@@ -25,8 +25,8 @@ nnoremap <leader>mn :bn<CR>
 nnoremap <leader>mN :bp<CR>
 nnoremap <leader>md :bd<CR>
 
-nmap                      gd        <Cmd>lua vim.lsp.buf.definition()<CR>
 nmap     <silent> <leader>gt        :vsp<CR><Cmd>lua vim.lsp.buf.definition()<CR>
+nmap                      gd        <Cmd>lua vim.lsp.buf.definition()<CR>
 nmap                      <C-Space> <Cmd>lua vim.lsp.buf.code_action()<CR>
 nmap     <silent>         gi        <CMD>lua vim.lsp.buf.implementation()<CR>
 nmap                      gk        <Cmd>lua vim.diagnostic.goto_prev()<CR>
@@ -34,7 +34,7 @@ nmap                      gj        <Cmd>lua vim.diagnostic.goto_next()<CR>
 nmap     <silent> <leader>gr        <CMD>lua vim.lsp.buf.references()<CR>
 nmap     <silent>         <F6>      <CMD>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <leader>gf        <CMD>lua vim.lsp.buf.formatting()<CR>
-nnoremap          <leader>gm        <CMD> lua vim.lsp.buf.signature_help()<CR>
+nnoremap          <leader>gm        <CMD>lua vim.lsp.buf.signature_help()<CR>
 
 nmap <space>e <cmd>lua vim.diagnostic.open_float()<CR>
 nmap <space>q <cmd>lua vim.diagnostic.setloclist()<CR>
@@ -66,17 +66,16 @@ nmap <silent> <leader>tl :TestLast<CR>
 nmap <silent> <leader>tv :TestVisit<CR>
 
 " Find files using Telescope command-line sugar.
-nnoremap <leader>F <cmd>Telescope find_files<cr>
+nnoremap <leader>F  <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>fl <cmd>Telescope git_files<cr>
+nnoremap <leader>ccc <cmd> lua require'telescope.builtin'.find_files({cwd = '~/.config/nvim'})<cr>
 
 nnoremap <leader>rr :source ~/.config/nvim/init.vim<CR>
 
 colorscheme medic_chalk
-"colorscheme nightfly
 
 highlight CursorLine ctermbg=0 ctermbg=235
 
-"autocmd CursorHold * silent call CocActionAsync('highlight')

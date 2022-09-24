@@ -2,9 +2,13 @@ require('plugins')
 require('plugins.complete')
 require('plugins.ident')
 require('plugins.dap')
-require('plugins.telescope')
 require('plugins.popfix')
-require("telescope").load_extension("flutter")
+
+require('plugins.telescope')
+require('telescope').load_extension('flutter')
+require('telescope').load_extension('project')
+require('telescope').load_extension('file_browser')
+
 require("flutter-tools").setup{
     debugger = {
         enabled = true,
@@ -12,14 +16,14 @@ require("flutter-tools").setup{
         register_configurations = function(_)
             require'plugins.dap'
         end,
-  },
-  dev_log = {
-    enabled = true,
-    open_cmd = "tabnew"
-  }
+    },
+    dev_log = {
+        enabled = true,
+        open_cmd = "tabnew"
+    }
 }
 
-vim.lsp.set_log_level("debug")
+--vim.lsp.set_log_level("debug")
 
 vim.wo.number = true
 vim.wo.relativenumber = true
@@ -29,6 +33,6 @@ require'nvim-treesitter.configs'.setup {
   ignore_install = { "phpdoc" }, -- List of parsers to ignore installing
   highlight = {
     enable = true,              -- false will disable the whole extension
-    disable = { "c", "rust" },  -- list of language that will be disabled
+    disable = { "c", "rust", "dart" },  -- list of language that will be disabled
   },
 }

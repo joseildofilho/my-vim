@@ -11,6 +11,8 @@ use 'hrsh7th/cmp-buffer'
 use 'hrsh7th/cmp-path'
 use 'hrsh7th/cmp-cmdline'
 
+use 'dart-lang/dart-vim-plugin' -- TS is causing dart classes to crash
+
 use 'saadparwaiz1/cmp_luasnip'
 use 'L3MON4D3/LuaSnip'
 
@@ -30,6 +32,9 @@ use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 use 'nvim-treesitter/playground'
 
 use { 'nvim-telescope/telescope.nvim', requires = 'nvim-lua/plenary.nvim' }
+use 'nvim-telescope/telescope-project.nvim'
+use 'nvim-telescope/telescope-file-browser.nvim'
+
 use 'nvim-lua/popup.nvim'
 use 'RishabhRD/popfix'
 
@@ -48,5 +53,6 @@ use 'vim-test/vim-test'
 use 'simrat39/rust-tools.nvim'
 
 use 'yuezk/vim-js'
+use 'sbdchd/neoformat'
 
 end)

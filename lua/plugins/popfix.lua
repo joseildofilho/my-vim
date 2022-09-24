@@ -16,7 +16,7 @@ function popfix.select_services()
         args = {'get', 'pod'}
     })
 
-    job:sync(10000)
+    job:sync(20000)
 
     local services 
     local hasErrors = job:stderr_result()[1] ~= Nil
@@ -69,13 +69,16 @@ function build_opts(data)
        data = data, -- Read below how to provide this.
        keymaps = {
           i = {
-            ['<Cr>'] = function(popup)
-               popup:close(select_callback)
+            ['<C-c>'] = function(popup)
+               popup:close()
+            end,
+            ['<Enter>'] = function(popup)
+               popup:close()
             end
           },
           n = {
             ['<Cr>'] = function(popup)
-               popup:close(select_callback)
+               popup:close()
             end
           }
        },

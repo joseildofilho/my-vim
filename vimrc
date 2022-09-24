@@ -18,6 +18,7 @@ set foldmethod=indent
 
 syntax on
 let g:lsc_auto_map = v:true
+let g:neovide_cursor_vfx_mode = "sonicboom"
 
 map <SPACE> <leader>
 
@@ -66,16 +67,26 @@ nmap <silent> <leader>tl :TestLast<CR>
 nmap <silent> <leader>tv :TestVisit<CR>
 
 " Find files using Telescope command-line sugar.
-nnoremap <leader>F  <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-nnoremap <leader>fl <cmd>Telescope git_files<cr>
-nnoremap <leader>ccc <cmd> lua require'telescope.builtin'.find_files({cwd = '~/.config/nvim'})<cr>
+nnoremap          <leader>F   <cmd>Telescope find_files<cr>
+nnoremap          <leader>fg  <cmd>Telescope live_grep<cr>
+nnoremap          <leader>fb  <cmd>Telescope buffers<cr>
+nnoremap          <leader>fh  <cmd>Telescope help_tags<cr>
+nnoremap          <leader>fl  <cmd>Telescope git_files<cr>
+nnoremap          <leader>fm  <cmd>Telescope file_browser<cr>
+nnoremap          <leader>ccc <cmd>lua require'telescope.builtin'.find_files({cwd = '~/.config/nvim'})<cr>
+nnoremap <silent> <leader>p   <cmd>lua require'telescope'.extensions.project.project{}<cr>
 
 nnoremap <leader>rr :source ~/.config/nvim/init.vim<CR>
+
+nnoremap <D-v> "+p
+
+" g:neovide_transparency should be 0 if you want to unify transparency of content and title bar.
+let g:neovide_transparency=0.0
+let g:transparency = 0.85
+let g:neovide_background_color = '#0f1117'.printf('%x', float2nr(255 * g:transparency))
 
 colorscheme medic_chalk
 
 highlight CursorLine ctermbg=0 ctermbg=235
 
+autocmd BufWritePre *.ts Neoformat

@@ -5,9 +5,11 @@ require('telescope').setup{
     extensions = {
         project = {
             base_dirs = {
+                '~/Codigos/Swipe/',
                 '~/Codigos/Swipe/main/',
                 '~/Codigos/Gavial/',
-                '~/Codigos/Joseildo/'
+                '~/Codigos/Tijolo/',
+                {'~/Codigos/Joseildo/', max_depth = 1},
             }
         },
         file_browser = {

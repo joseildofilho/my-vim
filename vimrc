@@ -25,6 +25,7 @@ map <SPACE> <leader>
 nnoremap <leader>mn :bn<CR>
 nnoremap <leader>mN :bp<CR>
 nnoremap <leader>md :bd<CR>
+nnoremap <leader>mc :bufdo bd<CR>
 
 nmap     <silent> <leader>gt        :vsp<CR><Cmd>lua vim.lsp.buf.definition()<CR>
 nmap                      gd        <Cmd>lua vim.lsp.buf.definition()<CR>
@@ -60,6 +61,7 @@ nnoremap <leader>fd <CMD> lua require'dap'.continue()<CR>
 nnoremap <leader>ff <cmd> lua require('telescope').extensions.flutter.commands()<CR>
 
 let test#dart#fluttertest#executable = 'fvm flutter test'
+"let test#javascript#jest#executable = 'jest --runInBand --config jest-integration.config.json' 
 nmap <silent> <leader>tn :TestNearest<CR>
 nmap <silent> <leader>tf :TestFile<CR>
 nmap <silent> <leader>tt :TestSuite<CR>

@@ -9,6 +9,8 @@ require('telescope').load_extension('flutter')
 require('telescope').load_extension('project')
 require('telescope').load_extension('file_browser')
 
+require('rest-nvim').setup()
+
 require("flutter-tools").setup{
     debugger = {
         enabled = true,
@@ -33,6 +35,7 @@ require'nvim-treesitter.configs'.setup {
   ignore_install = { "phpdoc" }, -- List of parsers to ignore installing
   highlight = {
     enable = true,              -- false will disable the whole extension
-    disable = { "c", "rust", "dart" },  -- list of language that will be disabled
+    disable = { "c", "dart" },  -- list of language that will be disabled
   },
 }
+

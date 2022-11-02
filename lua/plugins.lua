@@ -55,4 +55,6 @@ use 'simrat39/rust-tools.nvim'
 use 'yuezk/vim-js'
 use 'sbdchd/neoformat'
 
+use { "NTBBloodbath/rest.nvim", requires = { "nvim-lua/plenary.nvim" } }
+
 end)

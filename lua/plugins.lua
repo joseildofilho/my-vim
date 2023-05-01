@@ -1,5 +1,4 @@
-
-return require('packer').startup(function(use)
+return require('packer').startup({function(use)
 
 use 'wbthomason/packer.nvim'
 
@@ -18,10 +17,11 @@ use 'L3MON4D3/LuaSnip'
 
 use 'rafamadriz/friendly-snippets'
 use 'ray-x/lsp_signature.nvim'
-use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
 use 'onsails/lspkind-nvim'
 
 use 'mfussenegger/nvim-dap'
+use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+use 'theHamsta/nvim-dap-virtual-text'
 
 use {'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim'}
 
@@ -32,8 +32,6 @@ use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 use 'nvim-treesitter/playground'
 
 use { 'nvim-telescope/telescope.nvim', requires = 'nvim-lua/plenary.nvim' }
-use 'nvim-telescope/telescope-project.nvim'
-use 'nvim-telescope/telescope-file-browser.nvim'
 
 use 'nvim-lua/popup.nvim'
 use 'RishabhRD/popfix'
@@ -41,10 +39,6 @@ use 'RishabhRD/popfix'
 use "lukas-reineke/indent-blankline.nvim"
 
 use 'ParamagicDev/vim-medic_chalk'
-
-use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
-
-use 'theHamsta/nvim-dap-virtual-text'
 
 use 'jose-elias-alvarez/nvim-lsp-ts-utils'
 
@@ -55,6 +49,56 @@ use 'simrat39/rust-tools.nvim'
 use 'yuezk/vim-js'
 use 'sbdchd/neoformat'
 
+use 'ray-x/go.nvim'
+use 'ray-x/guihua.lua'
+
 use { "NTBBloodbath/rest.nvim", requires = { "nvim-lua/plenary.nvim" } }
 
-end)
+use 'pangloss/vim-javascript'
+
+use {
+    'jedrzejboczar/toggletasks.nvim',
+    requires = {
+        'nvim-lua/plenary.nvim',
+        'akinsho/toggleterm.nvim',
+    },
+}
+use_rocks {'lyaml', env= {YAML_DIR='/opt/homebrew/Cellar/libyaml/0.2.5'}}
+
+use "rebelot/kanagawa.nvim"
+
+use({ "mhanberg/elixir.nvim", requires = { "nvim-lua/plenary.nvim" }})
+
+use 'elixir-editors/vim-elixir'
+
+use 'nvim-tree/nvim-tree.lua'
+use('jose-elias-alvarez/null-ls.nvim')
+use('MunifTanjim/prettier.nvim')
+
+use {
+  'phaazon/hop.nvim',
+  branch = 'v2', -- optional but strongly recommended
+  config = function()
+    -- you can configure Hop the way you like here; see :h hop-config
+    require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+  end
+}
+
+use {
+  "microsoft/vscode-js-debug",
+  opt = true,
+  run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out" 
+}
+use { "mxsdev/nvim-dap-vscode-js", requires = {"mfussenegger/nvim-dap"} }
+
+use({
+"L3MON4D3/LuaSnip", tag = "v1.*", run = "make install_jsregexp"
+})
+
+use 'gnikdroy/projections.nvim'
+
+end, config = {
+    luarocks = {
+        python_cmd='python3'
+    }
+}})

@@ -10,11 +10,13 @@ set shiftwidth=4
 set expandtab
 set mouse=a
 
-set guifont="fira code bold"
+set guifont="Fira Code Nerd Font:b"
+
 
 set updatetime=300
 
-set foldmethod=indent
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
 
 syntax on
 let g:lsc_auto_map = v:true
@@ -24,7 +26,8 @@ map <SPACE> <leader>
 
 nnoremap <leader>mn :bn<CR>
 nnoremap <leader>mN :bp<CR>
-nnoremap <leader>md :bd<CR>
+nnoremap <leader>md :bp \| bd#<CR>
+nnoremap <leader>mD :bd<CR>
 nnoremap <leader>mc :bufdo bd<CR>
 
 nmap     <silent> <leader>gt        :vsp<CR><Cmd>lua vim.lsp.buf.definition()<CR>
@@ -41,12 +44,12 @@ nnoremap          <leader>gm        <CMD>lua vim.lsp.buf.signature_help()<CR>
 nmap <space>e <cmd>lua vim.diagnostic.open_float()<CR>
 nmap <space>q <cmd>lua vim.diagnostic.setloclist()<CR>
 
-nnoremap <silent> <F5>      :lua require'dap'.continue()<CR>
-nnoremap <silent> <F7>      :lua require'dap'.step_over()<CR>
-nnoremap <silent> <F8>      :lua require'dap'.step_into()<CR>
-nnoremap <silent> <F9>      :lua require'dap'.step_out()<CR>
-nnoremap <silent> <leader>b :lua require'dap'.toggle_breakpoint()<CR>
-nnoremap <silent> <leader>D :lua require'dapui'.toggle()<CR>
+nnoremap <silent> <leader>Dc :lua require'dap'.continue()<CR>
+nnoremap <silent> <leader>Ds :lua require'dap'.step_over()<CR>
+nnoremap <silent> <leader>Di :lua require'dap'.step_into()<CR>
+nnoremap <silent> <leader>Do :lua require'dap'.step_out()<CR>
+nnoremap <silent> <leader>b  :lua require'dap'.toggle_breakpoint()<CR>
+nnoremap <silent> <leader>D  :lua require'dapui'.toggle()<CR>
 
 nnoremap <leader>gss :lua require'plugins.popfix'.select_services()<CR>
 
@@ -74,21 +77,34 @@ nnoremap          <leader>fg  <cmd>Telescope live_grep<cr>
 nnoremap          <leader>fb  <cmd>Telescope buffers<cr>
 nnoremap          <leader>fh  <cmd>Telescope help_tags<cr>
 nnoremap          <leader>fl  <cmd>Telescope git_files<cr>
-nnoremap          <leader>fm  <cmd>Telescope file_browser<cr>
+nnoremap          <leader>fm  <cmd>:NvimTreeToggle<cr>
 nnoremap          <leader>ccc <cmd>lua require'telescope.builtin'.find_files({cwd = '~/.config/nvim'})<cr>
-nnoremap <silent> <leader>p   <cmd>lua require'telescope'.extensions.project.project{}<cr>
+nnoremap <silent> <leader>p   <cmd>Telescope projections<cr>
+
+nnoremap <silent> <leader>TT   <cmd>lua require'telescope'.extensions.toggletasks.spawn()<cr>
+nnoremap <silent> <leader>Ts   <cmd>lua require'telescope'.extensions.toggletasks.select()<cr>
+nnoremap <silent> <leader>Te   <cmd>lua require'telescope'.extensions.toggletasks.edit()<cr>
+
+nnoremap <leader>htp  <cmd>lua require'rest-nvim'.run()<cr>
+nnoremap <leader>htl <cmd>lua require'rest-nvim'.run()<cr>
 
 nnoremap <leader>rr :source ~/.config/nvim/init.vim<CR>
 
 nnoremap <D-v> "+p
+
+nnoremap <C-t> :rightb vsp +te <CR>
+
+nnoremap  ff :HopChar1<cr>
+nnoremap  F :HopAnywhere<cr>
 
 " g:neovide_transparency should be 0 if you want to unify transparency of content and title bar.
 let g:neovide_transparency=0.0
 let g:transparency = 0.85
 let g:neovide_background_color = '#0f1117'.printf('%x', float2nr(255 * g:transparency))
 
-colorscheme medic_chalk
+"colorscheme medic_chalk
+colorscheme kanagawa
 
 highlight CursorLine ctermbg=0 ctermbg=235
 
-autocmd BufWritePre *.ts Neoformat
+autocmd BufWritePre *.ts Prettier

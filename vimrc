@@ -38,7 +38,7 @@ nmap                      gk        <Cmd>lua vim.diagnostic.goto_prev()<CR>
 nmap                      gj        <Cmd>lua vim.diagnostic.goto_next()<CR>
 nmap     <silent> <leader>gr        <CMD>lua vim.lsp.buf.references()<CR>
 nmap     <silent>         <F6>      <CMD>lua vim.lsp.buf.rename()<CR>
-nnoremap <silent> <leader>gf        <CMD>lua vim.lsp.buf.formatting()<CR>
+nnoremap <silent> <leader>gf        <CMD>lua vim.lsp.buf.format()<CR>
 nnoremap          <leader>gm        <CMD>lua vim.lsp.buf.signature_help()<CR>
 
 nmap <space>e <cmd>lua vim.diagnostic.open_float()<CR>
@@ -65,7 +65,7 @@ nnoremap <leader>ff <cmd> lua require('telescope').extensions.flutter.commands()
 
 let test#dart#fluttertest#executable = 'fvm flutter test'
 "let test#javascript#jest#executable = 'jest --runInBand --config jest-integration.config.json' 
-nmap <silent> <leader>tn :TestNearest<CR>
+nmap <silent> <leader>tn :Nearest<CR>
 nmap <silent> <leader>tf :TestFile<CR>
 nmap <silent> <leader>tt :TestSuite<CR>
 nmap <silent> <leader>tl :TestLast<CR>
@@ -81,9 +81,8 @@ nnoremap          <leader>fm  <cmd>:NvimTreeToggle<cr>
 nnoremap          <leader>ccc <cmd>lua require'telescope.builtin'.find_files({cwd = '~/.config/nvim'})<cr>
 nnoremap <silent> <leader>p   <cmd>Telescope projections<cr>
 
-nnoremap <silent> <leader>TT   <cmd>lua require'telescope'.extensions.toggletasks.spawn()<cr>
-nnoremap <silent> <leader>Ts   <cmd>lua require'telescope'.extensions.toggletasks.select()<cr>
-nnoremap <silent> <leader>Te   <cmd>lua require'telescope'.extensions.toggletasks.edit()<cr>
+nnoremap <silent> <leader>TT   <cmd>OverseerRun<cr>
+nnoremap <silent> <leader>Ts   <cmd>OverseerToggle<cr>
 
 nnoremap <leader>htp  <cmd>lua require'rest-nvim'.run()<cr>
 nnoremap <leader>htl <cmd>lua require'rest-nvim'.run()<cr>

@@ -1,4 +1,4 @@
-return require('packer').startup({function(use)
+return require('packer').startup(function(use)
 
 use 'wbthomason/packer.nvim'
 
@@ -12,8 +12,10 @@ use 'hrsh7th/cmp-cmdline'
 
 use 'dart-lang/dart-vim-plugin' -- TS is causing dart classes to crash
 
+use({
+"L3MON4D3/LuaSnip", tag = "v1.*", run = "make install_jsregexp"
+})
 use 'saadparwaiz1/cmp_luasnip'
-use 'L3MON4D3/LuaSnip'
 
 use 'rafamadriz/friendly-snippets'
 use 'ray-x/lsp_signature.nvim'
@@ -25,7 +27,7 @@ use 'theHamsta/nvim-dap-virtual-text'
 
 use {'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim'}
 
-use 'vim-airline/vim-airline'
+use 'nvim-lualine/lualine.nvim'
 use 'tpope/vim-fugitive'
 
 use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
@@ -56,14 +58,8 @@ use { "NTBBloodbath/rest.nvim", requires = { "nvim-lua/plenary.nvim" } }
 
 use 'pangloss/vim-javascript'
 
-use {
-    'jedrzejboczar/toggletasks.nvim',
-    requires = {
-        'nvim-lua/plenary.nvim',
-        'akinsho/toggleterm.nvim',
-    },
-}
-use_rocks {'lyaml', env= {YAML_DIR='/opt/homebrew/Cellar/libyaml/0.2.5'}}
+use 'stevearc/overseer.nvim'
+use 'stevearc/dressing.nvim'
 
 use "rebelot/kanagawa.nvim"
 
@@ -91,14 +87,14 @@ use {
 }
 use { "mxsdev/nvim-dap-vscode-js", requires = {"mfussenegger/nvim-dap"} }
 
-use({
-"L3MON4D3/LuaSnip", tag = "v1.*", run = "make install_jsregexp"
-})
+use {
+  "nvim-neotest/neotest",
+  requires = {
+    "nvim-lua/plenary.nvim",
+    "nvim-treesitter/nvim-treesitter",
+    "antoinemadec/FixCursorHold.nvim"
+  }
+}
 
 use 'gnikdroy/projections.nvim'
-
-end, config = {
-    luarocks = {
-        python_cmd='python3'
-    }
-}})
+end)

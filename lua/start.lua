@@ -5,10 +5,17 @@ require('plugins.dap')
 require('plugins.popfix')
 require('plugins.rest')
 require('plugins.projections')
+require('plugins.tests')
+require('plugins.neotest')
+
+require('overseer').setup()
+
+require('dressing').setup()
 
 require('plugins.telescope')
 require('telescope').load_extension('flutter')
 require('hop').setup()
+require('lualine').setup()
 
 require('kanagawa').setup{}
 

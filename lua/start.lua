@@ -17,7 +17,15 @@ require('telescope').load_extension('flutter')
 require('hop').setup()
 require('lualine').setup()
 
-require('kanagawa').setup{}
+require('kanagawa').setup{
+    background = {
+        dark = "wave",
+        light = "lotus"
+    },
+    transparent=false
+}
+vim.o.background = 'light'
+vim.cmd('colorscheme kanagawa-lotus')
 
 require("elixir").setup{}
 
@@ -78,7 +86,7 @@ vim.wo.relativenumber = true
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-vim.opt.termguicolors = true
+-- vim.opt.termguicolors = true
 
 
 require'nvim-treesitter.configs'.setup {

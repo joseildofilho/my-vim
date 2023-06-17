@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["FixCursorHold.nvim"] = {
+    loaded = true,
+    path = "/Users/joseildo.filho/.local/share/nvim/site/pack/packer/start/FixCursorHold.nvim",
+    url = "https://github.com/antoinemadec/FixCursorHold.nvim"
+  },
   LuaSnip = {
     loaded = true,
     path = "/Users/joseildo.filho/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -108,6 +113,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/joseildo.filho/.local/share/nvim/site/pack/packer/start/dart-vim-plugin",
     url = "https://github.com/dart-lang/dart-vim-plugin"
+  },
+  ["dressing.nvim"] = {
+    loaded = true,
+    path = "/Users/joseildo.filho/.local/share/nvim/site/pack/packer/start/dressing.nvim",
+    url = "https://github.com/stevearc/dressing.nvim"
   },
   ["elixir.nvim"] = {
     loaded = true,
@@ -160,10 +170,25 @@ _G.packer_plugins = {
     path = "/Users/joseildo.filho/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
     url = "https://github.com/onsails/lspkind-nvim"
   },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/Users/joseildo.filho/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
   neoformat = {
     loaded = true,
     path = "/Users/joseildo.filho/.local/share/nvim/site/pack/packer/start/neoformat",
     url = "https://github.com/sbdchd/neoformat"
+  },
+  neotest = {
+    loaded = true,
+    path = "/Users/joseildo.filho/.local/share/nvim/site/pack/packer/start/neotest",
+    url = "https://github.com/nvim-neotest/neotest"
+  },
+  ["neotest-rust"] = {
+    loaded = true,
+    path = "/Users/joseildo.filho/.local/share/nvim/site/pack/packer/start/neotest-rust",
+    url = "https://github.com/rouge8/neotest-rust"
   },
   ["null-ls.nvim"] = {
     loaded = true,
@@ -215,6 +240,11 @@ _G.packer_plugins = {
     path = "/Users/joseildo.filho/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["overseer.nvim"] = {
+    loaded = true,
+    path = "/Users/joseildo.filho/.local/share/nvim/site/pack/packer/start/overseer.nvim",
+    url = "https://github.com/stevearc/overseer.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/joseildo.filho/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -245,6 +275,11 @@ _G.packer_plugins = {
     path = "/Users/joseildo.filho/.local/share/nvim/site/pack/packer/start/prettier.nvim",
     url = "https://github.com/MunifTanjim/prettier.nvim"
   },
+  ["projections.nvim"] = {
+    loaded = true,
+    path = "/Users/joseildo.filho/.local/share/nvim/site/pack/packer/start/projections.nvim",
+    url = "https://github.com/gnikdroy/projections.nvim"
+  },
   ["rest.nvim"] = {
     loaded = true,
     path = "/Users/joseildo.filho/.local/share/nvim/site/pack/packer/start/rest.nvim",
@@ -255,35 +290,10 @@ _G.packer_plugins = {
     path = "/Users/joseildo.filho/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
     url = "https://github.com/simrat39/rust-tools.nvim"
   },
-  ["telescope-file-browser.nvim"] = {
-    loaded = true,
-    path = "/Users/joseildo.filho/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
-    url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
-  },
-  ["telescope-project.nvim"] = {
-    loaded = true,
-    path = "/Users/joseildo.filho/.local/share/nvim/site/pack/packer/start/telescope-project.nvim",
-    url = "https://github.com/nvim-telescope/telescope-project.nvim"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/joseildo.filho/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
-  },
-  ["toggletasks.nvim"] = {
-    loaded = true,
-    path = "/Users/joseildo.filho/.local/share/nvim/site/pack/packer/start/toggletasks.nvim",
-    url = "https://github.com/jedrzejboczar/toggletasks.nvim"
-  },
-  ["toggleterm.nvim"] = {
-    loaded = true,
-    path = "/Users/joseildo.filho/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
-    url = "https://github.com/akinsho/toggleterm.nvim"
-  },
-  ["vim-airline"] = {
-    loaded = true,
-    path = "/Users/joseildo.filho/.local/share/nvim/site/pack/packer/start/vim-airline",
-    url = "https://github.com/vim-airline/vim-airline"
   },
   ["vim-elixir"] = {
     loaded = true,

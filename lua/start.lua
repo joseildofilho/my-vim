@@ -7,25 +7,15 @@ require('plugins.rest')
 require('plugins.projections')
 require('plugins.tests')
 require('plugins.neotest')
+require('plugins.theme')
+require('plugins.telescope')
 
 require('overseer').setup()
-
 require('dressing').setup()
-
-require('plugins.telescope')
 require('telescope').load_extension('flutter')
 require('hop').setup()
 require('lualine').setup()
 
-require('kanagawa').setup{
-    background = {
-        dark = "wave",
-        light = "lotus"
-    },
-    transparent=false
-}
-vim.o.background = 'light'
-vim.cmd('colorscheme kanagawa-lotus')
 
 require("elixir").setup{}
 

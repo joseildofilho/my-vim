@@ -16,7 +16,6 @@ require('telescope').load_extension('flutter')
 require('hop').setup()
 require('lualine').setup()
 
-
 require("elixir").setup{}
 
 require("nvim-tree").setup{
@@ -73,11 +72,6 @@ require("flutter-tools").setup{
 
 vim.wo.number = true
 vim.wo.relativenumber = true
-
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
--- vim.opt.termguicolors = true
-
 
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages

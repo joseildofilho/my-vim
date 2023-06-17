@@ -19,6 +19,8 @@ require('lualine').setup()
 require("elixir").setup{}
 
 require("nvim-tree").setup{
+    sync_root_with_cwd = true,
+    respect_buf_cwd = true,
     view = {
         relativenumber = true,
         adaptive_size = true

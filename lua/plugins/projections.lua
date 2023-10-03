@@ -1,3 +1,4 @@
+
 require('projections').setup{
     workspaces = {
         "~/Codigos/Swipe/main",
@@ -5,6 +6,7 @@ require('projections').setup{
         "~/Codigos/Gavial",
         "~/Codigos/Calango",
         "~/Codigos/Joseildo",
+        "~/Codigos/Pima",
         "~/.config",
         "~/.aws",
     },

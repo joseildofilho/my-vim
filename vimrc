@@ -26,7 +26,7 @@ map <SPACE> <leader>
 
 nnoremap <leader>mn :bn<CR>
 nnoremap <leader>mN :bp<CR>
-nnoremap <leader>md :bp \| bd#<CR>
+nnoremap <leader>md :bn \| bd#<CR>
 nnoremap <leader>mD :bd<CR>
 nnoremap <leader>mc :bufdo bd<CR>
 
@@ -66,7 +66,7 @@ nnoremap <leader>ff <cmd> lua require('telescope').extensions.flutter.commands()
 let test#dart#fluttertest#executable = 'fvm flutter test'
 "let test#javascript#jest#executable = 'jest --runInBand --config jest-integration.config.json' 
 nmap <silent> <leader>tn :Nearest<CR>
-nmap <silent> <leader>tf :TestFile<CR>
+nmap <silent> <leader>tf :FileTest<CR>
 nmap <silent> <leader>tt :TestSuite<CR>
 nmap <silent> <leader>tl :TestLast<CR>
 nmap <silent> <leader>tv :TestVisit<CR>
@@ -95,6 +95,8 @@ nnoremap <C-t> :rightb vsp +te <CR>
 
 nnoremap  ff :HopChar1<cr>
 nnoremap  F :HopAnywhere<cr>
+
+tnoremap <Esc> <C-\><C-n>
 
 " g:neovide_transparency should be 0 if you want to unify transparency of content and title bar.
 "let g:neovide_transparency=0.0

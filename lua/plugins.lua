@@ -3,6 +3,7 @@ return require('packer').startup(function(use)
 use 'wbthomason/packer.nvim'
 
 use 'neovim/nvim-lspconfig'
+use 'RishabhRD/nvim-lsputils'
 
 use 'hrsh7th/nvim-cmp'
 use 'hrsh7th/cmp-nvim-lsp'
@@ -93,9 +94,12 @@ use {
     "nvim-lua/plenary.nvim",
     "nvim-treesitter/nvim-treesitter",
     "antoinemadec/FixCursorHold.nvim",
-    "rouge8/neotest-rust"
+    "rouge8/neotest-rust",
+    "nvim-neotest/neotest-jest"
   }
 }
 
 use 'gnikdroy/projections.nvim'
+
+use 'folke/neodev.nvim'
 end)

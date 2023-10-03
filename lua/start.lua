@@ -9,12 +9,20 @@ require('plugins.tests')
 require('plugins.neotest')
 require('plugins.theme')
 require('plugins.telescope')
+require('plugins.lsp-utils')
 
 require('overseer').setup()
 require('dressing').setup()
 require('telescope').load_extension('flutter')
 require('hop').setup()
-require('lualine').setup()
+require('neodev').setup {
+    library = { plugins = { "neotest" }, types = true },
+}
+require('lualine').setup{
+    options = {
+        globalstatus=true
+    },
+}
 
 require("elixir").setup{}
 

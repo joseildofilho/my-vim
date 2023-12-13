@@ -21,6 +21,8 @@ set foldexpr=nvim_treesitter#foldexpr()
 syntax on
 let g:lsc_auto_map = v:true
 let g:neovide_cursor_vfx_mode = "sonicboom"
+let g:neovide_cursor_trail_size = 0.9
+let g:neovide_cursor_animation_length = 0.13
 
 map <SPACE> <leader>
 
@@ -93,7 +95,7 @@ nnoremap <D-v> "+p
 
 nnoremap <C-t> :rightb vsp +te <CR>
 
-nnoremap  ff :HopChar1<cr>
+nnoremap  f :HopChar1CurrentLine<cr>
 nnoremap  F :HopAnywhere<cr>
 
 tnoremap <Esc> <C-\><C-n>

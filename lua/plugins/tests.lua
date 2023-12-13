@@ -17,9 +17,11 @@ function run_file()
     neotest.summary.open()
     local bufferPath = vim.fn.expand('%')
     if(string.find(bufferPath, 'e2e')) then
-        vim.cmd([[let test#javascript#jest#executable = 'jest --runInBand --config jest-integration.config.json']])
+        -- vim.cmd([[let test#javascript#jest#executable = 'jest --runInBand --config jest-integration.config.json']])
+        neotest.run.run({vim.fn.expand('%'), jestConfigFile = "jest-integration.config.json"})
+    else
+        neotest.run.run(bufferPath)
     end
-    neotest.run.run(bufferPath)
 
 end
 

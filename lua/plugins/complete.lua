@@ -1,5 +1,5 @@
 if extesion == "md" then
-	require("plugins.tabnine")
+	require("plugins.lsp")
 else
 	require("plugins.lsp")
 end

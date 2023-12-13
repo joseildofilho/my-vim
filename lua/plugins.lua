@@ -95,11 +95,15 @@ use {
     "nvim-treesitter/nvim-treesitter",
     "antoinemadec/FixCursorHold.nvim",
     "rouge8/neotest-rust",
-    "nvim-neotest/neotest-jest"
+    "nvim-neotest/neotest-jest",
+    "nvim-neotest/neotest-go",
   }
 }
 
 use 'gnikdroy/projections.nvim'
 
 use 'folke/neodev.nvim'
+
+use 'JuliaEditorSupport/julia-vim'
+
 end)

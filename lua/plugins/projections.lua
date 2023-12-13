@@ -6,6 +6,8 @@ require('projections').setup{
         "~/Codigos/Gavial",
         "~/Codigos/Calango",
         "~/Codigos/Joseildo",
+        "~/Codigos/Joseildo/julia/",
+        "~/Codigos/Joseildo/nannou/",
         "~/Codigos/Pima",
         "~/.config",
         "~/.aws",

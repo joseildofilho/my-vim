@@ -107,4 +107,4 @@ tnoremap <Esc> <C-\><C-n>
 
 highlight CursorLine ctermbg=0 ctermbg=235
 
-autocmd BufWritePre *.ts Prettier
+"autocmd BufWritePre *.ts Prettier

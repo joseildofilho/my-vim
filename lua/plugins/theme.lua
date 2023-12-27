@@ -18,8 +18,3 @@ timer:start(0, 10000, vim.schedule_wrap(function()
   if (vim.o.bg ~= bg) and automatically_change then vim.o.bg = bg end
 end))
 
-function set_theme_dark() 
-end
-
-function set_theme_light() 
-end

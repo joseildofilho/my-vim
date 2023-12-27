@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require('plugins')
 
---require('plugins.complete')
+require('plugins.complete')
 --require('plugins.ident')
 --require('plugins.dap')
 --require('plugins.popfix')
@@ -24,7 +24,7 @@ require('plugins.projections')
 --require('plugins.neotest')
 require('plugins.theme')
 --require('plugins.telescope')
---require('plugins.lsp-utils')
+require('plugins.lsp-utils')
 --
 require('overseer').setup()
 require('dressing').setup()
@@ -67,7 +67,7 @@ require("nvim-tree").setup{
         },
     }
 }
---require("prettier").setup{}
+require("prettier").setup{}
 --
 --require("flutter-tools").setup{
 --    -- debugger = {
@@ -93,12 +93,12 @@ require("nvim-tree").setup{
 vim.wo.number = true
 vim.wo.relativenumber = true
 --
---require'nvim-treesitter.configs'.setup {
---  ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
---  ignore_install = { "phpdoc" }, -- List of parsers to ignore installing
---  highlight = {
---    enable = true,              -- false will disable the whole extension
---    disable = { "c" },  -- list of language that will be disabled
---  },
---}
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ignore_install = { "phpdoc" }, -- List of parsers to ignore installing
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    disable = { "c" },  -- list of language that will be disabled
+  },
+}
 

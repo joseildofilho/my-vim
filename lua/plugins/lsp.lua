@@ -9,18 +9,18 @@ end
 require'lspconfig'.clangd.setup{}
 require'lspconfig'.dartls.setup{}
 require'lspconfig'.tsserver.setup{}
-require'lspconfig'.pyright.setup{}
-require'lspconfig'.elixirls.setup{
-    cmd = {"/opt/homebrew/Cellar/elixir-ls/0.13.0/libexec/language_server.sh"};
-}
+--require'lspconfig'.pyright.setup{}
+--require'lspconfig'.elixirls.setup{
+--    cmd = {"/opt/homebrew/Cellar/elixir-ls/0.13.0/libexec/language_server.sh"};
+--}
 
-require'rust-tools'.setup({
-})
-require('go').setup{
-    lsp_inlay_hints = {
-        enabled = true
-    }
-}
+--require'rust-tools'.setup({
+--})
+--require('go').setup{
+--    lsp_inlay_hints = {
+--        enabled = true
+--    }
+--}
 
 require "lsp_signature".setup()
 vim.o.completeopt = 'menuone,noselect'

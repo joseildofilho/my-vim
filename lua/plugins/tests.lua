@@ -1,3 +1,27 @@
+require('neotest').setup {
+    discovery = {
+        enabled = false
+    },
+    adapters = {
+        require('neotest-rust') {
+--            args = { "--no-capture" }
+        },
+        require('neotest-jest')({
+            jest_test_discovery = true,
+            jestConfigFile = function()
+                local file = vim.fn.expand('%')
+                print("testing test tested " .. file)
+                print("tesled ted " .. vim.fn.getcwd())
+                if string.find(file, "e2e") then
+                    return "jest-integration.config.json"
+                end
+                return vim.fn.getcwd() .. "/jest.config.json"
+            end
+        }),
+        require('neotest-go')({}),
+    }
+}
+
 local neotest = require('neotest')
 
 function nearest()
@@ -18,7 +42,8 @@ function run_file()
     local bufferPath = vim.fn.expand('%')
     if(string.find(bufferPath, 'e2e')) then
         -- vim.cmd([[let test#javascript#jest#executable = 'jest --runInBand --config jest-integration.config.json']])
-        neotest.run.run({vim.fn.expand('%'), jestConfigFile = "jest-integration.config.json"})
+        print("e2e testing")
+        neotest.run.run({jestCommand = "jest --config jest-integration.config.json" .. vim.fn.expand('%')})
     else
         neotest.run.run(bufferPath)
     end

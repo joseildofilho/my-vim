@@ -28,7 +28,7 @@ map <SPACE> <leader>
 
 nnoremap <leader>mn :bn<CR>
 nnoremap <leader>mN :bp<CR>
-nnoremap <leader>md :bn \| bd#<CR>
+nnoremap <leader>md :bN \| bd#<CR>
 nnoremap <leader>mD :bd<CR>
 nnoremap <leader>mc :bufdo bd<CR>
 

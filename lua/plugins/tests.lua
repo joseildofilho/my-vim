@@ -17,8 +17,7 @@ require('neotest').setup {
                 end
                 return vim.fn.getcwd() .. "/jest.config.json"
             end
-        }),
-        require('neotest-go')({}),
+        })
     }
 }
 

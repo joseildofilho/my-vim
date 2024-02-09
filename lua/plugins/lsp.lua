@@ -1,3 +1,4 @@
+vim.lsp.set_log_level('debug')
 local has_any_words_before = function()
   if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
     return false
@@ -9,13 +10,16 @@ end
 require'lspconfig'.clangd.setup{}
 require'lspconfig'.dartls.setup{}
 require'lspconfig'.tsserver.setup{}
+--require'lspconfig'.rust_analizer.setup {
+--    settings = {
+--        ['rust-analizer'] = {}
+--    }
+--}
 --require'lspconfig'.pyright.setup{}
 --require'lspconfig'.elixirls.setup{
 --    cmd = {"/opt/homebrew/Cellar/elixir-ls/0.13.0/libexec/language_server.sh"};
 --}
 
---require'rust-tools'.setup({
---})
 --require('go').setup{
 --    lsp_inlay_hints = {
 --        enabled = true

@@ -2,6 +2,8 @@
 require('projections').setup{
     workspaces = {
         "~/Codigos/Swipe/main",
+        {"~/Codigos/Swipe", {".git", "tsconfig.json"}},
+        {"~/Codigos/Swipe/swp-common-libs/packages", {"tsconfig.json"}},
         "~/Codigos/Tijolo",
         "~/Codigos/Gavial",
         "~/Codigos/Calango",

@@ -1,4 +1,27 @@
 require('lazy').setup({
+{ 
+    'epwalsh/obsidian.nvim',
+    version = '*',
+    dependencies = {
+        'nvim-lua/plenary.nvim'
+    },
+    opts = {
+        workspaces = {
+            {
+                name = 'obsidian-vault',
+                path = '~/Documentos/obsidian-vault'
+            }
+        }
+    }
+},
+-- nvim v0.8.0
+{
+    "kdheepak/lazygit.nvim",
+    -- optional for floating window border decoration
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+    },
+},
 'neovim/nvim-lspconfig',
 'RishabhRD/nvim-lsputils',
 
@@ -26,7 +49,7 @@ require('lazy').setup({
 'nvim-lualine/lualine.nvim',
 'tpope/vim-fugitive',
 { 'nvim-treesitter/nvim-treesitter', lazy = false, build = 'TSUpdate' },
-{'nvim-treesitter/playground', cmd = 'TSPlaygroundToggle' },
+{ 'nvim-treesitter/playground', cmd = 'TSPlaygroundToggle' },
 { 'nvim-telescope/telescope.nvim', dependencies = 'nvim-lua/plenary.nvim' },
 'nvim-lua/popup.nvim',
 'RishabhRD/popfix',
@@ -34,14 +57,18 @@ require('lazy').setup({
 --use "lukas-reineke/indent-blankline.nvim"
 --
 --
---use 'vim-test/vim-test'
+'vim-test/vim-test',
 --
---use 'simrat39/rust-tools.nvim'
+{
+  'mrcjkb/rustaceanvim',
+  version = '^3', -- Recommended
+  ft = { 'rust' },
+},
 --
-{'yuezk/vim-js', ft = {'ts', 'js'}},
-{'pangloss/vim-javascript', ft = {'ts', 'js'}},
-{'MunifTanjim/prettier.nvim', ft = {'ts', 'js'}},
-{ 'jose-elias-alvarez/nvim-lsp-ts-utils', ft = {'ts', 'js'}},
+{ 'yuezk/vim-js', ft = {'ts', 'js'} },
+{ 'pangloss/vim-javascript', ft = {'ts', 'js'} },
+{ 'MunifTanjim/prettier.nvim', ft = {'ts', 'js'} },
+{ 'jose-elias-alvarez/nvim-lsp-ts-utils', ft = {'ts', 'js'} },
 
 'stevearc/overseer.nvim',
 'stevearc/dressing.nvim',
@@ -66,23 +93,28 @@ require('lazy').setup({
 --}
 --use { "mxsdev/nvim-dap-vscode-js", requires = {"mfussenegger/nvim-dap"} }
 --
---use {
---  "nvim-neotest/neotest",
---  requires = {
---    "nvim-lua/plenary.nvim",
---    "nvim-treesitter/nvim-treesitter",
---    "antoinemadec/FixCursorHold.nvim",
---    "rouge8/neotest-rust",
---    "nvim-neotest/neotest-jest",
---    "nvim-neotest/neotest-go",
---  }
---}
---
-'gnikdroy/projections.nvim',
-
+{
+  "nvim-neotest/neotest",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "nvim-treesitter/nvim-treesitter",
+    "antoinemadec/FixCursorHold.nvim",
+    "rouge8/neotest-rust",
+    "nvim-neotest/neotest-jest",
+  }
+},
+{'gnikdroy/projections.nvim', branch='pre_release'},
 {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
-    dependencies = {"nvim-lua/plenary.nvim"}
+    dependencies = {"nvim-lua/plenary.nvim"},
+    config = function()
+        require'harpoon'.setup{
+            settings = {
+                save_on_toggle = true,
+                save_on_ui_close = true
+            }
+        }
+    end
 },
 })

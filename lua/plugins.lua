@@ -45,7 +45,20 @@ require('lazy').setup({
 --use 'mfussenegger/nvim-dap'
 --use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 --use 'theHamsta/nvim-dap-virtual-text'
---use {'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim'}
+{ 
+    'akinsho/flutter-tools.nvim',
+    dependencies = 'nvim-lua/plenary.nvim',
+    lazy = true,
+    ft = { 'dart' },
+    opts = {
+        fvm=true,
+        lsp = {
+            color = {
+                enabled = false
+            }
+        }
+    }
+},
 'nvim-lualine/lualine.nvim',
 'tpope/vim-fugitive',
 { 'nvim-treesitter/nvim-treesitter', lazy = false, build = 'TSUpdate' },

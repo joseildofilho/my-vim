@@ -69,24 +69,25 @@ require("nvim-tree").setup{
 }
 require("prettier").setup{}
 --
---require("flutter-tools").setup{
---    -- debugger = {
---    --     enabled = false,
---    --     run_via_dap = true,
---    --     register_configurations = function(_)
---    --         require'plugins.dap'
---    --     end,
---    -- },
---    dev_log = {
---        enabled = true,
---        open_cmd = "tabedit"
---    },
---    lsp = {
---        color = {
---            enabled = false
---        }
---    }
---}
+-- require("flutter-tools").setup{
+--     -- debugger = {
+--     --     enabled = false,
+--     --     run_via_dap = true,
+--     --     register_configurations = function(_)
+--     --         require'plugins.dap'
+--     --     end,
+--     -- },
+--     dev_log = {
+--         enabled = true,
+--         open_cmd = "tabedit"
+--     },
+--     fvm=true,
+--     lsp = {
+--         color = {
+--             enabled = false
+--         }
+--     }
+-- }
 --
 ---- vim.lsp.set_log_level("debug")
 --

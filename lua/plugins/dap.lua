@@ -37,21 +37,21 @@ for _, language in ipairs({ "typescript", "javascript" }) do
   }
 end
 
--- 
--- dap.adapters.dart = {
---     type = "executable",
---     command = "flutter",
---     args = {"debug_adapter"}
--- }
--- 
--- dap.configurations.dart = {
---   {
---     type = "dart",
---     request = "launch",
---     name = "Launch flutter",
---     program = "${file}",
---     cwd = "${workspaceFolder}",
---     toolArgs = { "-d", "all" }
---   }
--- }
---
+ 
+dap.adapters.dart = {
+    type = "executable",
+    command = "flutter",
+    args = {"debug_adapter"}
+}
+
+dap.configurations.dart = {
+  {
+    type = "dart",
+    request = "launch",
+    name = "Launch flutter",
+    program = "${file}",
+    cwd = "${workspaceFolder}",
+    toolArgs = { "-d", "all" }
+  }
+}
+

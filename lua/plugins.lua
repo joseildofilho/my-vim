@@ -36,6 +36,15 @@ require('lazy').setup({
 {
 "L3MON4D3/LuaSnip", version = "v1.*", build = "make install_jsregexp"
 },
+{ 'folke/neodev.nvim', ft={'lua'}, opts = {
+    library = {
+        plugins = {
+            "nvim-dap-ui"
+        },
+        types = true
+    },
+    }
+},
 'saadparwaiz1/cmp_luasnip',
 --
 'rafamadriz/friendly-snippets',

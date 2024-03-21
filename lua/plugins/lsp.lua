@@ -1,4 +1,5 @@
-vim.lsp.set_log_level('debug')
+vim.lsp.set_log_level('error')
+
 local has_any_words_before = function()
   if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
     return false
@@ -10,6 +11,15 @@ end
 require'lspconfig'.clangd.setup{}
 require'lspconfig'.dartls.setup{}
 require'lspconfig'.tsserver.setup{}
+require'lspconfig'.lua_ls.setup{
+    settings = {
+        Lua = {
+            completion = {
+                callSnippet = "Replace",
+            }
+        }
+    }
+}
 --require'lspconfig'.rust_analizer.setup {
 --    settings = {
 --        ['rust-analizer'] = {}

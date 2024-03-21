@@ -16,7 +16,7 @@ require('plugins')
 
 require('plugins.complete')
 --require('plugins.ident')
---require('plugins.dap')
+require('plugins.dap')
 --require('plugins.popfix')
 --require('plugins.rest')
 require('plugins.projections')

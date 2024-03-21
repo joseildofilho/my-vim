@@ -42,9 +42,30 @@ require('lazy').setup({
 'ray-x/lsp_signature.nvim',
 'onsails/lspkind-nvim',
 --
---use 'mfussenegger/nvim-dap'
---use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
---use 'theHamsta/nvim-dap-virtual-text'
+{ "rcarriga/nvim-dap-ui", 
+  dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} ,
+  opts = {
+    layouts = { {
+        elements = { {
+            id = "scopes",
+            size = 0.33
+          }, {
+            id = "stacks",
+            size = 0.33
+          } },
+        position = "left",
+        size = 40
+      }, {
+        elements = { {
+            id = "repl",
+            size = 1
+          } },
+        position = "bottom",
+        size = 10
+      } }
+  }
+},
+'theHamsta/nvim-dap-virtual-text',
 { 
     'akinsho/flutter-tools.nvim',
     dependencies = 'nvim-lua/plenary.nvim',
@@ -78,10 +99,10 @@ require('lazy').setup({
   ft = { 'rust' },
 },
 --
-{ 'yuezk/vim-js', ft = {'ts', 'js'} },
-{ 'pangloss/vim-javascript', ft = {'ts', 'js'} },
-{ 'MunifTanjim/prettier.nvim', ft = {'ts', 'js'} },
-{ 'jose-elias-alvarez/nvim-lsp-ts-utils', ft = {'ts', 'js'} },
+{ 'yuezk/vim-js', ft = {'typescript', 'js'} },
+{ 'pangloss/vim-javascript', ft = {'typescript', 'js'} },
+{ 'MunifTanjim/prettier.nvim', ft = {'typescript', 'js'} },
+{ 'jose-elias-alvarez/nvim-lsp-ts-utils', ft = {'typescript', 'js'} },
 
 'stevearc/overseer.nvim',
 'stevearc/dressing.nvim',
@@ -99,12 +120,17 @@ require('lazy').setup({
   end
 },
 --
---use {
---  "microsoft/vscode-js-debug",
---  opt = true,
---  run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out" 
---}
---use { "mxsdev/nvim-dap-vscode-js", requires = {"mfussenegger/nvim-dap"} }
+{
+  "microsoft/vscode-js-debug",
+  lazy = true,
+  build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
+  ft = {'typescript', 'js'}
+},
+{ 
+  "mxsdev/nvim-dap-vscode-js",
+  dependencies = {"mfussenegger/nvim-dap"},
+  ft = {'typescript', 'js'}
+},
 --
 {
   "nvim-neotest/neotest",
@@ -130,4 +156,5 @@ require('lazy').setup({
         }
     end
 },
+'github/copilot.vim'
 })

@@ -12,6 +12,7 @@ set mouse=a
 
 set guifont="Fira Code Nerd Font:b"
 
+let g:lazygit_floating_window_use_plenary = 1
 
 set updatetime=300
 
@@ -69,7 +70,8 @@ nnoremap <silent> <leader>Dt  :lua require'dapui'.float_element('console')<CR>
 nnoremap <leader>gss :lua require'plugins.popfix'.select_services()<CR>
 
 " git
-nmap <silent> gs :G<CR>
+nmap <silent> <leader>gs :G<CR>
+nmap <silent> <leader>gg :LazyGit<CR>
 
 nnoremap <leader>fa :FlutterRun -d all<cr>
 nnoremap <leader>fq :FlutterQuit<cr>
@@ -103,7 +105,7 @@ nnoremap <D-v> "+p
 
 nnoremap <C-t> :rightb vsp +te <CR>
 
-tnoremap <Esc> <C-\><C-n>
+tnoremap <leader><Esc> <C-\><C-n>
 
 " g:neovide_transparency should be 0 if you want to unify transparency of content and title bar.
 "let g:neovide_transparency=0.0

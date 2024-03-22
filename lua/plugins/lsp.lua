@@ -12,6 +12,9 @@ require'lspconfig'.clangd.setup{}
 require'lspconfig'.dartls.setup{}
 require'lspconfig'.tsserver.setup{}
 require'lspconfig'.lua_ls.setup{
+    diagnostics = {
+        globals = {'vim'}
+    },
     settings = {
         Lua = {
             completion = {

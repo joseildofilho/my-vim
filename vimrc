@@ -63,11 +63,11 @@ nnoremap <silent> <leader>Ds :lua require'dap'.step_over()<CR>
 nnoremap <silent> <leader>Di :lua require'dap'.step_into()<CR>
 nnoremap <silent> <leader>Do :lua require'dap'.step_out()<CR>
 nnoremap <silent> <leader>b  :lua require'dap'.toggle_breakpoint()<CR>
-nnoremap <silent> <leader>DD  :lua require'dapui'.toggle()<CR>
+nnoremap <silent> <leader>DD :lua require'dapui'.toggle()<CR>
 nnoremap <silent> <leader>B  :lua require'dapui'.float_element('breakpoints')<CR>
-nnoremap <silent> <leader>Dt  :lua require'dapui'.float_element('console')<CR>
+nnoremap <silent> <leader>Dt :lua require'dapui'.float_element('console')<CR>
 
-nnoremap <leader>gss :lua require'plugins.popfix'.select_services()<CR>
+nnoremap <leader>log :lua require'plugins.popfix'.select_services()<CR>
 
 " git
 nmap <silent> <leader>gs :G<CR>

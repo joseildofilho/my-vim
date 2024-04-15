@@ -33,12 +33,6 @@ require'lspconfig'.lua_ls.setup{
 --    cmd = {"/opt/homebrew/Cellar/elixir-ls/0.13.0/libexec/language_server.sh"};
 --}
 
---require('go').setup{
---    lsp_inlay_hints = {
---        enabled = true
---    }
---}
-
 require "lsp_signature".setup()
 vim.o.completeopt = 'menuone,noselect'
 

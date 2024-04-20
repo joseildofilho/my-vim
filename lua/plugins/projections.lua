@@ -1,9 +1,8 @@
-
-require('projections').setup{
+require('projections').setup {
     workspaces = {
         "~/Codigos/Swipe/main",
-        {"~/Codigos/Swipe", {".git", "tsconfig.json"}},
-        {"~/Codigos/Swipe/swp-common-libs/packages", {"tsconfig.json"}},
+        { "~/Codigos/Swipe",                          { ".git", "tsconfig.json" } },
+        { "~/Codigos/Swipe/swp-common-libs/packages", { "tsconfig.json" } },
         "~/Codigos/Tijolo",
         "~/Codigos/Gavial",
         "~/Codigos/Calango",
@@ -15,18 +14,18 @@ require('projections').setup{
         "~/.aws",
     },
     restore_hooks = {
-        pre = function() 
+        pre = function()
             local tree_api = require('nvim-tree.api')
             tree_api.tree.close()
         end
     },
 }
- -- Autostore session on VimExit
+-- Autostore session on VimExit
 local Session = require("projections.session")
 vim.api.nvim_create_autocmd({ 'VimLeavePre' }, {
     callback = function() Session.store(vim.loop.cwd()) end,
 })
-    
+
 -- Switch to project if vim was started in a project dir
 local switcher = require("projections.switcher")
 vim.api.nvim_create_autocmd({ "VimEnter" }, {

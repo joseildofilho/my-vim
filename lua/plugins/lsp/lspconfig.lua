@@ -1,4 +1,7 @@
 local lua_ls_config = {
+    cmd = { 'lua-language-server' },
+    filetypes = { 'lua' },
+    single_file_support = true,
     settings = {
         diagnostics = {
             globals = { 'vim' }
@@ -8,7 +11,28 @@ local lua_ls_config = {
                 callSnippet = "Replace",
             }
         }
-    }
+    },
+    on_init = function(client)
+        local path = client.workspace_folders[1].name
+        if vim.loop.fs_stat(path .. '/.luarc.json') or vim.loop.fs_stat(path .. '/.luarc.jsonc') then
+            return
+        end
+
+        client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+            runtime = {
+                -- Tell the language server which version of Lua you're using
+                -- (most likely LuaJIT in the case of Neovim)
+                version = 'LuaJIT'
+            },
+            -- Make the server aware of Neovim runtime files
+            workspace = {
+                checkThirdParty = true,
+                library = {
+                    vim.env.VIMRUNTIME
+                }
+            }
+        })
+    end,
 }
 
 local lspconfig_lazy_config = {
@@ -24,7 +48,13 @@ local lspconfig_lazy_config = {
     end,
     lazy = true,
     ft = { 'lua', 'dart', 'typescript' },
-    dependencies = {}
+    dependencies = {
+        {
+            'folke/neodev.nvim',
+            ft = { 'lua' },
+            lazy = true
+        }
+    }
 }
 
 return {

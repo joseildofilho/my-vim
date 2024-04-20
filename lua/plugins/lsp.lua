@@ -1,5 +1,3 @@
-vim.lsp.set_log_level('error')
-
 require "lsp_signature".setup()
 vim.o.completeopt = 'menuone,noselect'
 

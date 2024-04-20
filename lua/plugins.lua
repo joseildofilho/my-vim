@@ -1,15 +1,5 @@
 require('lazy').setup({
     {
-        'folke/neodev.nvim',
-        priority = 100,
-        opts = {
-            override = function(_, library)
-                library.enabled = true
-                library.plugins = true
-            end,
-        }
-    },
-    {
         'epwalsh/obsidian.nvim',
         version = '*',
         dependencies = {

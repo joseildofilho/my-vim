@@ -17,7 +17,6 @@ require('plugins')
 
 require('plugins.dap')
 require('plugins.projections')
-require('plugins.tests')
 require('plugins.theme')
 --
 require('overseer').setup()

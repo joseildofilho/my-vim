@@ -3,10 +3,11 @@ require("nvim-dap-virtual-text").setup {}
 local dap = require('dap')
 dap.set_log_level('ERROR')
 
+local debugger_path
 if vim.fn.has('macunix') == 1 then
-    local debugger_path = "/Users/joseildo.filho/.local/share/nvim/lazy/vscode-js-debug"
+    debugger_path = "/Users/joseildo.filho/.local/share/nvim/lazy/vscode-js-debug"
 else
-    local debugger_path = "/usr/joseildo.filho/.local/share/nvim/lazy/vscode-js-debug"
+    debugger_path = "/usr/joseildo.filho/.local/share/nvim/lazy/vscode-js-debug"
 end
 
 require("dap-vscode-js").setup({

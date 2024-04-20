@@ -41,7 +41,11 @@ require('lazy').setup({
     --
     {
         "rcarriga/nvim-dap-ui",
-        dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+        dependencies = {
+            "mfussenegger/nvim-dap",
+            "nvim-neotest/nvim-nio",
+            'leoluz/nvim-dap-go',
+        },
         opts = {
             layouts = { {
                 elements = { {
@@ -101,9 +105,9 @@ require('lazy').setup({
         ft = { 'rust' },
     },
     --
-    { 'yuezk/vim-js',                         ft = { 'typescript', 'js' } },
-    { 'pangloss/vim-javascript',              ft = { 'typescript', 'js' } },
-    { 'MunifTanjim/prettier.nvim',            ft = { 'typescript', 'js' } },
+    { 'yuezk/vim-js',              ft = { 'typescript', 'js' } },
+    { 'pangloss/vim-javascript',   ft = { 'typescript', 'js' } },
+    { 'MunifTanjim/prettier.nvim', ft = { 'typescript', 'js' } },
 
     'stevearc/overseer.nvim',
     'stevearc/dressing.nvim',
@@ -120,7 +124,6 @@ require('lazy').setup({
             require 'hop'.setup { keys = 'jkletovxqpdygfbzhcisuran' }
         end
     },
-    --
     {
         "microsoft/vscode-js-debug",
         lazy = true,
@@ -132,17 +135,7 @@ require('lazy').setup({
         dependencies = { "mfussenegger/nvim-dap" },
         ft = { 'typescript', 'js' }
     },
-    --
-    {
-        "nvim-neotest/neotest",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "nvim-treesitter/nvim-treesitter",
-            "antoinemadec/FixCursorHold.nvim",
-            "rouge8/neotest-rust",
-            "nvim-neotest/neotest-jest",
-        }
-    },
+    require 'plugins.tests.neotest',
     { 'gnikdroy/projections.nvim', branch = 'pre_release' },
     {
         "ThePrimeagen/harpoon",

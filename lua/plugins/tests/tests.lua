@@ -1,26 +1,3 @@
-require('neotest').setup {
-    discovery = {
-        enabled = false
-    },
-    adapters = {
-        require('neotest-rust') {
---            args = { "--no-capture" }
-        },
-        require('neotest-jest')({
-            jest_test_discovery = true,
-            jestConfigFile = function()
-                local file = vim.fn.expand('%')
-                print("testing test tested " .. file)
-                print("tesled ted " .. vim.fn.getcwd())
-                if string.find(file, "e2e") then
-                    return "jest-integration.config.json"
-                end
-                return vim.fn.getcwd() .. "/jest.config.json"
-            end
-        })
-    }
-}
-
 local neotest = require('neotest')
 
 function nearest()

@@ -1,5 +1,15 @@
 require('lazy').setup({
     {
+        'folke/neodev.nvim',
+        priority = 100,
+        opts = {
+            override = function(_, library)
+                library.enabled = true
+                library.plugins = true
+            end,
+        }
+    },
+    {
         'epwalsh/obsidian.nvim',
         version = '*',
         dependencies = {
@@ -22,8 +32,7 @@ require('lazy').setup({
             "nvim-lua/plenary.nvim",
         },
     },
-    'neovim/nvim-lspconfig',
-    'RishabhRD/nvim-lsputils',
+    require 'plugins.lsp.lspconfig',
 
     'hrsh7th/nvim-cmp',
     'hrsh7th/cmp-nvim-lsp',
@@ -36,23 +45,9 @@ require('lazy').setup({
     {
         "L3MON4D3/LuaSnip", version = "v1.*", build = "make install_jsregexp"
     },
-    {
-        'folke/neodev.nvim',
-        ft = { 'lua' },
-        opts = {
-            library = {
-                plugins = {
-                    "nvim-dap-ui"
-                },
-                types = true
-            },
-        }
-    },
     'saadparwaiz1/cmp_luasnip',
     --
     'rafamadriz/friendly-snippets',
-    'ray-x/lsp_signature.nvim',
-    'onsails/lspkind-nvim',
     --
     {
         "rcarriga/nvim-dap-ui",
@@ -119,7 +114,6 @@ require('lazy').setup({
     { 'yuezk/vim-js',                         ft = { 'typescript', 'js' } },
     { 'pangloss/vim-javascript',              ft = { 'typescript', 'js' } },
     { 'MunifTanjim/prettier.nvim',            ft = { 'typescript', 'js' } },
-    { 'jose-elias-alvarez/nvim-lsp-ts-utils', ft = { 'typescript', 'js' } },
 
     'stevearc/overseer.nvim',
     'stevearc/dressing.nvim',
@@ -173,7 +167,6 @@ require('lazy').setup({
             }
         end
     },
-    'github/copilot.vim',
     {
         "j-hui/fidget.nvim",
         opts = {
@@ -199,8 +192,8 @@ require('lazy').setup({
                 },
             }
         end,
-        event = { "CmdlineEnter" },
         ft = { "go", 'gomod' },
+        lazy = true,
         build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
     }
 })

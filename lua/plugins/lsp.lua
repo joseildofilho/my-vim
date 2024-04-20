@@ -1,43 +1,7 @@
 vim.lsp.set_log_level('error')
 
-local has_any_words_before = function()
-  if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
-    return false
-  end
-  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-end
-
-require'lspconfig'.clangd.setup{}
-require'lspconfig'.dartls.setup{}
-require'lspconfig'.tsserver.setup{}
-require'lspconfig'.lua_ls.setup{
-    diagnostics = {
-        globals = {'vim'}
-    },
-    settings = {
-        Lua = {
-            completion = {
-                callSnippet = "Replace",
-            }
-        }
-    }
-}
---require'lspconfig'.rust_analizer.setup {
---    settings = {
---        ['rust-analizer'] = {}
---    }
---}
---require'lspconfig'.pyright.setup{}
---require'lspconfig'.elixirls.setup{
---    cmd = {"/opt/homebrew/Cellar/elixir-ls/0.13.0/libexec/language_server.sh"};
---}
-
 require "lsp_signature".setup()
 vim.o.completeopt = 'menuone,noselect'
-
--- local capabilities = vim.lsp.protocol.make_client_capabilities()
--- capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 local cmp = require'cmp'
 local luasnip = require("luasnip")

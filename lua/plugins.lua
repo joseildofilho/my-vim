@@ -169,6 +169,7 @@ require('lazy').setup({
                 lsp_inlay_hints = {
                     enabled = true
                 },
+                lsp_keymaps = false,
                 lsp_cfg = {
                     capabilities = capabilities,
                     -- other setups

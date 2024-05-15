@@ -1,7 +1,7 @@
 set number relativenumber
 set nocompatible
 set encoding=utf-8
-set listchars=tab:\|\
+"set listchars=tab:\|\
 set list
 set cursorline
 
@@ -16,8 +16,8 @@ let g:lazygit_floating_window_use_plenary = 1
 
 set updatetime=300
 
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
+"set foldmethod=expr
+"set foldexpr=nvim_treesitter#foldexpr()
 
 syntax on
 let g:lsc_auto_map = v:true

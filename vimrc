@@ -58,10 +58,10 @@ nnoremap          <leader>gm        <CMD>lua vim.lsp.buf.signature_help()<CR>
 nmap <space>e <cmd>lua vim.diagnostic.open_float()<CR>
 nmap <space>q <cmd>lua vim.diagnostic.setloclist()<CR>
 
-nnoremap <silent> <leader>Dc :lua require'dap'.continue()<CR>
-nnoremap <silent> <leader>Ds :lua require'dap'.step_over()<CR>
-nnoremap <silent> <leader>Di :lua require'dap'.step_into()<CR>
-nnoremap <silent> <leader>Do :lua require'dap'.step_out()<CR>
+nnoremap <silent> <F1>       :lua require'dap'.continue()<CR>
+nnoremap <silent> <F2>       :lua require'dap'.step_over()<CR>
+nnoremap <silent> <F3>       :lua require'dap'.step_into()<CR>
+nnoremap <silent> <F4>       :lua require'dap'.step_out()<CR>
 nnoremap <silent> <leader>b  :lua require'dap'.toggle_breakpoint()<CR>
 nnoremap <silent> <leader>DD :lua require'dapui'.toggle()<CR>
 nnoremap <silent> <leader>B  :lua require'dapui'.float_element('breakpoints')<CR>
@@ -106,6 +106,8 @@ nnoremap <D-v> "+p
 nnoremap <C-t> :rightb vsp +te <CR>
 
 tnoremap <leader><Esc> <C-\><C-n>
+
+map <silent> , :lua require('nvim-window').pick()<CR>
 
 " g:neovide_transparency should be 0 if you want to unify transparency of content and title bar.
 "let g:neovide_transparency=0.0

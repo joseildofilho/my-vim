@@ -1,20 +1,10 @@
 require('lazy').setup({
     {
-        'epwalsh/obsidian.nvim',
-        version = '*',
-        dependencies = {
-            'nvim-lua/plenary.nvim'
-        },
-        opts = {
-            workspaces = {
-                {
-                    name = 'obsidian-vault',
-                    path = '~/Documentos/obsidian-vault'
-                }
-            }
-        }
+        "nvim-zh/colorful-winsep.nvim",
+        config = true,
+        event = { "WinNew" },
     },
-    -- nvim v0.8.0
+    'yorickpeterse/nvim-window',
     {
         "kdheepak/lazygit.nvim",
         -- optional for floating window border decoration

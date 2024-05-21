@@ -10,6 +10,8 @@ else
     debugger_path = "/usr/joseildo.filho/.local/share/nvim/lazy/vscode-js-debug"
 end
 
+require'dap-go'.setup{}
+
 require("dap-vscode-js").setup({
     -- node_path = "node", -- Path of node executable. Defaults to $NODE_PATH, and then "node"
     debugger_path = debugger_path,                                                             -- Path to vscode-js-debug installation.

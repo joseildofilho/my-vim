@@ -88,6 +88,8 @@ nmap <silent> <leader>tt :TestSuite<CR>
 nmap <silent> <leader>tl :TestLast<CR>
 nmap <silent> <leader>tv :TestVisit<CR>
 
+nmap <silent> <leader>to <CMD> lua require'neotest'.output_panel.toggle()<CR>
+
 " Find files using Telescope command-line sugar.
 nnoremap          <leader>F   <cmd>Telescope find_files<cr>
 nnoremap          <leader>fg  <cmd>Telescope live_grep<cr>

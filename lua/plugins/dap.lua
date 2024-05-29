@@ -37,7 +37,7 @@ for _, language in ipairs({ "typescript", "javascript" }) do
             name = "Launch file",
             --program = "${workspaceFolder}/src/main.ts",
             runtimeExecutable = "npm",
-            runtimeArgs = { "run", "debug:local" },
+            runtimeArgs = { "run", "start:local" },
             cwd = "${workspaceFolder}",
             sourceMaps = true,
             protocol = "inspector",

@@ -1,15 +1,10 @@
 require('lazy').setup({
-    {
-        'nvimdev/dashboard-nvim',
-        event = 'VimEnter',
-        config = function()
-            require('dashboard').setup {
-                -- config
-            }
-        end,
-        dependencies = { { 'nvim-tree/nvim-web-devicons' } }
-    },
     { 'nvim-tree/nvim-web-devicons' },
+    { 'github/copilot.vim' },
+    {
+        'willothy/wezterm.nvim',
+        config = true
+    },
     {
         "nvim-zh/colorful-winsep.nvim",
         config = true,
@@ -38,7 +33,7 @@ require('lazy').setup({
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-cmdline',
 
-    { 'dart-lang/dart-vim-plugin',  lazy = true },      -- TS is causing dart classes to crash
+    { 'dart-lang/dart-vim-plugin',       lazy = true }, -- TS is causing dart classes to crash
 
     {
         "L3MON4D3/LuaSnip", version = "v1.*", build = "make install_jsregexp"
@@ -84,7 +79,7 @@ require('lazy').setup({
         opts = {
             debugger = {
                 enabled = true,
-                run_via_dap = true
+                run_via_dap = false
             },
             fvm = true,
             lsp = {

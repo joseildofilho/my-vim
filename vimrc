@@ -27,7 +27,7 @@ let g:neovide_cursor_animation_length = 0.13
 
 map <SPACE> <leader>
 
-nnoremap <leader>a  <CMD>lua require'harpoon':list():append()<CR>
+nnoremap <leader>a  <CMD>lua require'harpoon':list():add()<CR>
 nnoremap <C-e>      <CMD>lua require'harpoon'.ui:toggle_quick_menu(require'harpoon':list())<CR>
 
 nnoremap <C-j>  <CMD>lua require'harpoon':list():select(1)<CR>

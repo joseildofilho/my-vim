@@ -111,6 +111,8 @@ tnoremap <leader><Esc> <C-\><C-n>
 
 map <silent> , :lua require('nvim-window').pick()<CR>
 
+imap <space><space><space> <cmd>lua require("copilot.suggestion").accept(modifier)<cr>
+
 " g:neovide_transparency should be 0 if you want to unify transparency of content and title bar.
 "let g:neovide_transparency=0.0
 "let g:transparency = 0.85

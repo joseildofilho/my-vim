@@ -1,6 +1,14 @@
 require('lazy').setup({
     { 'nvim-tree/nvim-web-devicons' },
-    { 'github/copilot.vim' },
+    {
+        'zbirenbaum/copilot.lua',
+        config = true,
+        opts = {
+            suggestion = {
+                auto_trigger = true
+            }
+        }
+    },
     {
         'willothy/wezterm.nvim',
         config = true
@@ -33,7 +41,7 @@ require('lazy').setup({
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-cmdline',
 
-    { 'dart-lang/dart-vim-plugin',       lazy = true }, -- TS is causing dart classes to crash
+    { 'dart-lang/dart-vim-plugin',  lazy = true },      -- TS is causing dart classes to crash
 
     {
         "L3MON4D3/LuaSnip", version = "v1.*", build = "make install_jsregexp"

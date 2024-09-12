@@ -41,10 +41,15 @@ require('lazy').setup({
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-cmdline',
 
-    { 'dart-lang/dart-vim-plugin',  lazy = true },      -- TS is causing dart classes to crash
+    { 'dart-lang/dart-vim-plugin',  lazy = true }, -- TS is causing dart classes to crash
 
     {
-        "L3MON4D3/LuaSnip", version = "v1.*", build = "make install_jsregexp"
+        "L3MON4D3/LuaSnip",
+        version = "v1.*",
+        build = "make install_jsregexp",
+        config = function()
+            require("luasnip.loaders.from_lua").load({ paths = { "~/.config/nvim/lua/LuaSnip/" } })
+        end
     },
     'saadparwaiz1/cmp_luasnip',
     --

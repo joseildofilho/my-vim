@@ -35,5 +35,27 @@ return {
                 r(1),
                 r(2),
             })
+    ),
+    s(
+        { trig = "erre", dscr = "creates the if err != nil block" },
+        fmta(
+            [[
+            if err != nil {
+                return nil, err
+            }
+        ]],
+        {}
+        )
+    ),
+    s(
+        { trig = "errp", dscr = "creates the if err != nil block that panics" },
+        fmta(
+            [[
+            if err != nil {
+                panic(err)
+            }
+        ]],
+        {}
+        )
     )
 }

@@ -1,5 +1,6 @@
 require('lazy').setup({
     { 'nvim-tree/nvim-web-devicons' },
+    { 'chentoast/marks.nvim', opts={} },
     {
         'zbirenbaum/copilot.lua',
         config = true,

@@ -1,7 +1,7 @@
 require("nvim-dap-virtual-text").setup {}
 
 local dap = require('dap')
-dap.set_log_level('ERROR')
+dap.set_log_level('DEBUG')
 
 local debugger_path
 if vim.fn.has('macunix') == 1 then
@@ -10,7 +10,17 @@ else
     debugger_path = "/usr/joseildo.filho/.local/share/nvim/lazy/vscode-js-debug"
 end
 
-require 'dap-go'.setup {}
+require 'dap-go'.setup {
+    dap_configurations = {
+        {
+            type = "go",
+            name = "Debug (Build Flags)",
+            request = "launch",
+            program = "${file}",
+            buildFlags = require("dap-go").get_build_flags,
+        },
+    },
+}
 
 require("dap-vscode-js").setup({
     -- node_path = "node", -- Path of node executable. Defaults to $NODE_PATH, and then "node"

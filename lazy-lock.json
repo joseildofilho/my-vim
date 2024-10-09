@@ -53,6 +53,7 @@
   "projections.nvim": { "branch": "pre_release", "commit": "889914169fa1f5c00fb8659653b5a8330fb223e6" },
   "rustaceanvim": { "branch": "master", "commit": "bc8c4b8f7606d5b7c067cd8369e25c1a7ff77bd0" },
   "telescope.nvim": { "branch": "master", "commit": "c392f1b78eaaf870ca584bd698e78076ed301b26" },
+  "typo.nvim": { "branch": "main", "commit": "a162ec91d6cd1cf3db7a3fd05912302ba322ab99" },
   "vim-fugitive": { "branch": "master", "commit": "64d6cafb9dcbacce18c26d7daf617ebb96b273f3" },
   "vim-javascript": { "branch": "master", "commit": "c470ce1399a544fe587eab950f571c83cccfbbdc" },
   "vim-js": { "branch": "master", "commit": "90f340d31907590fad059cd9aab03a55ab49e352" },

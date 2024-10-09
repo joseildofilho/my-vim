@@ -1,4 +1,5 @@
 require('lazy').setup({
+    --{ 'axieax/typo.nvim', opts={} },
     { 'nvim-tree/nvim-web-devicons' },
     { 'chentoast/marks.nvim', opts={} },
     {
@@ -95,7 +96,7 @@ require('lazy').setup({
                 enabled = true,
                 run_via_dap = false
             },
-            fvm = true,
+            fvm = false,
             lsp = {
                 color = {
                     enabled = false

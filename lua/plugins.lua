@@ -1,7 +1,14 @@
 require('lazy').setup({
     --{ 'axieax/typo.nvim', opts={} },
     { 'nvim-tree/nvim-web-devicons' },
-    { 'chentoast/marks.nvim', opts={} },
+    {
+        'rest-nvim/rest.nvim',
+        dependencies = {
+            "nvim-neotest/nvim-nio",
+            "j-hui/fidget.nvim",
+        }
+    },
+    { 'chentoast/marks.nvim',       opts = {} },
     {
         'zbirenbaum/copilot.lua',
         config = true,
@@ -43,7 +50,7 @@ require('lazy').setup({
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-cmdline',
 
-    { 'dart-lang/dart-vim-plugin',  lazy = true }, -- TS is causing dart classes to crash
+    { 'dart-lang/dart-vim-plugin',       lazy = true }, -- TS is causing dart classes to crash
 
     {
         "L3MON4D3/LuaSnip",
@@ -197,5 +204,13 @@ require('lazy').setup({
         ft = { "go", 'gomod' },
         lazy = true,
         build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
+    },
+    {
+        "vhyrro/luarocks.nvim",
+        priority = 1000,
+        opts = {
+            rocks = { "lua-curl", "nvim-nio", "mimetypes", "xml2lua" },
+        },
+        config = true,
     }
 })

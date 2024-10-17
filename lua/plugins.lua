@@ -2,12 +2,23 @@ require('lazy').setup({
     --{ 'axieax/typo.nvim', opts={} },
     { 'nvim-tree/nvim-web-devicons' },
     {
-        'rest-nvim/rest.nvim',
-        dependencies = {
-            "nvim-neotest/nvim-nio",
-            "j-hui/fidget.nvim",
+        'mvllow/modes.nvim',
+        version = 'v0.2.0',
+        opts = {}
+    },
+    {
+        'mistweaverco/kulala.nvim',
+        opts = {
+            debug = true,
         }
     },
+    -- {
+    --     'rest-nvim/rest.nvim',
+    --     dependencies = {
+    --         "nvim-neotest/nvim-nio",
+    --         "j-hui/fidget.nvim",
+    --     }
+    -- },
     { 'chentoast/marks.nvim',       opts = {} },
     {
         'zbirenbaum/copilot.lua',
@@ -205,12 +216,12 @@ require('lazy').setup({
         lazy = true,
         build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
     },
-    {
-        "vhyrro/luarocks.nvim",
-        priority = 1000,
-        opts = {
-            rocks = { "lua-curl", "nvim-nio", "mimetypes", "xml2lua" },
-        },
-        config = true,
-    }
+    --{
+    --    "vhyrro/luarocks.nvim",
+    --    priority = 1000,
+    --    opts = {
+    --        rocks = { "lua-curl", "nvim-nio", "mimetypes", "xml2lua" },
+    --    },
+    --    config = true,
+    --}
 })

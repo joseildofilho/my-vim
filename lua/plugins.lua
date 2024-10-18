@@ -29,10 +29,10 @@ require('lazy').setup({
             }
         }
     },
-    {
-        'willothy/wezterm.nvim',
-        config = true
-    },
+    -- {
+    --     'willothy/wezterm.nvim',
+    --     config = true
+    -- },
     {
         "nvim-zh/colorful-winsep.nvim",
         config = true,

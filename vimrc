@@ -103,6 +103,9 @@ nnoremap <silent> <leader>p   <cmd>Telescope projections<cr>
 nnoremap <silent> <leader>TT   <cmd>OverseerRun<cr>
 nnoremap <silent> <leader>Ts   <cmd>OverseerToggle<cr>
 
+nnoremap <leader>kr <cmd>lua require'kulala'.run()<cr>
+nnoremap <leader>kc <cmd>lua require'kulala'.from_curl()<cr>
+
 nnoremap <D-v> "+p
 
 nnoremap <C-t> :rightb vsp +te <CR>

@@ -12,13 +12,6 @@ require('lazy').setup({
             debug = true,
         }
     },
-    -- {
-    --     'rest-nvim/rest.nvim',
-    --     dependencies = {
-    --         "nvim-neotest/nvim-nio",
-    --         "j-hui/fidget.nvim",
-    --     }
-    -- },
     { 'chentoast/marks.nvim',       opts = {} },
     {
         'zbirenbaum/copilot.lua',

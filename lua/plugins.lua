@@ -10,6 +10,8 @@ require('lazy').setup({
         'mistweaverco/kulala.nvim',
         opts = {
             debug = true,
+            winbar = true,
+            default_view = 'headers_body',
         }
     },
     { 'chentoast/marks.nvim',       opts = {} },

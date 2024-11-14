@@ -93,8 +93,9 @@ nmap <silent> <leader>to <CMD> lua require'neotest'.output_panel.toggle()<CR>
 " Find files using Telescope command-line sugar.
 nnoremap          <leader>F   <cmd>Telescope find_files<cr>
 nnoremap          <leader>fg  <cmd>Telescope live_grep<cr>
-nnoremap          <leader>fb  <cmd>Telescope buffers<cr>
+nnoremap          <leader>fb  <cmd>Telescope oldfiles<cr>
 nnoremap          <leader>fh  <cmd>Telescope help_tags<cr>
+nnoremap          q:          <cmd>Telescope command_history<cr>
 nnoremap          <leader>fl  <cmd>Telescope git_files<cr>
 nnoremap          <leader>fm  <cmd>:NvimTreeToggle<cr>
 nnoremap          <leader>ccc <cmd>lua require'telescope.builtin'.find_files({cwd = '~/.config/nvim'})<cr>

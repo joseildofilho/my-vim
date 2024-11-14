@@ -1,4 +1,18 @@
-require('lazy').setup({
+local dev = {
+    path = "~/Codigos/Joseildo/nvim-plugins"
+}
+
+local plugins = {
+    {
+        'joseildofilho/db_connect.nvim',
+        dev = true,
+        opts = {
+            username = 'postgres',
+            password = 'postgres',
+            host = 'localhost:5432',
+            dbname = 'postgres'
+        }
+    },
     --{ 'axieax/typo.nvim', opts={} },
     { 'nvim-tree/nvim-web-devicons' },
     {
@@ -219,4 +233,10 @@ require('lazy').setup({
     --    },
     --    config = true,
     --}
-})
+}
+
+local lazy = require 'lazy'
+lazy.setup {
+    spec = plugins,
+    dev = dev
+}

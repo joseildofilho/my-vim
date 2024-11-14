@@ -40,9 +40,9 @@ local lspconfig_lazy_config = {
     config = function()
         local lspconfig = require 'lspconfig'
         lspconfig.clangd.setup {}
-        lspconfig.dartls.setup {
-            cmd = {"dart", "language-server", "--protocol=lsp"}
-        }
+--        lspconfig.dartls.setup {
+--            cmd = {"dart", "language-server", "--protocol=lsp"}
+--        }
         lspconfig.tsserver.setup {}
         lspconfig.lua_ls.setup(lua_ls_config)
         require('plugins.lsp-utils')

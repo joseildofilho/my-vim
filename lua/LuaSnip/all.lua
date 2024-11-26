@@ -36,6 +36,26 @@ return {
                 r(2),
             })
     ),
+    s("createUsecase", fmta([[
+        type I<>Usecase interface {
+            Execute(ctx context.Context) error
+        }
+
+        type <>Usecase struct {}
+
+        func New<>Usecase() *<>Usecase {
+            return &<>Usecase {}
+        }
+
+        func (u *<>Usecase) Execute(ctx context.Context) error {}
+    ]], {
+        i(1), -- Interface name
+        r(1), -- Struct name
+        r(1), -- Constructor name
+        r(1), -- Constructor return
+        r(1), -- Constructor return type struct
+        r(1), -- Execute method bind
+    })),
     s(
         { trig = "erre", dscr = "creates the if err != nil block" },
         fmta(
@@ -44,7 +64,7 @@ return {
                 return nil, err
             }
         ]],
-        {}
+            {}
         )
     ),
     s(
@@ -55,7 +75,7 @@ return {
                 panic(err)
             }
         ]],
-        {}
+            {}
         )
     )
 }

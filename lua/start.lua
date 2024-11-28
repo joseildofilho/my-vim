@@ -21,11 +21,7 @@ require('plugins.theme')
 --
 require('overseer').setup()
 require('dressing').setup()
-require('lualine').setup {
-    options = {
-        globalstatus = true
-    },
-}
+require('lualine').setup {}
 
 require("nvim-tree").setup {
     sync_root_with_cwd = true,

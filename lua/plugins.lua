@@ -70,7 +70,7 @@ local plugins = {
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-cmdline',
 
-    { 'dart-lang/dart-vim-plugin',       lazy = true }, -- TS is causing dart classes to crash
+    { 'dart-lang/dart-vim-plugin',     lazy = true }, -- TS is causing dart classes to crash
 
     {
         "L3MON4D3/LuaSnip",
@@ -120,7 +120,7 @@ local plugins = {
         ft = { 'dart' },
         opts = {
             debugger = {
-                enabled = true,
+                enabled = false,
                 run_via_dap = false
             },
             fvm = false,
@@ -133,9 +133,13 @@ local plugins = {
     },
     'nvim-lualine/lualine.nvim',
     'tpope/vim-fugitive',
-    { 'nvim-treesitter/nvim-treesitter', lazy = false,                          build = 'TSUpdate' },
-    { 'nvim-treesitter/playground',      cmd = 'TSPlaygroundToggle' },
-    { 'nvim-telescope/telescope.nvim',   dependencies = 'nvim-lua/plenary.nvim' },
+    {
+        'nvim-treesitter/nvim-treesitter',
+        lazy = false,
+        build = 'TSUpdate',
+    },
+    { 'nvim-treesitter/playground',    cmd = 'TSPlaygroundToggle' },
+    { 'nvim-telescope/telescope.nvim', dependencies = 'nvim-lua/plenary.nvim' },
     'nvim-lua/popup.nvim',
     'RishabhRD/popfix',
     --
@@ -158,7 +162,42 @@ local plugins = {
     'stevearc/dressing.nvim',
 
     'rebelot/kanagawa.nvim',
-    'nvim-tree/nvim-tree.lua',
+    {
+        'nvim-tree/nvim-tree.lua',
+        config = function()
+            require 'nvim-tree'.setup {
+                sync_root_with_cwd = true,
+                respect_buf_cwd = true,
+                view = {
+                    relativenumber = true,
+                    adaptive_size = true
+                },
+                diagnostics = {
+                    enable = true,
+                    show_on_dirs = true,
+                },
+                renderer = {
+                    indent_markers = {
+                        enable = true,
+                        icons = {
+                            corner = "└ ",
+                            edge = "│ ",
+                            item = "│ ",
+                            none = "  ",
+                        }
+                    },
+                    icons = {
+                        show = {
+                            file = false,
+                            folder = false,
+                            folder_arrow = false,
+                            git = true
+                        }
+                    },
+                }
+            }
+        end,
+    },
     'jose-elias-alvarez/null-ls.nvim',
     --
     {

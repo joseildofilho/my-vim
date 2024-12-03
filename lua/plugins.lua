@@ -131,7 +131,7 @@ local plugins = {
             }
         }
     },
-    'nvim-lualine/lualine.nvim',
+    require'plugins.lua_line',
     'tpope/vim-fugitive',
     {
         'nvim-treesitter/nvim-treesitter',

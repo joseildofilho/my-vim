@@ -21,7 +21,6 @@ require('plugins.theme')
 --
 require('overseer').setup()
 require('dressing').setup()
-require('lualine').setup {}
 
 require("prettier").setup {}
 vim.wo.number = true

@@ -82,11 +82,12 @@ nnoremap <leader>ff <cmd> lua require('telescope').extensions.flutter.commands()
 
 let test#dart#fluttertest#executable = 'fvm flutter test'
 "let test#javascript#jest#executable = 'jest --runInBand --config jest-integration.config.json' 
-nmap <silent> <leader>tn :Nearest<CR>
-nmap <silent> <leader>tf :FileTest<CR>
-nmap <silent> <leader>tt :TestSuite<CR>
-nmap <silent> <leader>tl :TestLast<CR>
-nmap <silent> <leader>tv :TestVisit<CR>
+nmap <silent> <leader>tn         :Nearest<CR>
+nmap <silent> <leader><leader>tn :NearestDebugMode<CR>
+nmap <silent> <leader>tf         :FileTest<CR>
+nmap <silent> <leader>tt         :TestSuite<CR>
+nmap <silent> <leader>tl         :TestLast<CR>
+nmap <silent> <leader>tv         :TestVisit<CR>
 
 nmap <silent> <leader>to <CMD> lua require'neotest'.output_panel.toggle()<CR>
 

@@ -13,8 +13,21 @@ local function nearest()
         neotest.run.run()
     end
 end
-
 vim.api.nvim_create_user_command('Nearest', nearest, {})
+
+local function nearest_debug()
+    neotest.summary.open()
+    neotest.output_panel.clear()
+
+    local bufferPath = vim.fn.expand('%')
+    if (string.find(bufferPath, 'e2e')) then
+        print("e2e testing")
+        neotest.run.run({ jestCommand = "jest --config jest-integration.config.json", strategy = 'dap'})
+    else
+        neotest.run.run({strategy =  'dap'})
+    end
+end
+vim.api.nvim_create_user_command('NearestDebugMode', nearest, {})
 
 local function run_file()
     neotest.summary.open()

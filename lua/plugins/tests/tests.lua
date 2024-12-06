@@ -2,14 +2,16 @@ local neotest = require('neotest')
 local fidget = require 'fidget'
 
 local function nearest()
+    neotest.summary.open()
+    neotest.output_panel.clear()
+
     local bufferPath = vim.fn.expand('%')
-    if (string.find(bufferPath, 'component')) then
-        vim.cmd([[let test#javascript#jest#executable = 'jest --runInBand --config jest-component.config.json']])
-    end
     if (string.find(bufferPath, 'e2e')) then
-        vim.cmd([[let test#javascript#jest#executable = 'jest --runInBand --config jest-integration.config.json']])
+        print("e2e testing")
+        neotest.run.run({ jestCommand = "jest --config jest-integration.config.json" })
+    else
+        neotest.run.run()
     end
-    vim.cmd([[:TestNearest]])
 end
 
 vim.api.nvim_create_user_command('Nearest', nearest, {})
@@ -42,4 +44,3 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 --     local current_workspace = vim.fn.getcwd()
 --     local file_path = vim.api.nvim_buf_get_name(4):match(current_workspace .. '/(.*)')
 -- end
-

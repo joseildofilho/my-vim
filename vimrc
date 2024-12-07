@@ -14,16 +14,10 @@ set guifont="Fira Code Nerd Font:b"
 
 let g:lazygit_floating_window_use_plenary = 1
 
-set updatetime=300
-
-"set foldmethod=expr
-"set foldexpr=nvim_treesitter#foldexpr()
+set updatetime=100
 
 syntax on
 let g:lsc_auto_map = v:true
-let g:neovide_cursor_vfx_mode = "sonicboom"
-let g:neovide_cursor_trail_size = 0.9
-let g:neovide_cursor_animation_length = 0.13
 
 map <SPACE> <leader>
 

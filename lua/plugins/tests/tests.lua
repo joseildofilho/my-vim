@@ -12,9 +12,6 @@ end
 vim.api.nvim_create_user_command('ToggleOutputPanel', toggle_output_panel, {})
 
 local function nearest()
-    neotest.summary.open()
-    neotest.output_panel.clear()
-
     local bufferPath = vim.fn.expand('%')
     if (string.find(bufferPath, 'e2e')) then
         print("e2e testing")
@@ -26,9 +23,6 @@ end
 vim.api.nvim_create_user_command('Nearest', nearest, {})
 
 local function nearest_debug()
-    neotest.summary.open()
-    neotest.output_panel.clear()
-
     local bufferPath = vim.fn.expand('%')
     if (string.find(bufferPath, 'e2e')) then
         print("e2e testing")
@@ -40,9 +34,6 @@ end
 vim.api.nvim_create_user_command('NearestDebugMode', nearest_debug, {})
 
 local function run_file()
-    neotest.summary.open()
-    neotest.output_panel.clear()
-
     local bufferPath = vim.fn.expand('%')
     if (string.find(bufferPath, 'e2e')) then
         -- vim.cmd([[let test#javascript#jest#executable = 'jest --runInBand --config jest-integration.config.json']])

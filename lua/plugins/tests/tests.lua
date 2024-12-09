@@ -37,7 +37,7 @@ local function nearest_debug()
         neotest.run.run({strategy =  'dap'})
     end
 end
-vim.api.nvim_create_user_command('NearestDebugMode', nearest, {})
+vim.api.nvim_create_user_command('NearestDebugMode', nearest_debug, {})
 
 local function run_file()
     neotest.summary.open()

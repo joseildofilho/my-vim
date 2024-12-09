@@ -1,6 +1,16 @@
 local neotest = require('neotest')
 local fidget = require 'fidget'
 
+local function toggle_summary()
+    neotest.summary.toggle()
+end
+vim.api.nvim_create_user_command('ToggleSummary', toggle_summary, {})
+
+local function toggle_output_panel()
+    neotest.output_panel.toggle()
+end
+vim.api.nvim_create_user_command('ToggleOutputPanel', toggle_output_panel, {})
+
 local function nearest()
     neotest.summary.open()
     neotest.output_panel.clear()

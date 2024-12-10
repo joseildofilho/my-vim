@@ -145,9 +145,6 @@ local plugins = {
     --
     --use "lukas-reineke/indent-blankline.nvim"
     --
-    --
-    'vim-test/vim-test',
-    --
     {
         'mrcjkb/rustaceanvim',
         version = '^3', -- Recommended

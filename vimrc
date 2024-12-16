@@ -103,6 +103,7 @@ nnoremap <silent> <leader>TT   <cmd>OverseerRun<cr>
 nnoremap <silent> <leader>Ts   <cmd>OverseerToggle<cr>
 
 nnoremap <leader>kr <cmd>lua require'kulala'.run()<cr>
+nnoremap <leader>ki <cmd>lua require'kulala'.inspect()<cr>
 nnoremap <leader>kc <cmd>lua require'kulala'.from_curl()<cr>
 
 nnoremap <D-v> "+p

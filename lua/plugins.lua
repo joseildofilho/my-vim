@@ -143,7 +143,7 @@ local plugins = {
                 enabled = false,
                 run_via_dap = false
             },
-            fvm = false,
+            fvm = true,
             lsp = {
                 color = {
                     enabled = false

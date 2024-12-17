@@ -14,10 +14,10 @@ require 'dap-go'.setup {
     dap_configurations = {
         {
             type = "go",
-            name = "Debug (Build Flags)",
+            name = "Debug main.go",
             request = "launch",
-            program = "${file}",
-            buildFlags = require("dap-go").get_build_flags,
+            program = "${workspaceFolder}/main.go",
+            -- buildFlags = require("dap-go").get_build_flags,
         },
     },
 }

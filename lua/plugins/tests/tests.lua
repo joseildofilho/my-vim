@@ -73,8 +73,3 @@ vim.api.nvim_create_autocmd('BufWritePost', {
     pattern = { "*.js", "*.ts", "*.tsx", "*_test.go" },
     callback = stop_current_test_after_write,
 })
-
--- local function create_test_file()
---     local current_workspace = vim.fn.getcwd()
---     local file_path = vim.api.nvim_buf_get_name(4):match(current_workspace .. '/(.*)')
--- end

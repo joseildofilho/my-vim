@@ -13,6 +13,14 @@ local source_mapping = {
     luasnip = "🌜 LuaSnip"
 }
 
+vim.api.nvim_create_user_command('LspBufFormat', function()
+    if vim.bo.filetype == 'typescript' or vim.bo.filetype == 'javascript' then
+        vim.cmd [[Prettier]]
+    else
+        vim.lsp.buf.formatting()
+    end
+end, {})
+
 cmp.setup({
     preselect = cmp.PreselectMode.None,
     sources = {

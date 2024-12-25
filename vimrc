@@ -47,7 +47,7 @@ nmap                      gk        <Cmd>lua vim.diagnostic.goto_prev()<CR>
 nmap                      gj        <Cmd>lua vim.diagnostic.goto_next()<CR>
 nmap     <silent> <leader>gr        <CMD>lua vim.lsp.buf.references()<CR>
 nmap     <silent>         <F6>      <CMD>lua vim.lsp.buf.rename()<CR>
-nnoremap <silent> <leader>gf        <CMD>lua vim.lsp.buf.format()<CR>
+nnoremap <silent> <leader>gf        :LspBufFormat<CR>
 nnoremap          <leader>gm        <CMD>lua vim.lsp.buf.signature_help()<CR>
 
 nmap <space>e <cmd>lua vim.diagnostic.open_float()<CR>

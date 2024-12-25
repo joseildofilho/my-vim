@@ -24,6 +24,7 @@ local plugins = {
             -- see below for full list of optional dependencies 👇
         },
         opts = {
+            ui = { enable = false },
             workspaces = {
                 {
                     name = "Books",

@@ -1,4 +1,4 @@
-setlocal spell spelllang=en_us
+setlocal spell spelllang=pt,en_us
 set number relativenumber
 set nocompatible
 set encoding=utf-8

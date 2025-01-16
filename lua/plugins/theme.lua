@@ -6,7 +6,7 @@ require('kanagawa').setup {
     transparent = false
 }
 vim.o.background = 'dark'
-vim.cmd('colorscheme kanagawa')
+vim.cmd('colorscheme tokyonight')
 
 local automatically_change = false
 

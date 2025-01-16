@@ -17,7 +17,7 @@ vim.api.nvim_create_user_command('LspBufFormat', function()
     if vim.bo.filetype == 'typescript' or vim.bo.filetype == 'javascript' then
         vim.cmd [[Prettier]]
     else
-        vim.lsp.buf.formatting()
+        vim.lsp.buf.format()
     end
 end, {})
 

@@ -4,6 +4,16 @@ local dev = {
 
 local plugins = {
     {
+        'stevearc/oil.nvim',
+        opts = {}
+    },
+    {
+        'nvzone/typr',
+        dependencies = {
+            'nvzone/volt'
+        }
+    },
+    {
         'folke/tokyonight.nvim'
     },
     {

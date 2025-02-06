@@ -77,5 +77,32 @@ return {
         ]],
             {}
         )
+    ),
+    s(
+        { trig = 'controller', dscr = 'creates a controller to golang CA starter' },
+        fmta(
+            [[
+            package controllers
+
+            import "github.com/ContaAzul/ca-starters-go/web/restserver"
+
+            type <>Controller struct {}
+
+            func New<>Controller() *<>Controller {
+                return &<>Controller {}
+            }
+
+            func (c *<>Controller) Routes() []restserver.Route {
+                return []restserver.Route {}
+            }
+        ]]
+            , {
+                i(1),
+                r(1),
+                r(1),
+                r(1),
+                r(1),
+            }
+        )
     )
 }

@@ -12,7 +12,7 @@ require('projections').setup {
         "~/Codigos/Pima",
         "~/.config",
         "~/.aws",
-        "~/vault/Books",
+        "~/vault",
     },
     restore_hooks = {
         pre = function()

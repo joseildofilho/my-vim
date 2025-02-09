@@ -9,12 +9,10 @@ end
 local function toggle_summary()
     neotest.summary.toggle()
 end
-vim.api.nvim_create_user_command('ToggleSummary', toggle_summary, {})
 
 local function toggle_output_panel()
     neotest.output_panel.toggle()
 end
-vim.api.nvim_create_user_command('ToggleOutputPanel', toggle_output_panel, {})
 
 local function nearest()
     stop_current_test()
@@ -26,7 +24,6 @@ local function nearest()
         neotest.run.run()
     end
 end
-vim.api.nvim_create_user_command('Nearest', nearest, {})
 
 local function nearest_debug()
     stop_current_test()
@@ -38,7 +35,6 @@ local function nearest_debug()
         neotest.run.run({ strategy = 'dap' })
     end
 end
-vim.api.nvim_create_user_command('NearestDebugMode', nearest_debug, {})
 
 local function run_file()
     stop_current_test()
@@ -51,24 +47,31 @@ local function run_file()
         neotest.run.run(bufferPath)
     end
 end
-vim.api.nvim_create_user_command('FileTest', run_file, {})
 
 local function last_test()
     stop_current_test()
     neotest.run.run_last({ strategy = 'integrated' })
 end
-vim.api.nvim_create_user_command('TestLast', last_test, {})
 
 local function last_test_debug_mode()
     stop_current_test()
     neotest.run.run_last({ strategy = 'dap' })
 end
-vim.api.nvim_create_user_command('TestLastDebugMode', last_test_debug_mode, {})
 
 local function stop_current_test_after_write(_)
     stop_current_test()
     fidget.notify('Parando execução de tests após salvar', vim.log.levels.INFO)
 end
+
+vim.api.nvim_create_user_command('ToggleSummary', toggle_summary, {})
+vim.api.nvim_create_user_command('ToggleOutputPanel', toggle_output_panel, {})
+vim.api.nvim_create_user_command('Nearest', nearest, {})
+vim.api.nvim_create_user_command('NearestDebugMode', nearest_debug, {})
+vim.api.nvim_create_user_command('FileTest', run_file, {})
+vim.api.nvim_create_user_command('TestLast', last_test, {})
+vim.api.nvim_create_user_command('TestLastDebugMode', last_test_debug_mode, {})
+vim.api.nvim_create_user_command('TestStopCurrent', stop_current_test, {})
+
 vim.api.nvim_create_autocmd('BufWritePost', {
     pattern = { "*.js", "*.ts", "*.tsx", "*_test.go" },
     callback = stop_current_test_after_write,

@@ -13,39 +13,9 @@ local plugins = {
             'nvzone/volt'
         }
     },
-    {
-        'folke/tokyonight.nvim'
-    },
-    {
-        "epwalsh/obsidian.nvim",
-        version = "*", -- recommended, use latest release instead of latest commit
-        lazy = true,
-        ft = "markdown",
-        -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
-        -- event = {
-        --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
-        --   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/*.md"
-        --   -- refer to `:h file-pattern` for more examples
-        --   "BufReadPre path/to/my-vault/*.md",
-        --   "BufNewFile path/to/my-vault/*.md",
-        -- },
-        dependencies = {
-            -- Required.
-            "nvim-lua/plenary.nvim",
-            "nvim-telescope/telescope.nvim",
-            { "ibhagwan/fzf-lua" },
-            -- see below for full list of optional dependencies 👇
-        },
-        opts = {
-            ui = { enable = false },
-            workspaces = {
-                {
-                    name = "Books",
-                    path = "~/vault/Books",
-                },
-            },
-        },
-    },
+    require 'plugins.obsidian',
+    require 'plugins.lsp.lspconfig',
+    require 'plugins.themes',
     {
         'pwntester/octo.nvim',
         requires = {
@@ -124,16 +94,12 @@ local plugins = {
             "nvim-lua/plenary.nvim",
         },
     },
-    require 'plugins.lsp.lspconfig',
-
     'hrsh7th/nvim-cmp',
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-cmdline',
-
     { 'dart-lang/dart-vim-plugin',     lazy = true }, -- TS is causing dart classes to crash
-
     {
         "L3MON4D3/LuaSnip",
         version = "v1.*",
@@ -216,11 +182,8 @@ local plugins = {
     { 'yuezk/vim-js',              ft = { 'typescript', 'js' } },
     { 'pangloss/vim-javascript',   ft = { 'typescript', 'js' } },
     { 'MunifTanjim/prettier.nvim', ft = { 'typescript', 'js' } },
-
     'stevearc/overseer.nvim',
     'stevearc/dressing.nvim',
-
-    'rebelot/kanagawa.nvim',
     {
         'nvim-tree/nvim-tree.lua',
         config = function()

@@ -84,6 +84,7 @@ nmap <silent> <leader>tl  :TestLast<CR>
 nmap <silent> <leader>tdl :TestLastDebugMode<CR>
 nmap <silent> <leader>ts  :ToggleSummary<CR>
 nmap <silent> <leader>to  :ToggleOutputPanel<CR>
+nmap <silent> <leader>tS  :TestStopCurrent<CR>
 "nmap <silent> <leader>tt  :TestSuite<CR>
 "nmap <silent> <leader>tv  :TestVisit<CR>
 

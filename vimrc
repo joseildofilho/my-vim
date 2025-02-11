@@ -99,7 +99,7 @@ nnoremap          q:          <cmd>Telescope command_history<cr>
 nnoremap          <leader>fl  <cmd>Telescope git_files<cr>
 nnoremap          <leader>fm  <cmd>:NvimTreeToggle<cr>
 nnoremap          <leader>ccc <cmd>lua require'telescope.builtin'.find_files({cwd = '~/.config/nvim'})<cr>
-nnoremap <silent> <leader>p   <cmd>Telescope projections<cr>
+nnoremap <silent> <leader>p   <cmd>Telescope persisted<cr>
 
 nnoremap <silent> <leader>TT   <cmd>OverseerRun<cr>
 nnoremap <silent> <leader>Ts   <cmd>OverseerToggle<cr>

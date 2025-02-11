@@ -16,7 +16,7 @@ vim.lsp.set_log_level('error')
 require('plugins')
 
 require('plugins.dap')
-require('plugins.projections')
+--require('plugins.projections')
 require('plugins.theme')
 --
 require('overseer').setup()
@@ -33,6 +33,8 @@ require 'nvim-treesitter.configs'.setup {
         disable = { "c" },       -- list of language that will be disabled
     },
 }
+
+require('telescope').load_extension('persisted')
 
 local fidget = require'fidget'
 vim.api.nvim_create_autocmd("BufEnter", {

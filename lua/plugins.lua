@@ -242,7 +242,12 @@ local plugins = {
         ft = { 'typescript', 'js' }
     },
     require 'plugins.tests.neotest',
-    { 'gnikdroy/projections.nvim', branch = 'pre_release' },
+    --{ 'gnikdroy/projections.nvim', branch = 'pre_release' },
+    {
+        'olimorris/persisted.nvim',
+        lazy = false,
+        config = true
+    },
     {
         "ThePrimeagen/harpoon",
         branch = "harpoon2",

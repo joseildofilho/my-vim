@@ -3,6 +3,9 @@ return {
     opts = {
         sections = {
             lualine_x = { "overseer" },
+        },
+        options = {
+            globalstatus = true,
         }
     }
 }

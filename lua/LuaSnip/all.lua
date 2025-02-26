@@ -168,7 +168,7 @@ return {
             }
     ]], { i(1), i(2) }
     )),
-    s({ trig = 't.Run', dscr = 'creates a simple test case for golang' }, fmta(
+    s({ trig = 'tRun', dscr = 'creates a simple test case for golang' }, fmta(
         [[ t.Run("should <>", func(t *testing.T) {}) ]], { i(1) }
     ))
 }

@@ -1,6 +1,9 @@
 require("nvim-dap-virtual-text").setup {}
 
+vim.fn.sign_define('DapBreakpoint', {text='🔴', texthl='red', linehl='', numhl=''})
+
 local dap = require('dap')
+
 dap.set_log_level('DEBUG')
 
 local debugger_path

@@ -3,6 +3,8 @@ local dev = {
 }
 
 local plugins = {
+    {"folke/trouble.nvim",},
+    { 'mrjones2014/smart-splits.nvim' },
     {
         'stevearc/oil.nvim',
         opts = {}
@@ -61,7 +63,7 @@ local plugins = {
             default_view = 'headers_body',
         }
     },
-    { 'chentoast/marks.nvim',       opts = {} },
+    { 'chentoast/marks.nvim',      opts = {} },
     {
         'zbirenbaum/copilot.lua',
         config = true,
@@ -71,10 +73,10 @@ local plugins = {
             }
         }
     },
-    -- {
-    --     'willothy/wezterm.nvim',
-    --     config = true
-    -- },
+    {
+        'willothy/wezterm.nvim',
+        config = true
+    },
     {
         "nvim-zh/colorful-winsep.nvim",
         config = true,
@@ -99,7 +101,7 @@ local plugins = {
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-cmdline',
-    { 'dart-lang/dart-vim-plugin',     lazy = true }, -- TS is causing dart classes to crash
+    { 'dart-lang/dart-vim-plugin', lazy = true }, -- TS is causing dart classes to crash
     {
         "L3MON4D3/LuaSnip",
         version = "v1.*",
@@ -246,7 +248,10 @@ local plugins = {
     {
         'olimorris/persisted.nvim',
         lazy = false,
-        config = true
+        config = true,
+        opts = {
+            autoload = true,
+        }
     },
     {
         "ThePrimeagen/harpoon",

@@ -1,12 +1,5 @@
-require('kanagawa').setup {
-    background = {
-        dark = "wave",
-        light = "lotus"
-    },
-    transparent = false
-}
 vim.o.background = 'dark'
-vim.cmd('colorscheme tokyonight')
+vim.cmd('colorscheme tokyonight-night')
 
 local automatically_change = false
 

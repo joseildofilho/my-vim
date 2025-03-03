@@ -5,13 +5,14 @@ set encoding=utf-8
 "set listchars=tab:\|\
 set list
 set cursorline
+set clipboard=unnamedplus
 
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set mouse=a
 
-set guifont="Fira Code Nerd Font:b"
+set guifont=FiraCode\ Regular:h20
 
 let g:lazygit_floating_window_use_plenary = 1
 
@@ -21,6 +22,8 @@ syntax on
 let g:lsc_auto_map = v:true
 
 map <SPACE> <leader>
+
+nnoremap <leader>RV <CMD>lua vim.cmd('source ~/.config/nvim/vimrc')<CR>
 
 nnoremap <leader>a  <CMD>lua require'harpoon':list():add()<CR>
 nnoremap <C-e>      <CMD>lua require'harpoon'.ui:toggle_quick_menu(require'harpoon':list())<CR>
@@ -49,6 +52,7 @@ nmap     <silent> <leader>gr        <CMD>lua vim.lsp.buf.references()<CR>
 nmap     <silent>         <F6>      <CMD>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <leader>gf        :LspBufFormat<CR>
 nnoremap          <leader>gm        <CMD>lua vim.lsp.buf.signature_help()<CR>
+nmap     <silent>         gq     <CMD>lua vim.diagnostic.setqflist()<CR>
 
 nmap <space>e <cmd>lua vim.diagnostic.open_float()<CR>
 nmap <space>q <cmd>lua vim.diagnostic.setloclist()<CR>
@@ -98,7 +102,7 @@ nnoremap          <leader>fh  <cmd>Telescope help_tags<cr>
 nnoremap          q:          <cmd>Telescope command_history<cr>
 nnoremap          <leader>fl  <cmd>Telescope git_files<cr>
 nnoremap          <leader>fm  <cmd>:NvimTreeToggle<cr>
-nnoremap          <leader>ccc <cmd>lua require'telescope.builtin'.find_files({cwd = '~/.config/nvim'})<cr>
+nnoremap          <leader>ccc <cmd>lua require'wezterm'.spawn('nvim', { cwd = '~/.config/nvim/'})<cr>
 nnoremap <silent> <leader>p   <cmd>Telescope persisted<cr>
 
 nnoremap <silent> <leader>TT   <cmd>OverseerRun<cr>
@@ -126,3 +130,5 @@ imap <space><space><space> <cmd>lua require("copilot.suggestion").accept(modifie
 highlight CursorLine ctermbg=0 ctermbg=235
 
 "autocmd BufWritePre *.ts Prettier
+
+lua require'fidget'.notify("Shortcuts loaded", vim.log.levels.INFO)

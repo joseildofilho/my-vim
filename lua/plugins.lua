@@ -3,7 +3,7 @@ local dev = {
 }
 
 local plugins = {
-    {"folke/trouble.nvim",},
+    { "folke/trouble.nvim", },
     { 'mrjones2014/smart-splits.nvim' },
     {
         'stevearc/oil.nvim',
@@ -50,11 +50,7 @@ local plugins = {
         }
     },
     { 'nvim-tree/nvim-web-devicons' },
-    {
-        'mvllow/modes.nvim',
-        version = 'v0.2.0',
-        opts = {}
-    },
+    { 'mvllow/modes.nvim',          version = 'v0.2.0', opts = {} },
     {
         'mistweaverco/kulala.nvim',
         opts = {
@@ -75,7 +71,8 @@ local plugins = {
     },
     {
         'willothy/wezterm.nvim',
-        config = true
+        config = true,
+        dev = true,
     },
     {
         "nvim-zh/colorful-winsep.nvim",

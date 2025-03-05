@@ -128,7 +128,7 @@ return {
         )
     ),
     s(
-        { trig = 'db_value', dscr = 'creates a db value type for golang' },
+        { trig = 'create_db_value', dscr = 'creates a db value type for golang' },
         fmta(
             [[
                 type <> string

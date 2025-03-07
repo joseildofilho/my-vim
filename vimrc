@@ -34,8 +34,8 @@ nnoremap <C-k>  <CMD>lua require'harpoon':list():select(2)<CR>
 nnoremap <C-l>  <CMD>lua require'harpoon':list():select(3)<CR>
 nnoremap <C-;>  <CMD>lua require'harpoon':list():select(4)<CR>
 
-nnoremap f          :HopChar1CurrentLine<cr>
-nnoremap F          :HopAnywhere<cr>
+nnoremap f :HopChar1CurrentLine<cr>
+nnoremap F :HopAnywhere<cr>
 
 nnoremap <leader>mn :bn<CR>
 nnoremap <leader>mN :bp<CR>
@@ -53,7 +53,7 @@ nmap     <silent> <leader>gr        <CMD>lua vim.lsp.buf.references()<CR>
 nmap     <silent>         <F6>      <CMD>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <leader>gf        :LspBufFormat<CR>
 nnoremap          <leader>gm        <CMD>lua vim.lsp.buf.signature_help()<CR>
-nmap     <silent>         gq     <CMD>lua vim.diagnostic.setqflist()<CR>
+nmap     <silent>         gq        <CMD>lua vim.diagnostic.setqflist()<CR>
 
 nmap <space>e <cmd>lua vim.diagnostic.open_float()<CR>
 nmap <space>q <cmd>lua vim.diagnostic.setloclist()<CR>
@@ -96,7 +96,7 @@ nmap <silent> <leader>to <CMD> lua require'neotest'.output_panel.toggle()<CR>
 " Find files using Telescope command-line sugar.
 nnoremap          <C-F>       <cmd>Telescope find_files<cr>
 nnoremap          <C-F><C-G>  <cmd>Telescope live_grep<cr>
-nnoremap          <C-F><C-B>  <cmd>Telescope bufers<cr>
+nnoremap          <C-F><C-B>  <cmd>Telescope buffers<cr>
 nnoremap          <C-F><C-O>  <cmd>Telescope oldfiles<cr>
 nnoremap          <C-F><C-H>  <cmd>Telescope help_tags<cr>
 nnoremap          q:          <cmd>Telescope command_history<cr>
@@ -125,13 +125,6 @@ map <silent> , :lua require('nvim-window').pick()<CR>
 
 imap <space><space><space> <cmd>lua require("copilot.suggestion").accept(modifier)<cr>
 
-" g:neovide_transparency should be 0 if you want to unify transparency of content and title bar.
-"let g:neovide_transparency=0.0
-"let g:transparency = 0.85
-"let g:neovide_background_color = '#0f1117'.printf('%x', float2nr(255 * g:transparency))
-
 highlight CursorLine ctermbg=0 ctermbg=235
-
-"autocmd BufWritePre *.ts Prettier
 
 lua require'fidget'.notify("Shortcuts loaded", vim.log.levels.INFO)

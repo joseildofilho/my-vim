@@ -67,8 +67,6 @@ nnoremap <silent> <leader>DD :lua require'dapui'.toggle()<CR>
 nnoremap <silent> <leader>B  :lua require'dapui'.float_element('breakpoints')<CR>
 nnoremap <silent> <leader>Dt :lua require'dapui'.float_element('console')<CR>
 
-nnoremap <leader>log :lua require'plugins.popfix'.select_services()<CR>
-
 " git
 nmap <silent> <leader>gs :G<CR>
 nmap <silent> <leader>gg :LazyGit<CR>
@@ -96,18 +94,22 @@ nmap <silent> <leader>tS  :TestStopCurrent<CR>
 nmap <silent> <leader>to <CMD> lua require'neotest'.output_panel.toggle()<CR>
 
 " Find files using Telescope command-line sugar.
-nnoremap          <leader>F   <cmd>Telescope find_files<cr>
-nnoremap          <leader>fg  <cmd>Telescope live_grep<cr>
-nnoremap          <leader>fb  <cmd>Telescope oldfiles<cr>
-nnoremap          <leader>fh  <cmd>Telescope help_tags<cr>
+nnoremap          <C-F>       <cmd>Telescope find_files<cr>
+nnoremap          <C-F><C-G>  <cmd>Telescope live_grep<cr>
+nnoremap          <C-F><C-B>  <cmd>Telescope bufers<cr>
+nnoremap          <C-F><C-O>  <cmd>Telescope oldfiles<cr>
+nnoremap          <C-F><C-H>  <cmd>Telescope help_tags<cr>
 nnoremap          q:          <cmd>Telescope command_history<cr>
 nnoremap          <leader>fl  <cmd>Telescope git_files<cr>
-nnoremap          <leader>fm  <cmd>:NvimTreeToggle<cr>
-nnoremap          <leader>ccc <cmd>lua require'wezterm'.spawn('nvim', { cwd = '~/.config/nvim/'})<cr>
 nnoremap <silent> <leader>p   <cmd>Telescope persisted<cr>
 
-nnoremap <silent> <leader>TT   <cmd>OverseerRun<cr>
-nnoremap <silent> <leader>Ts   <cmd>OverseerToggle<cr>
+nnoremap <leader>fm  <cmd>:NvimTreeToggle<cr>
+
+nnoremap <leader>ccc <cmd>lua require'wezterm'.spawn('nvim', { cwd = '~/.config/nvim/'})<cr>
+
+
+nnoremap <silent> <leader>TT <cmd>OverseerRun<cr>
+nnoremap <silent> <leader>Ts <cmd>OverseerToggle<cr>
 
 nnoremap <leader>kr <cmd>lua require'kulala'.run()<cr>
 nnoremap <leader>ki <cmd>lua require'kulala'.inspect()<cr>

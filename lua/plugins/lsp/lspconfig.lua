@@ -43,7 +43,7 @@ local lspconfig_lazy_config = {
 --        lspconfig.dartls.setup {
 --            cmd = {"dart", "language-server", "--protocol=lsp"}
 --        }
-        lspconfig.tsserver.setup {}
+        lspconfig.ts_ls.setup {}
         lspconfig.lua_ls.setup(lua_ls_config)
         require('plugins.lsp-utils')
         require("plugins.lsp")

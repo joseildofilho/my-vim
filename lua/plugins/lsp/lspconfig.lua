@@ -45,6 +45,7 @@ local lspconfig_lazy_config = {
 --        }
         lspconfig.ts_ls.setup {}
         lspconfig.lua_ls.setup(lua_ls_config)
+        require'lspconfig'.beancount.setup{}
         require('plugins.lsp-utils')
         require("plugins.lsp")
     end,

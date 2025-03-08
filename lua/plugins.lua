@@ -5,6 +5,7 @@ local dev = {
 local plugins = {
     { "folke/trouble.nvim", },
     { 'mrjones2014/smart-splits.nvim' },
+    { 'polarmutex/beancount.nvim' },
     {
         'stevearc/oil.nvim',
         opts = {}

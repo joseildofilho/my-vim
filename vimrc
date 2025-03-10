@@ -104,6 +104,7 @@ nnoremap          <leader>fl  <cmd>Telescope git_files<cr>
 nnoremap <silent> <leader>p   <cmd>Telescope persisted<cr>
 
 nnoremap <leader>fm  <cmd>:NvimTreeToggle<cr>
+nnoremap <leader>o   <cmd>:Oil<cr>
 
 nnoremap <leader>ccc <cmd>lua require'wezterm'.spawn('nvim', { cwd = '~/.config/nvim/'})<cr>
 
@@ -114,6 +115,8 @@ nnoremap <silent> <leader>Ts <cmd>OverseerToggle<cr>
 nnoremap <leader>kr <cmd>lua require'kulala'.run()<cr>
 nnoremap <leader>ki <cmd>lua require'kulala'.inspect()<cr>
 nnoremap <leader>kc <cmd>lua require'kulala'.from_curl()<cr>
+
+map <leader>? <cmd>lua require('which-key').show()<CR>
 
 nnoremap <D-v> "+p
 

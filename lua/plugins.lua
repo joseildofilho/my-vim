@@ -3,6 +3,7 @@ local dev = {
 }
 
 local plugins = {
+    require 'plugins.which-key',
     { "folke/trouble.nvim", },
     { 'mrjones2014/smart-splits.nvim' },
     { 'polarmutex/beancount.nvim' },

@@ -1,5 +1,5 @@
 vim.o.background = 'dark'
-vim.cmd('colorscheme tokyonight-night')
+vim.cmd('colorscheme vague')
 
 local automatically_change = false
 

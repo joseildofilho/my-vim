@@ -39,13 +39,14 @@ local lspconfig_lazy_config = {
     'neovim/nvim-lspconfig',
     config = function()
         local lspconfig = require 'lspconfig'
+
         lspconfig.clangd.setup {}
---        lspconfig.dartls.setup {
---            cmd = {"dart", "language-server", "--protocol=lsp"}
---        }
         lspconfig.ts_ls.setup {}
         lspconfig.lua_ls.setup(lua_ls_config)
-        require'lspconfig'.beancount.setup{}
+        lspconfig.beancount.setup {}
+        lspconfig.jsonls.setup {}
+        lspconfig.zls.setup {}
+
         require('plugins.lsp-utils')
         require("plugins.lsp")
     end,

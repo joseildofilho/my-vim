@@ -81,4 +81,3 @@ cmp.setup({
 })
 
 require("luasnip/loaders/from_vscode").load()
-require'lspconfig'.jsonls.setup{}

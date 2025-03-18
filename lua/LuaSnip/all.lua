@@ -5,6 +5,10 @@ local s = require('luasnip').snippet
 
 return {
     s(
+        { trig = "build_mock", dscr = "creates a build_mock script for golang" },
+        fmta("//go:generate build_mock", {})
+    ),
+    s(
         { trig = "producer", dscr = "creates a producer to golang CA starter" },
         fmta(
             [[

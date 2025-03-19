@@ -5,6 +5,24 @@ local s = require('luasnip').snippet
 
 return {
     s(
+        { trig = "create_repo", dscr = "creates a Repository for golang" },
+        fmta([[
+            type I<>Repository interface {}
+
+            type <>Repository struct{}
+
+            func New<>Repository() *<>Repository {
+            	return &<>Repository{}
+            }
+    ]], {
+            i(1),
+            r(1),
+            r(1),
+            r(1),
+            r(1),
+        })
+    ),
+    s(
         { trig = "build_mock", dscr = "creates a build_mock script for golang" },
         fmta("//go:generate build_mock", {})
     ),

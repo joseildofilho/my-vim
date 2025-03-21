@@ -13,6 +13,8 @@ local goConfig = {
     dap_go_enabled = true
 }
 
+local plenaryConfig = {}
+
 local neotest_lazy_config = {
     "nvim-neotest/neotest",
     dependencies = {
@@ -24,23 +26,26 @@ local neotest_lazy_config = {
         "rouge8/neotest-rust",
         "nvim-neotest/neotest-jest",
         "fredrikaverpil/neotest-golang",
+        "nvim-neotest/neotest-plenary"
     },
     config = function()
         local neotest = require 'neotest'
         local jest = require 'neotest-jest'
         local go = require 'neotest-golang'
+        local plenary = require 'neotest-plenary'
 
         neotest.setup {
             adapters = {
                 jest(jestConfig),
-                go(goConfig)
+                go(goConfig),
+                plenary(plenaryConfig)
             }
         }
 
         require('plugins.tests.tests')
     end,
     lazy = true,
-    ft = { "rust", "typescript", "go" },
+    ft = { "rust", "typescript", "go", "lua" },
     opts = {
         discovery = {
             enabled = false

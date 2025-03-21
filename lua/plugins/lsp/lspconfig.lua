@@ -52,13 +52,7 @@ local lspconfig_lazy_config = {
     end,
     lazy = true,
     ft = { 'lua', 'dart', 'typescript' },
-    dependencies = {
-        {
-            'folke/neodev.nvim',
-            ft = { 'lua' },
-            lazy = true
-        }
-    }
+    dependencies = {}
 }
 
 return {

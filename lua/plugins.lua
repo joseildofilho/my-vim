@@ -295,14 +295,17 @@ local plugins = {
         lazy = true,
         build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
     },
-    --{
-    --    "vhyrro/luarocks.nvim",
-    --    priority = 1000,
-    --    opts = {
-    --        rocks = { "lua-curl", "nvim-nio", "mimetypes", "xml2lua" },
-    --    },
-    --    config = true,
-    --}
+    {
+        "folke/lazydev.nvim",
+        ft = "lua", -- only load on lua files
+        opts = {
+            library = {
+                -- See the configuration section for more details
+                -- Load luvit types when the `vim.uv` word is found
+                { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+            },
+        },
+    },
 }
 
 local lazy = require 'lazy'

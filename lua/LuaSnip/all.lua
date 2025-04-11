@@ -182,6 +182,52 @@ return {
             }
         )
     ),
+    s(
+        { trig = 'create_db_uuid_value', dscr = 'creates a db value type for golang' },
+        fmta(
+            [[
+                type <> uuid.UUID
+
+                func (v *<>) Scan(value any) error {
+                	if value == nil {
+                		return errors.New("<> cannot be created with nil")
+                	}
+
+                	field, ok := value.([]byte)
+                	if !ok {
+                		return errors.New("When scanning <> from db, expected string, got: " + reflect.TypeOf(value).String())
+                	}
+
+                	u, err := uuid.ParseBytes(field)
+                	if err != nil {
+                		return err
+                	}
+                	if u == uuid.Nil {
+                		return errors.New("When scanning <> from db, expected string, got: " + reflect.TypeOf(value).String())
+                	}
+
+                	*v = <>(u)
+                	return nil
+                }
+
+                func (v <>) Value() (driver.Value, error) {
+                	return v.String(), nil
+                }
+
+                func (v <>) String() string {
+                	return uuid.UUID(v).String()
+                }]], {
+                i(1),
+                r(1),
+                r(1),
+                r(1),
+                r(1),
+                r(1),
+                r(1),
+                r(1),
+            }
+        )
+    ),
     s({ trig = 'func Test_', dscr = 'creates a simple first test for golang' }, fmta(
         [[
             func Test_<>(t *testing.T) {

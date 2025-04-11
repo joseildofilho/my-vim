@@ -16,23 +16,15 @@ vim.lsp.set_log_level('error')
 require('plugins')
 
 require('plugins.dap')
---require('plugins.projections')
 require('plugins.theme')
 --
 require('overseer').setup()
 require('dressing').setup()
 
 require("prettier").setup {}
+
 vim.wo.number = true
 vim.wo.relativenumber = true
-require 'nvim-treesitter.configs'.setup {
-    ensure_installed = "all",    -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-    ignore_install = { "phpdoc" }, -- List of parsers to ignore installing
-    highlight = {
-        enable = true,           -- false will disable the whole extension
-        disable = { "c" },       -- list of language that will be disabled
-    },
-}
 
 require('telescope').load_extension('persisted')
 

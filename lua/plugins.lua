@@ -3,6 +3,7 @@ local dev = {
 }
 
 local plugins = {
+    require 'plugins.snacks',
     require 'plugins.which-key',
     { "folke/trouble.nvim", },
     { 'mrjones2014/smart-splits.nvim' },
@@ -249,7 +250,7 @@ local plugins = {
         lazy = false,
         config = true,
         opts = {
-            autoload = true,
+            autoload = false,
         }
     },
     {

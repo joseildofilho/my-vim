@@ -23,6 +23,7 @@ syntax on
 let g:lsc_auto_map = v:true
 
 map <SPACE> <leader>
+"nmap : <CMD>SnackInput<CR>
 
 nnoremap <leader>RV <CMD>lua vim.cmd('source ~/.config/nvim/vimrc')<CR>
 

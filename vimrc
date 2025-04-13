@@ -127,7 +127,7 @@ tnoremap <leader><Esc> <C-\><C-n>
 
 map <silent> , :lua require('nvim-window').pick()<CR>
 
-imap <space><space><space> <cmd>lua require("copilot.suggestion").accept(modifier)<cr>
+imap <right> <cmd>lua require("copilot.suggestion").accept(modifier)<cr>
 
 highlight CursorLine ctermbg=0 ctermbg=235
 

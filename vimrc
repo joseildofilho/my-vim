@@ -44,20 +44,20 @@ nnoremap <leader>md :bN \| bd#<CR>
 nnoremap <leader>mD :bd<CR>
 nnoremap <leader>mc :bufdo bd<CR>
 
-nmap     <silent> <leader>gt        :vsp<CR><Cmd>lua vim.lsp.buf.definition()<CR>
-nmap                      gd        <Cmd>lua vim.lsp.buf.definition()<CR>
-nmap                      <C-Space> <Cmd>lua vim.lsp.buf.code_action()<CR>
-nmap     <silent>         gi        <CMD>lua vim.lsp.buf.implementation()<CR>
-nmap                      gk        <Cmd>lua vim.diagnostic.goto_prev()<CR>
-nmap                      gj        <Cmd>lua vim.diagnostic.goto_next()<CR>
-nmap     <silent> <leader>gr        <CMD>lua vim.lsp.buf.references()<CR>
-nmap     <silent>         <F6>      <CMD>lua vim.lsp.buf.rename()<CR>
-nnoremap <silent> <leader>gf        :LspBufFormat<CR>
-nnoremap          <leader>gm        <CMD>lua vim.lsp.buf.signature_help()<CR>
-nmap     <silent>         gq        <CMD>lua vim.diagnostic.setqflist()<CR>
+nmap     <silent> <leader>gt   :vsp<CR><Cmd>lua vim.lsp.buf.definition()<CR>
+nmap                      gd   <Cmd>lua vim.lsp.buf.definition()<CR>
+nmap              <leader>a    <Cmd>lua vim.lsp.buf.code_action()<CR>
+nmap     <silent>         gi   <CMD>lua vim.lsp.buf.implementation()<CR>
+nmap                      gk   <Cmd>lua vim.diagnostic.goto_prev()<CR>
+nmap                      gj   <Cmd>lua vim.diagnostic.goto_next()<CR>
+nmap     <silent> <leader>gr   <CMD>lua vim.lsp.buf.references()<CR>
+nmap     <silent>         <F6> <CMD>lua vim.lsp.buf.rename()<CR>
+nnoremap <silent> <leader>gf   :LspBufFormat<CR>
+nnoremap          <leader>gm   <CMD>lua vim.lsp.buf.signature_help()<CR>
+nmap     <silent>         gq   <CMD>lua vim.diagnostic.setqflist()<CR>
 
-nmap <space>e <cmd>lua vim.diagnostic.open_float()<CR>
-nmap <space>q <cmd>lua vim.diagnostic.setloclist()<CR>
+nmap <leader>e <cmd>lua vim.diagnostic.open_float()<CR>
+nmap <leader>q <cmd>lua vim.diagnostic.setloclist()<CR>
 
 nnoremap <silent> <F1>       :lua require'dap'.continue()<CR>
 nnoremap <silent> <F2>       :lua require'dap'.step_into()<CR>
@@ -80,7 +80,6 @@ nnoremap <leader>fd <CMD> lua require'dap'.continue()<CR>
 nnoremap <leader>ff <cmd> lua require('telescope').extensions.flutter.commands()<CR>
 
 let test#dart#fluttertest#executable = 'fvm flutter test'
-"let test#javascript#jest#executable = 'jest --runInBand --config jest-integration.config.json' 
 nmap <silent> <leader>tn  :Nearest<CR>
 nmap <silent> <leader>tdn :NearestDebugMode<CR>
 nmap <silent> <leader>tf  :FileTest<CR>
@@ -89,8 +88,6 @@ nmap <silent> <leader>tdl :TestLastDebugMode<CR>
 nmap <silent> <leader>ts  :ToggleSummary<CR>
 nmap <silent> <leader>to  :ToggleOutputPanel<CR>
 nmap <silent> <leader>tS  :TestStopCurrent<CR>
-"nmap <silent> <leader>tt  :TestSuite<CR>
-"nmap <silent> <leader>tv  :TestVisit<CR>
 
 nmap <silent> <leader>to <CMD> lua require'neotest'.output_panel.toggle()<CR>
 

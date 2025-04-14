@@ -46,7 +46,7 @@ nnoremap <leader>mc :bufdo bd<CR>
 
 nmap     <silent> <leader>gt   :vsp<CR><Cmd>lua vim.lsp.buf.definition()<CR>
 nmap                      gd   <Cmd>lua vim.lsp.buf.definition()<CR>
-nmap              <leader>a    <Cmd>lua vim.lsp.buf.code_action()<CR>
+nmap              <leader>s    <Cmd>lua vim.lsp.buf.code_action()<CR>
 nmap     <silent>         gi   <CMD>lua vim.lsp.buf.implementation()<CR>
 nmap                      gk   <Cmd>lua vim.diagnostic.goto_prev()<CR>
 nmap                      gj   <Cmd>lua vim.diagnostic.goto_next()<CR>

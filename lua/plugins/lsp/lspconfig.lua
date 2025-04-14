@@ -46,6 +46,7 @@ local lspconfig_lazy_config = {
         lspconfig.beancount.setup {}
         lspconfig.jsonls.setup {}
         lspconfig.zls.setup {}
+        lspconfig.terraformls.setup {}
 
         require('plugins.lsp-utils')
         require("plugins.lsp")

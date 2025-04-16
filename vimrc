@@ -107,8 +107,8 @@ nnoremap <leader>o   <cmd>:Oil<cr>
 nnoremap <leader>ccc <cmd>lua require'wezterm'.spawn('nvim', { cwd = '~/.config/nvim/'})<cr>
 
 
-nnoremap <silent> <leader>TT <cmd>OverseerRun<cr>
-nnoremap <silent> <leader>Ts <cmd>OverseerToggle<cr>
+nnoremap <silent> <C-g><C-g> <cmd>OverseerRun<cr>
+nnoremap <silent> <C-g><C-s> <cmd>OverseerToggle<cr>
 
 nnoremap <leader>kr <cmd>lua require'kulala'.run()<cr>
 nnoremap <leader>ki <cmd>lua require'kulala'.inspect()<cr>

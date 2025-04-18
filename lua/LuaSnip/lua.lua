@@ -4,5 +4,5 @@ local i = require('luasnip').insert_node
 local s = require('luasnip').snippet
 
 return {
-    s({ trig = "trig", dscr = "creates a basic trigger" }, fmta([[ s({ trig = "", dscr = "creates a basic trigger" }, fmta(\[\[\]\], {})) ]], {}))
+    s({ trig = "trig", dscr = "creates a basic trigger" }, fmta('s({ trig = "", dscr = "creates a basic trigger" }, fmta([[]], {}))', {}))
 }

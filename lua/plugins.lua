@@ -3,6 +3,33 @@ local dev = {
 }
 
 local plugins = {
+    {
+        "Dan7h3x/neaterm.nvim",
+        branch = "stable",
+        event = "VeryLazy",
+        opts = {
+            use_default_keymaps = false,
+        },
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "ibhagwan/fzf-lua",
+        },
+        terminals = {
+            {
+                config = {
+                    name = "NvimConfig",
+                    cmd = "nvim",
+                    type = "float",
+                    float_width = 0.9,
+                    float_height = 0.9,
+                    on_exit = function()
+                        vim.cmd('source ~/.config/nvim/vimrc')
+                    end,
+                    keymaps={}
+                }
+            }
+        }
+    },
     require 'plugins.snacks',
     require 'plugins.which-key',
     { "folke/trouble.nvim", },

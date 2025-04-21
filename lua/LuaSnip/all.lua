@@ -5,6 +5,40 @@ local s = require('luasnip').snippet
 
 return {
     s(
+        { trig = "create_gateway", dscr = "creates a Gateway for golang" },
+        fmta([[
+            package gateways
+
+            import (
+	            "os"
+
+                "github.com/ContaAzul/ca-starters-go/web/restclient"
+            )
+
+            type I<>Gateway interface {}
+
+            type <>Gateway struct {
+            	client *restclient.RestClient
+            }
+
+            func New<>Gateway() *<>Gateway {
+            	return &<>Gateway{
+            		client: restclient.NewRestClient(&restclient.RestClientConfig{
+            			Name:    "<>",
+            			BaseURL: os.Getenv(""),
+            			Timeout: 30,
+            		})}
+            }
+    ]], {
+            i(1),
+            r(1),
+            r(1),
+            r(1),
+            r(1),
+            r(1),
+        })
+    ),
+    s(
         { trig = "create_repo", dscr = "creates a Repository for golang" },
         fmta([[
             type I<>Repository interface {}
@@ -238,5 +272,14 @@ return {
     )),
     s({ trig = 'tRun', dscr = 'creates a simple test case for golang' }, fmta(
         [[ t.Run("should <>", func(t *testing.T) {}) ]], { i(1) }
-    ))
+    )),
+    s({ trig = "restclientrequest", dscr = "creates an http call" }, fmta([[
+    response := restclient.Request[any, any]{
+		Ctx:        ctx,
+		Client:     g.client,
+		HttpMethod: http...,
+		Path:       "???",
+		Headers: map[string]string{},
+	}.Call()
+    ]], {}))
 }

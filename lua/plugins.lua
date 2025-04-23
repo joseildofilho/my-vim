@@ -4,6 +4,19 @@ local dev = {
 
 local plugins = {
     {
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
+        opts = {
+            scope = {
+                include = {
+                    node_type = {
+                        ['*'] = {}
+                    }
+                }
+            }
+        },
+    },
+    {
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
         opts = {
@@ -318,6 +331,7 @@ local plugins = {
         config = function()
             local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
             require("go").setup {
+                gofmt = "golines",
                 max_line_len = 100,
                 tag_transform = true,
                 lsp_inlay_hints = {

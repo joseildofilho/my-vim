@@ -23,5 +23,4 @@ return {
   'RishabhRD/nvim-lsputils',
   'ray-x/lsp_signature.nvim',
   'onsails/lspkind-nvim',
-  { 'jose-elias-alvarez/nvim-lsp-ts-utils', ft = { 'typescript', 'js' } },
 }

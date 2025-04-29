@@ -1,8 +1,10 @@
 require "lsp_signature".setup()
 vim.o.completeopt = 'menuone,noselect'
+vim.diagnostic.config({
+  virtual_lines = true,
+})
 
 local cmp = require 'cmp'
-local luasnip = require("luasnip")
 
 local lspkind = require('lspkind')
 local source_mapping = {

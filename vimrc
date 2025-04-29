@@ -3,12 +3,12 @@ set number relativenumber
 set nocompatible
 set encoding=utf-8
 "set listchars=tab:\|\
-set list
+"set list
 set cursorline
 set clipboard=unnamedplus
 
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set mouse=a
 
@@ -19,7 +19,6 @@ let g:lazygit_floating_window_use_plenary = 1
 set updatetime=100
 set scrolloff=2
 
-syntax on
 let g:lsc_auto_map = v:true
 
 map <SPACE> <leader>

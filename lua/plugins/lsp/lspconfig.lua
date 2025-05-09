@@ -15,8 +15,7 @@ local lspconfig_lazy_config = {
   lazy = true,
   ft = { 'lua', 'dart' }
 }
-
-vim.lsp.enable({ 'ts_ls', 'lua_ls' })
+vim.lsp.enable({ 'ts_ls', 'lua_ls', 'elmls' })
 
 return {
   lspconfig_lazy_config,

@@ -31,26 +31,23 @@ local plugins = {
     event = "VeryLazy",
     opts = {
       use_default_keymaps = false,
+      terminals = {
+        nvimConfigShortcut = {
+          name = "Config",
+          cmd = "nvim ~/.config/nvim/vimrc",
+          type = "float",
+          float_width = 0.8,
+          float_height = 0.8,
+          on_exit = function()
+            vim.cmd('source ~/.config/nvim/vimrc')
+          end
+        }
+      }
     },
     dependencies = {
       "nvim-lua/plenary.nvim",
       "ibhagwan/fzf-lua",
     },
-    terminals = {
-      {
-        config = {
-          name = "NvimConfig",
-          cmd = "nvim",
-          type = "float",
-          float_width = 0.9,
-          float_height = 0.9,
-          on_exit = function()
-            vim.cmd('source ~/.config/nvim/vimrc')
-          end,
-          keymaps = {}
-        }
-      }
-    }
   },
   require 'plugins.snacks',
   require 'plugins.which-key',
@@ -72,6 +69,7 @@ local plugins = {
   require 'plugins.themes',
   {
     'pwntester/octo.nvim',
+    dev = true,
     requires = {
       'nvim-lua/plenary.nvim',
       'nvim-telescope/telescope.nvim',
@@ -84,7 +82,7 @@ local plugins = {
   },
   {
     'MeanderingProgrammer/render-markdown.nvim',
-    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' },     -- if you use the mini.nvim suite
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
     -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
     -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
     ---@module 'render-markdown'
@@ -103,15 +101,8 @@ local plugins = {
   },
   { 'nvim-tree/nvim-web-devicons' },
   { 'mvllow/modes.nvim',          version = 'v0.2.0', opts = {} },
-  {
-    'mistweaverco/kulala.nvim',
-    opts = {
-      debug = true,
-      winbar = true,
-      default_view = 'headers_body',
-    }
-  },
-  { 'chentoast/marks.nvim',      opts = {} },
+  require 'plugins.kulala',
+  { 'chentoast/marks.nvim',       opts = {} },
   {
     'zbirenbaum/copilot.lua',
     config = true,
@@ -150,7 +141,7 @@ local plugins = {
   'hrsh7th/cmp-buffer',
   'hrsh7th/cmp-path',
   'hrsh7th/cmp-cmdline',
-  { 'dart-lang/dart-vim-plugin', lazy = true },   -- TS is causing dart classes to crash
+  { 'dart-lang/dart-vim-plugin',     lazy = true }, -- TS is causing dart classes to crash
   {
     "L3MON4D3/LuaSnip",
     version = "v1.*",
@@ -226,7 +217,7 @@ local plugins = {
   --
   {
     'mrcjkb/rustaceanvim',
-    version = '^3',     -- Recommended
+    version = '^3', -- Recommended
     ft = { 'rust' },
   },
   --
@@ -275,7 +266,7 @@ local plugins = {
   --
   {
     'phaazon/hop.nvim',
-    branch = 'v2',     -- optional but strongly recommended
+    branch = 'v2', -- optional but strongly recommended
     config = function()
       -- you can configure Hop the way you like here; see :h hop-config
       require 'hop'.setup { keys = 'jkletovxqpdygfbzhcisuran' }
@@ -294,14 +285,18 @@ local plugins = {
   },
   require 'plugins.tests.neotest',
   --{ 'gnikdroy/projections.nvim', branch = 'pre_release' },
-  {
-    'olimorris/persisted.nvim',
-    lazy = false,
-    config = true,
-    opts = {
-      autoload = false,
-    }
-  },
+  --{
+  --  event = "BufReadPre",
+  --  'olimorris/persisted.nvim',
+  --  lazy = false,
+  --  opts = {
+  --    autoload = true,
+  --    use_git_branch = true,
+  --  },
+  --  config = function()
+  --    require('telescope').load_extension('persisted')
+  --  end,
+  --},
   {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
@@ -323,7 +318,7 @@ local plugins = {
   },
   {
     "ray-x/go.nvim",
-    dependencies = {     -- optional packages
+    dependencies = { -- optional packages
       "ray-x/guihua.lua",
       "neovim/nvim-lspconfig",
       "nvim-treesitter/nvim-treesitter",
@@ -346,11 +341,11 @@ local plugins = {
     end,
     ft = { "go", 'gomod' },
     lazy = true,
-    build = ':lua require("go.install").update_all_sync()'     -- if you need to install/update all binaries
+    build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
   },
   {
     "folke/lazydev.nvim",
-    ft = "lua",     -- only load on lua files
+    ft = "lua", -- only load on lua files
     opts = {
       library = {
         -- See the configuration section for more details

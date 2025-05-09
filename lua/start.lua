@@ -26,7 +26,7 @@ require("prettier").setup {}
 vim.wo.number = true
 vim.wo.relativenumber = true
 
-require('telescope').load_extension('persisted')
+--require('telescope').load_extension('persisted')
 
 local fidget = require'fidget'
 vim.api.nvim_create_autocmd("BufEnter", {

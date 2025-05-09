@@ -1,4 +1,4 @@
-setlocal spell spelllang=pt,en_us
+"setlocal spell spelllang=pt,en_us
 set number relativenumber
 set nocompatible
 set encoding=utf-8
@@ -104,6 +104,7 @@ nnoremap <leader>fm  <cmd>:NvimTreeToggle<cr>
 nnoremap <leader>o   <cmd>:Oil<cr>
 
 nnoremap <leader>ccc <cmd>lua require'wezterm'.spawn('nvim', { cwd = '~/.config/nvim/'})<cr>
+nnoremap <leader>ccC <cmd>:NeatermNvimConfigShortcut<cr>
 
 
 nnoremap <silent> <C-g><C-g> <cmd>OverseerRun<cr>

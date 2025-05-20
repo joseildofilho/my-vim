@@ -1,5 +1,4 @@
 local Path = require("plenary").path
-local notify = require("fidget").notify
 M = {
   bufs = {},
 }

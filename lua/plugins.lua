@@ -4,6 +4,13 @@ local dev = {
 
 local plugins = {
   {
+    'nvim-java/nvim-java',
+    config = function()
+      require 'java'.setup {}
+    end,
+    ft = { 'java' },
+  },
+  {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
     opts = {
@@ -16,15 +23,7 @@ local plugins = {
       }
     },
   },
-  {
-    "folke/todo-comments.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    }
-  },
+
   {
     "Dan7h3x/neaterm.nvim",
     branch = "stable",
@@ -51,9 +50,22 @@ local plugins = {
   },
   require 'plugins.snacks',
   require 'plugins.which-key',
-  { "folke/trouble.nvim", },
+  {
+    "folke/trouble.nvim",
+    opts = {
+      focus = true,
+    }
+  },
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  },
   { 'mrjones2014/smart-splits.nvim' },
-  { 'polarmutex/beancount.nvim' },
   {
     'stevearc/oil.nvim',
     opts = {}
@@ -77,7 +89,11 @@ local plugins = {
       'nvim-tree/nvim-web-devicons',
     },
     config = function()
-      require "octo".setup()
+      require "octo".setup {
+        pull_requests = {
+          use_branch_name_as_title = true,
+        }
+      }
     end
   },
   {
@@ -100,9 +116,9 @@ local plugins = {
     }
   },
   { 'nvim-tree/nvim-web-devicons' },
-  { 'mvllow/modes.nvim',          version = 'v0.2.0', opts = {} },
+  { 'mvllow/modes.nvim',            version = 'v0.2.0', opts = {} },
   require 'plugins.kulala',
-  { 'chentoast/marks.nvim',       opts = {} },
+  { 'chentoast/marks.nvim',      opts = {} },
   {
     'zbirenbaum/copilot.lua',
     config = true,
@@ -141,19 +157,8 @@ local plugins = {
   'hrsh7th/cmp-buffer',
   'hrsh7th/cmp-path',
   'hrsh7th/cmp-cmdline',
-  { 'dart-lang/dart-vim-plugin',     lazy = true }, -- TS is causing dart classes to crash
-  {
-    "L3MON4D3/LuaSnip",
-    version = "v1.*",
-    build = "make install_jsregexp",
-    config = function()
-      require("luasnip.loaders.from_lua").load({ paths = { "~/.config/nvim/lua/LuaSnip/" } })
-    end
-  },
-  'saadparwaiz1/cmp_luasnip',
-  --
-  'rafamadriz/friendly-snippets',
-  --
+  { 'dart-lang/dart-vim-plugin', lazy = true }, -- TS is causing dart classes to crash
+  require'plugins.snippets',
   {
     "rcarriga/nvim-dap-ui",
     dependencies = {

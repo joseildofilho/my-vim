@@ -54,6 +54,7 @@ nmap     <silent>         <F6> <CMD>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <leader>gf   :LspBufFormat<CR>
 nnoremap          <leader>gm   <CMD>lua vim.lsp.buf.signature_help()<CR>
 nmap     <silent>         gq   <CMD>lua vim.diagnostic.setqflist()<CR>
+nmap                      ?    <CMD>:Trouble<CR>
 
 nmap <leader>e <cmd>lua vim.diagnostic.open_float()<CR>
 nmap <leader>q <cmd>lua vim.diagnostic.setloclist()<CR>

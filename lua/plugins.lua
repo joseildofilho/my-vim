@@ -105,16 +105,6 @@ local plugins = {
     ---@type render.md.UserConfig
     opts = {},
   },
-  {
-    'joseildofilho/db_connect.nvim',
-    dev = true,
-    opts = {
-      username = 'postgres',
-      password = 'postgres',
-      host = 'localhost:5432',
-      dbname = 'postgres'
-    }
-  },
   { 'nvim-tree/nvim-web-devicons' },
   { 'mvllow/modes.nvim',            version = 'v0.2.0', opts = {} },
   require 'plugins.kulala',
@@ -158,7 +148,7 @@ local plugins = {
   'hrsh7th/cmp-path',
   'hrsh7th/cmp-cmdline',
   { 'dart-lang/dart-vim-plugin', lazy = true }, -- TS is causing dart classes to crash
-  require'plugins.snippets',
+  require 'plugins.snippets',
   {
     "rcarriga/nvim-dap-ui",
     dependencies = {

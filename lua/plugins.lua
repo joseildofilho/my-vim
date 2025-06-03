@@ -4,6 +4,18 @@ local dev = {
 
 local plugins = {
   {
+    "kndndrj/nvim-dbee",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+    },
+    build = function()
+      require("dbee").install()
+    end,
+    config = function()
+      require("dbee").setup()
+    end,
+  },
+  {
     'nvim-java/nvim-java',
     config = function()
       require 'java'.setup {}
@@ -203,7 +215,6 @@ local plugins = {
     lazy = false,
     build = 'TSUpdate',
   },
-  { 'nvim-treesitter/playground',    cmd = 'TSPlaygroundToggle' },
   { 'nvim-telescope/telescope.nvim', dependencies = 'nvim-lua/plenary.nvim' },
   'nvim-lua/popup.nvim',
   'RishabhRD/popfix',
@@ -216,9 +227,9 @@ local plugins = {
     ft = { 'rust' },
   },
   --
-  { 'yuezk/vim-js',              ft = { 'typescript', 'js' } },
-  { 'pangloss/vim-javascript',   ft = { 'typescript', 'js' } },
-  { 'MunifTanjim/prettier.nvim', ft = { 'typescript', 'js' } },
+  { 'yuezk/vim-js',                  ft = { 'typescript', 'js' } },
+  { 'pangloss/vim-javascript',       ft = { 'typescript', 'js' } },
+  { 'MunifTanjim/prettier.nvim',     ft = { 'typescript', 'js' } },
   'stevearc/overseer.nvim',
   'stevearc/dressing.nvim',
   {
@@ -318,6 +329,7 @@ local plugins = {
       "neovim/nvim-lspconfig",
       "nvim-treesitter/nvim-treesitter",
     },
+    version = "v0.10.0",
     config = function()
       local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
       require("go").setup {

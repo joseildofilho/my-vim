@@ -1,12 +1,16 @@
 return {
   'mistweaverco/kulala.nvim',
+  version = 'v5.3.0',
   opts = {
     debug = true,
     winbar = true,
-    default_view = 'headers_body',
+    ui = {
+      default_view = 'headers_body',
+    },
   },
   dependencies = { "nvim-lua/plenary.nvim" },
-  config = function()
+  config = function(_, opts)
+    require('kulala').setup(opts)
     require('plugins.kulala.requests')
   end
 }

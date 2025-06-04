@@ -17,7 +17,7 @@ local lspconfig_lazy_config = {
   lazy = true,
   ft = { 'lua', 'dart' }
 }
-vim.lsp.enable({ 'ts_ls', 'lua_ls', 'elmls', 'gopls' })
+vim.lsp.enable({ 'ts_ls', 'lua_ls', 'elmls', 'gopls', 'arduino_language_server', })
 
 return {
   lspconfig_lazy_config,

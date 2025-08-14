@@ -2,6 +2,7 @@
 set number relativenumber
 set nocompatible
 set encoding=utf-8
+set noswapfile
 "set listchars=tab:\|\
 "set list
 set cursorline
@@ -49,7 +50,7 @@ nmap              <leader>s    <Cmd>lua vim.lsp.buf.code_action()<CR>
 nmap     <silent>         gi   <CMD>lua vim.lsp.buf.implementation()<CR>
 nmap                      gk   <Cmd>lua vim.diagnostic.goto_prev()<CR>
 nmap                      gj   <Cmd>lua vim.diagnostic.goto_next()<CR>
-nmap     <silent> <leader>gr   <CMD>lua vim.lsp.buf.references()<CR>
+nmap     <silent> <leader>gr   <CMD>lua require'telescope.builtin'.lsp_incoming_calls()<CR>
 nmap     <silent>         <F6> <CMD>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <leader>gf   :LspBufFormat<CR>
 nnoremap          <leader>gm   <CMD>lua vim.lsp.buf.signature_help()<CR>

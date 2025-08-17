@@ -61,7 +61,10 @@ local neotest_lazy_config = {
         enabled = false,
     },
     summary = {
-      open = "botright vsplit | vertical resize 50 | set relativenumber number | set nowrap"
+      open = "botright vsplit | vertical resize 50 | set relativenumber number nowrap"
+    },
+    output = {
+      open_on_run = false
     }
   }
 }

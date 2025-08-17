@@ -40,11 +40,24 @@ local neotest_lazy_config = {
     local go = require 'neotest-golang'
     local plenary = require 'neotest-plenary'
 
+    ---@diagnostic disable-next-line: missing-fields
     neotest.setup {
       adapters = {
         jest(jestConfig),
         go(goConfig),
         plenary(plenaryConfig)
+      },
+      discovery = {
+        enabled = true,
+        concurrent = 1,
+      },
+      ---@diagnostic disable-next-line: missing-fields
+      summary = {
+        open = "botright vsplit | vertical resize 50 | set relativenumber number"
+      },
+      ---@diagnostic disable-next-line: missing-fields
+      output = {
+        open_on_run = false
       }
     }
 
@@ -52,21 +65,6 @@ local neotest_lazy_config = {
   end,
   lazy = true,
   ft = { "rust", "typescript", "go", "lua" },
-  opts = {
-    discovery = {
-      enabled = true,
-      concurrent = 1,
-    },
-    output_panel = {
-        enabled = false,
-    },
-    summary = {
-      open = "botright vsplit | vertical resize 50 | set relativenumber number nowrap"
-    },
-    output = {
-      open_on_run = false
-    }
-  }
 }
 
 return {

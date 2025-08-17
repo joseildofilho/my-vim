@@ -76,3 +76,8 @@ vim.api.nvim_create_autocmd('BufWritePost', {
     pattern = { "*.js", "*.ts", "*.tsx", "*_test.go" },
     callback = stop_current_test_after_write,
 })
+
+vim.api.nvim_create_autocmd('WinLeave', {
+  pattern = '*Neotest Summary*',
+  callback = function() vim.cmd('q') end,
+})

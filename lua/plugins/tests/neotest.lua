@@ -53,7 +53,7 @@ local neotest_lazy_config = {
       },
       ---@diagnostic disable-next-line: missing-fields
       summary = {
-        open = "botright vsplit | vertical resize 50 | set relativenumber number"
+        open = "botright vsplit | vertical resize 50 | set nowrap"
       },
       ---@diagnostic disable-next-line: missing-fields
       output = {

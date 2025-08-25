@@ -4,6 +4,18 @@ local dev = {
 
 local plugins = {
   {
+    {
+      "CopilotC-Nvim/CopilotChat.nvim",
+      dependencies = {
+        { "nvim-lua/plenary.nvim", branch = "master" },
+      },
+      build = "make tiktoken",
+      opts = {
+        -- See Configuration section for options
+      },
+    },
+  },
+  {
     "kndndrj/nvim-dbee",
     dependencies = {
       "MunifTanjim/nui.nvim",
@@ -16,17 +28,19 @@ local plugins = {
     end,
   },
   {
-    'nvim-java/nvim-java',
-    config = function()
-      require 'java'.setup {}
-    end,
-    ft = { 'java' },
-  },
-  {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
     opts = {
+      indent = {
+        highlight = {
+          "Function"
+        }
+      },
       scope = {
+        highlight = {
+          "Function"
+        },
+        enabled = true,
         include = {
           node_type = {
             ['*'] = {}

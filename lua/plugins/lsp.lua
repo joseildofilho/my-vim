@@ -27,6 +27,10 @@ end, {})
 
 cmp.setup({
   preselect = cmp.PreselectMode.None,
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+  },
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },

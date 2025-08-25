@@ -9,7 +9,7 @@ local lspconfig_lazy_config = {
     lspconfig.zls.setup {}
     lspconfig.terraformls.setup {}
     lspconfig.jdtls.setup {}
-    lspconfig.gopls.setup {}
+    lspconfig.ts_ls.setup {}
 
     require('plugins.lsp-utils')
     require("plugins.lsp")
@@ -17,7 +17,7 @@ local lspconfig_lazy_config = {
   lazy = true,
   ft = { 'lua', 'dart' }
 }
-vim.lsp.enable({ 'ts_ls', 'lua_ls', 'elmls', 'gopls', 'arduino_language_server', })
+vim.lsp.enable({ 'lua_ls', 'elmls', 'gopls', 'arduino_language_server', 'kulala_ls', 'postgres_lsp', 'sqruff' })
 
 return {
   lspconfig_lazy_config,

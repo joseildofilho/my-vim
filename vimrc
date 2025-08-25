@@ -93,7 +93,7 @@ nmap <silent> <leader>tS  :TestStopCurrent<CR>
 nmap <silent> <leader>to <CMD> lua require'neotest'.output_panel.toggle()<CR>
 
 " Find files using Telescope command-line sugar.
-nnoremap          <C-F>       <cmd>Telescope find_files<cr>
+nnoremap          <C-F>       :lua require'telescope.builtin'.find_files({ hidden = true, no_ignore = '*.http'})<cr>
 nnoremap          <C-F><C-G>  <cmd>Telescope live_grep<cr>
 nnoremap          <C-F><C-B>  <cmd>Telescope buffers<cr>
 nnoremap          <C-F><C-O>  <cmd>Telescope oldfiles<cr>

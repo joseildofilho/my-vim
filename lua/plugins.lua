@@ -2,7 +2,29 @@ local dev = {
   path = "~/Codigos/Joseildo/nvim-plugins"
 }
 
+
 local plugins = {
+  {
+    {
+      "CopilotC-Nvim/CopilotChat.nvim",
+      dependencies = {
+        { "nvim-lua/plenary.nvim", branch = "master" },
+      },
+      build = "make tiktoken",
+      opts = {
+        model = "claude-sonnet-4",
+        prompts = {
+          CommitWithCommand = {
+            prompt =
+            'Write commit message for the change with commitizen convention. Keep the title under 50 characters and wrap message at 72 characters. Format as a gitcommit code block. If user has COMMIT_EDITMSG opened, generate replacement block for whole buffer. Write the command line to run it.',
+            resources = {
+              'gitdiff:staged'
+            },
+          }
+        }
+      },
+    },
+  },
   {
     {
       "CopilotC-Nvim/CopilotChat.nvim",
@@ -347,8 +369,8 @@ local plugins = {
     config = function()
       local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
       require("go").setup {
-        gofmt = "golines",
-        max_line_len = 100,
+        -- gofmt = "golines",
+        -- max_line_len = 100,
         tag_transform = true,
         lsp_inlay_hints = {
           enabled = false,

@@ -14,12 +14,13 @@ local plugins = {
       opts = {
         model = "claude-sonnet-4",
         prompts = {
-          CommitWithCommand = {
+          PrDescription = {
             prompt =
-            'Write commit message for the change with commitizen convention. Keep the title under 50 characters and wrap message at 72 characters. Format as a gitcommit code block. If user has COMMIT_EDITMSG opened, generate replacement block for whole buffer. Write the command line to run it.',
-            resources = {
-              'gitdiff:staged'
-            },
+            [[
+            #gitdiff:master
+            #buffers:visible
+            Write the PR description
+            ]],
           }
         }
       },

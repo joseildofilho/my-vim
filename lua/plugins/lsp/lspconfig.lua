@@ -3,7 +3,6 @@ local lspconfig_lazy_config = {
   config = function()
     local lspconfig = require 'lspconfig'
 
-    lspconfig.clangd.setup {}
     lspconfig.beancount.setup {}
     lspconfig.jsonls.setup {}
     lspconfig.zls.setup {}
@@ -17,7 +16,7 @@ local lspconfig_lazy_config = {
   lazy = true,
   ft = { 'lua', 'dart' }
 }
-vim.lsp.enable({ 'lua_ls', 'elmls', 'arduino_language_server', 'kulala_ls', 'postgres_lsp', 'sqruff' })
+vim.lsp.enable({ 'lua_ls', 'elmls', 'arduino_language_server', 'kulala_ls', 'postgres_lsp', 'sqruff', 'ccls' })
 
 return {
   lspconfig_lazy_config,

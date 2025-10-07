@@ -260,7 +260,7 @@ local plugins = {
   --
   {
     'mrcjkb/rustaceanvim',
-    version = '^3', -- Recommended
+    version = '^6', -- Recommended
     ft = { 'rust' },
   },
   --
@@ -414,7 +414,7 @@ local plugins = {
       elseif (vim.uv or vim.loop).fs_stat(vim.fn.stdpath('data') .. '/lazy/nvim-platformio.lua') == nil then
         -- if nvim-platformio not installed, enable plugin to install it first time
         vim.g.platformioRootDir = vim.fn.getcwd()
-      else                                                   -- if nvim-platformio.lua installed but disabled, create Pioinit command
+      else                                                     -- if nvim-platformio.lua installed but disabled, create Pioinit command
         vim.api.nvim_create_user_command('Pioinit', function() --available only if no platformio.ini and .pio in cwd
           vim.api.nvim_create_autocmd('User', {
             pattern = { 'LazyRestore', 'LazyLoad' },

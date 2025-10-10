@@ -4,6 +4,7 @@ local dev = {
 
 
 local plugins = {
+  'isobit/vim-caddyfile',
   {
     {
       "CopilotC-Nvim/CopilotChat.nvim",

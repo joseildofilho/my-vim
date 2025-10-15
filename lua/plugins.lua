@@ -119,12 +119,6 @@ local plugins = {
     'stevearc/oil.nvim',
     opts = {}
   },
-  {
-    'nvzone/typr',
-    dependencies = {
-      'nvzone/volt'
-    }
-  },
   require 'plugins.obsidian',
   require 'plugins.lsp.lspconfig',
   require 'plugins.themes',

@@ -114,7 +114,6 @@ local plugins = {
       -- refer to the configuration section below
     }
   },
-  { 'mrjones2014/smart-splits.nvim' },
   {
     'stevearc/oil.nvim',
     opts = {}

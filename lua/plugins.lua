@@ -96,11 +96,7 @@ local plugins = {
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    }
+    opts = {}
   },
   {
     'stevearc/oil.nvim',
@@ -111,11 +107,9 @@ local plugins = {
   require 'plugins.themes',
   {
     'pwntester/octo.nvim',
-    dev = false,
     requires = {
       'nvim-lua/plenary.nvim',
       'nvim-telescope/telescope.nvim',
-      -- OR 'ibhagwan/fzf-lua',
       'nvim-tree/nvim-web-devicons',
     },
     config = function()
@@ -128,15 +122,11 @@ local plugins = {
   },
   {
     'MeanderingProgrammer/render-markdown.nvim',
-    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
-    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
-    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
-    ---@module 'render-markdown'
-    ---@type render.md.UserConfig
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' },
     opts = {},
   },
   { 'nvim-tree/nvim-web-devicons' },
-  { 'mvllow/modes.nvim',            version = 'v0.2.0', opts = {} },
+  { 'mvllow/modes.nvim',          version = 'v0.2.0', opts = {} },
   require 'plugins.kulala',
   { 'chentoast/marks.nvim',      opts = {} },
   {
@@ -177,7 +167,7 @@ local plugins = {
   'hrsh7th/cmp-buffer',
   'hrsh7th/cmp-path',
   'hrsh7th/cmp-cmdline',
-  { 'dart-lang/dart-vim-plugin', lazy = true }, -- TS is causing dart classes to crash
+  { 'dart-lang/dart-vim-plugin', lazy = true },
   require 'plugins.snippets',
   {
     "rcarriga/nvim-dap-ui",
@@ -236,15 +226,11 @@ local plugins = {
   { 'nvim-telescope/telescope.nvim', dependencies = 'nvim-lua/plenary.nvim' },
   'nvim-lua/popup.nvim',
   'RishabhRD/popfix',
-  --
-  --use "lukas-reineke/indent-blankline.nvim"
-  --
   {
     'mrcjkb/rustaceanvim',
-    version = '^6', -- Recommended
+    version = '^6',
     ft = { 'rust' },
   },
-  --
   { 'yuezk/vim-js',                  ft = { 'typescript', 'js' } },
   { 'pangloss/vim-javascript',       ft = { 'typescript', 'js' } },
   { 'MunifTanjim/prettier.nvim',     ft = { 'typescript', 'js' } },
@@ -288,9 +274,8 @@ local plugins = {
   },
   {
     'phaazon/hop.nvim',
-    branch = 'v2', -- optional but strongly recommended
+    branch = 'v2',
     config = function()
-      -- you can configure Hop the way you like here; see :h hop-config
       require 'hop'.setup { keys = 'jkletovxqpdygfbzhcisuran' }
     end
   },
@@ -334,18 +319,14 @@ local plugins = {
   },
   {
     "j-hui/fidget.nvim",
-    opts = {
-      -- options
-    },
+    opts = {},
   },
   require 'plugins.go',
   {
     "folke/lazydev.nvim",
-    ft = "lua", -- only load on lua files
+    ft = "lua",
     opts = {
       library = {
-        -- See the configuration section for more details
-        -- Load luvit types when the `vim.uv` word is found
         { path = "${3rd}/luv/library", words = { "vim%.uv" } },
       },
     },
@@ -387,7 +368,6 @@ local plugins = {
       return vim.g.platformioRootDir ~= nil
     end,
 
-    -- Dependencies are lazy-loaded by default unless specified otherwise.
     dependencies = {
       { 'akinsho/toggleterm.nvim' },
       { 'nvim-telescope/telescope.nvim' },

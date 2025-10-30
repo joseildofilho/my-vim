@@ -162,13 +162,9 @@ Write the PR description
       "nvim-lua/plenary.nvim",
     },
   },
-  'hrsh7th/nvim-cmp',
-  'hrsh7th/cmp-nvim-lsp',
-  'hrsh7th/cmp-buffer',
-  'hrsh7th/cmp-path',
-  'hrsh7th/cmp-cmdline',
   { 'dart-lang/dart-vim-plugin', lazy = true },
   require 'plugins.snippets',
+  require 'plugins.cmp',
   {
     "rcarriga/nvim-dap-ui",
     dependencies = {
@@ -220,8 +216,38 @@ Write the PR description
   'tpope/vim-fugitive',
   {
     'nvim-treesitter/nvim-treesitter',
+    branch='main',
     lazy = false,
     build = 'TSUpdate',
+    config = function()
+      require 'nvim-treesitter'.setup {
+        ensure_installed = {
+          'lua',
+          'rust',
+          'typescript',
+          'javascript',
+          'go',
+          'gomod',
+          'http',
+          'json',
+          'markdown',
+          'markdown_inline',
+          'yaml',
+          'toml',
+          'caddyfile',
+        },
+        highlight = {
+          enable = true,
+          additional_vim_regex_highlighting = false,
+        },
+        indent = {
+          enable = true,
+        },
+        playground = {
+          enable = true,
+        },
+      }
+    end,
   },
   { 'nvim-telescope/telescope.nvim', dependencies = 'nvim-lua/plenary.nvim' },
   'nvim-lua/popup.nvim',

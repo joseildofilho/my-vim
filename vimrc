@@ -108,7 +108,6 @@ nnoremap <leader>o   <cmd>:Oil<cr>
 nnoremap <leader>ccc <cmd>lua require'wezterm'.spawn('nvim', { cwd = '~/.config/nvim/'})<cr>
 nnoremap <leader>ccC <cmd>:NeatermNvimConfigShortcut<cr>
 
-
 nnoremap <silent> <C-g><C-g> <cmd>OverseerRun<cr>
 nnoremap <silent> <C-g><C-s> <cmd>OverseerToggle<cr>
 
@@ -119,8 +118,6 @@ nnoremap <leader>kc <cmd>lua require'kulala'.from_curl()<cr>
 map <leader>? <cmd>lua require('which-key').show()<CR>
 
 nnoremap <D-v> "+p
-
-nnoremap <C-t> :rightb vsp +te <CR>
 
 tnoremap <leader><Esc> <C-\><C-n>
 

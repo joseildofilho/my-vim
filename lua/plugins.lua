@@ -5,6 +5,7 @@ local dev = {
 
 local plugins = {
   require 'plugins.mason',
+  require 'plugins.jdtls',
   'isobit/vim-caddyfile',
   {
     {
@@ -217,7 +218,7 @@ Write the PR description
   'tpope/vim-fugitive',
   {
     'nvim-treesitter/nvim-treesitter',
-    branch='main',
+    branch = 'main',
     lazy = false,
     build = 'TSUpdate',
     config = function()

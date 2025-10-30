@@ -4,6 +4,7 @@ local dev = {
 
 
 local plugins = {
+  require 'plugins.mason',
   'isobit/vim-caddyfile',
   {
     {

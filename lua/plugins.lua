@@ -18,9 +18,9 @@ local plugins = {
           PrDescription = {
             prompt =
             [[
-            #gitdiff:master
-            #buffers:visible
-            Write the PR description
+#gitdiff:master
+#buffer:visible
+Write the PR description
             ]],
           }
         }

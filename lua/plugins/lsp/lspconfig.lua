@@ -17,7 +17,14 @@ local lspconfig_lazy_config = {
   ft = { 'lua', 'dart' }
 }
 vim.lsp.enable({ 'lua_ls', 'elmls', 'arduino_language_server', 'kulala_ls', 'postgres_lsp', 'sqruff', 'ccls' })
+vim.lsp.enable({ 'lua_ls', 'elmls', 'arduino_language_server', 'kulala_ls', 'postgres_lsp', 'sqruff' })
 
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = 'cpp,h,hpp,c',
+  callback = function(_)
+    require 'lspconfig'.ccls.setup {}
+  end
+})
 return {
   lspconfig_lazy_config,
   'RishabhRD/nvim-lsputils',

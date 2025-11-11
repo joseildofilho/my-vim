@@ -5,7 +5,7 @@ local dev = {
 
 local plugins = {
   require 'plugins.mason',
-  require 'plugins.jdtls',
+  require 'plugins.jdtls.jdtls',
   'isobit/vim-caddyfile',
   {
     {
@@ -136,7 +136,7 @@ Write the PR description
     config = true,
     opts = {
       suggestion = {
-        auto_trigger = true
+        auto_trigger = false
       }
     }
   },

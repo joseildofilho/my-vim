@@ -7,7 +7,7 @@ local lspconfig_lazy_config = {
     lspconfig.jsonls.setup {}
     lspconfig.zls.setup {}
     lspconfig.terraformls.setup {}
-    lspconfig.jdtls.setup {}
+    --lspconfig.jdtls.setup {}
     lspconfig.ts_ls.setup {}
 
     require('plugins.lsp-utils')
@@ -16,8 +16,14 @@ local lspconfig_lazy_config = {
   lazy = true,
   ft = { 'lua', 'dart' }
 }
-vim.lsp.enable({ 'lua_ls', 'elmls', 'arduino_language_server', 'kulala_ls', 'postgres_lsp', 'sqruff', 'ccls' })
-vim.lsp.enable({ 'lua_ls', 'elmls', 'arduino_language_server', 'kulala_ls', 'postgres_lsp', 'sqruff' })
+vim.lsp.enable({ 'lua_ls', 'elmls', 'arduino_language_server', 'kulala_ls' })
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = 'sql',
+  callback = function(_)
+    vim.lsp.enable { 'postgres_lsp', 'sqruff' }
+  end
+})
 
 vim.api.nvim_create_autocmd("BufEnter", {
   pattern = 'cpp,h,hpp,c',
@@ -25,6 +31,14 @@ vim.api.nvim_create_autocmd("BufEnter", {
     require 'lspconfig'.ccls.setup {}
   end
 })
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = '*.java',
+  callback = function(_)
+    require 'plugins.jdtls.jdtls_setup'.setup {}
+  end
+})
+
 return {
   lspconfig_lazy_config,
   'RishabhRD/nvim-lsputils',

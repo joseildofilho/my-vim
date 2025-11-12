@@ -8,18 +8,6 @@ local lspconfig_lazy_config = {
 
 vim.lsp.enable({ 'lua_ls', 'arduino_language_server', 'kulala_ls', 'jsonls', 'terraformls', 'ts_ls', 'json_ls' })
 
-vim.api.nvim_create_autocmd('BufEnter', {
-  pattern = 'json',
-  callback = function(_)
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-    vim.lsp.config('jsonls', {
-      capabilities = capabilities,
-    })
-  end
-})
-
 vim.api.nvim_create_autocmd("BufEnter", {
   pattern = 'sql',
   callback = function(_)

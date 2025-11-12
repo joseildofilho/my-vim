@@ -18,7 +18,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 vim.api.nvim_create_autocmd("BufEnter", {
   pattern = 'cpp,h,hpp,c',
   callback = function(_)
-    require 'lspconfig'.ccls.setup {}
+    vim.lsp.config('ccls', {})
   end
 })
 

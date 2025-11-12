@@ -31,7 +31,6 @@ local plugins = {
   require 'plugins.wezterm',
   require 'plugins.winsep',
   require 'plugins.nvim-window',
-  require 'plugins.lazygit',
   require 'plugins.dart',
   require 'plugins.snippets',
   require 'plugins.cmp',

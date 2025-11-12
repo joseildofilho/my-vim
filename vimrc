@@ -71,7 +71,7 @@ nnoremap <silent> <leader>Dt :lua require'dapui'.float_element('console')<CR>
 
 " git
 nmap <silent> <leader>gs :G<CR>
-nmap <silent> <leader>gg :LazyGit<CR>
+nmap <silent> <leader>gg :lua require'snacks'.lazygit()<CR>
 
 nnoremap <leader>fa :FlutterRun -d all<cr>
 nnoremap <leader>fq :FlutterQuit<cr>

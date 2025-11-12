@@ -6,7 +6,7 @@ local lspconfig_lazy_config = {
   end
 }
 
-vim.lsp.enable({ 'lua_ls', 'elmls', 'arduino_language_server', 'kulala_ls', 'jsonls', 'terraformls', 'ts_ls', 'json_ls' })
+vim.lsp.enable({ 'lua_ls', 'arduino_language_server', 'kulala_ls', 'jsonls', 'terraformls', 'ts_ls', 'json_ls' })
 
 vim.api.nvim_create_autocmd('BufEnter', {
   pattern = 'json',

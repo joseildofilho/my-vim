@@ -44,26 +44,4 @@ vim.api.nvim_create_autocmd("BufEnter", {
     end
 })
 
-vim.api.nvim_create_autocmd("BufEnter", {
-    pattern = {"*.go"},
-    callback = function(ev)
-        local current_buf = ev.buf
-        vim.treesitter.stop(current_buf)
-        local lang = vim.treesitter.language.get_lang('go')
-        local ok, err = pcall(vim.treesitter.start, current_buf, lang)
-        if not ok then
-            fidget.notify("We Have some error on trying to load the highlighter by the treesitter", vim.log.levels.ERROR)
-            print(err)
-        end
-    end
-})
-
---Enable (broadcasting) snippet capability for completion
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-require'lspconfig'.jsonls.setup {
-  capabilities = capabilities,
-}
-
 vim.cmd('source ~/.config/nvim/vimrc')

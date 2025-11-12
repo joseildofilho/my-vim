@@ -1,3 +1,5 @@
+local fidget = require'fidget'
+
 local lspconfig_lazy_config = {
   'neovim/nvim-lspconfig',
   config = function()
@@ -7,7 +9,30 @@ local lspconfig_lazy_config = {
   lazy = true,
   ft = { 'lua', 'dart' }
 }
+
 vim.lsp.enable({ 'lua_ls', 'elmls', 'arduino_language_server', 'kulala_ls', 'jsonls', 'terraformls', 'ts_ls' })
+
+vim.api.nvim_create_autocmd("BufEnter", {
+    pattern = {"*.go"},
+    callback = function(ev)
+        local current_buf = ev.buf
+        vim.treesitter.stop(current_buf)
+        local lang = vim.treesitter.language.get_lang('go')
+        local ok, err = pcall(vim.treesitter.start, current_buf, lang)
+        if not ok then
+            fidget.notify("We Have some error on trying to load the highlighter by the treesitter", vim.log.levels.ERROR)
+            print(err)
+        end
+    end
+})
+
+--Enable (broadcasting) snippet capability for completion
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+require'lspconfig'.jsonls.setup {
+  capabilities = capabilities,
+}
 
 vim.api.nvim_create_autocmd("BufEnter", {
   pattern = 'sql',

@@ -319,19 +319,6 @@ Write the PR description
     ft = { 'typescript', 'js' }
   },
   require 'plugins.tests.neotest',
-  --{ 'gnikdroy/projections.nvim', branch = 'pre_release' },
-  --{
-  --  event = "BufReadPre",
-  --  'olimorris/persisted.nvim',
-  --  lazy = false,
-  --  opts = {
-  --    autoload = true,
-  --    use_git_branch = true,
-  --  },
-  --  config = function()
-  --    require('telescope').load_extension('persisted')
-  --  end,
-  --},
   {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",

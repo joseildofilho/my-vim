@@ -1,8 +1,8 @@
 local lspconfig_lazy_config = {
   'neovim/nvim-lspconfig',
   config = function()
-    require('plugins.lsp-utils')
-    require("plugins.lsp")
+    require('plugins.lsp.lsp-utils')
+    require("plugins.lsp.lsp")
   end
 }
 

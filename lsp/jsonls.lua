@@ -9,11 +9,10 @@ end
 
 return {
   on_attach = add_capabilities,
-  filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
-  cmd = { 'gopls' },
-  root_markers = {
-    '.git',
-    'go.mod',
-    'go.sum',
+  cmd = { 'vscode-json-language-server', '--stdio' },
+  filetypes = { 'json', 'jsonc' },
+  init_options = {
+    provideFormatter = true,
   },
+  root_markers = { '.git' },
 }

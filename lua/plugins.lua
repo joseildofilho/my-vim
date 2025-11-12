@@ -63,30 +63,6 @@ Write the PR description
       }
     },
   },
-  {
-    "Dan7h3x/neaterm.nvim",
-    branch = "stable",
-    event = "VeryLazy",
-    opts = {
-      use_default_keymaps = false,
-      terminals = {
-        nvimConfigShortcut = {
-          name = "Config",
-          cmd = "nvim ~/.config/nvim/vimrc",
-          type = "float",
-          float_width = 0.8,
-          float_height = 0.8,
-          on_exit = function()
-            vim.cmd('source ~/.config/nvim/vimrc')
-          end
-        }
-      }
-    },
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "ibhagwan/fzf-lua",
-    },
-  },
   require 'plugins.snacks',
   require 'plugins.which-key',
   {

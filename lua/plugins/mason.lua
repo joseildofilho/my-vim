@@ -4,14 +4,9 @@ return {
     opts = {}
   },
   {
-    'mason-org/mason-lspconfig.nvim',
+    'WhoIsSethDaniel/mason-tool-installer.nvim',
     opts = {
-      automatic_enable = {
-        exclude = {
-          -- needs external plugin
-          'jdtls',
-        }
-      }
+      ensure_installed = { 'lua-language-server' },
     }
   }
 }

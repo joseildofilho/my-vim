@@ -19,6 +19,7 @@ return {
         'yaml',
         'toml',
         'caddyfile',
+        'cpp' 
       },
       highlight = {
         enable = true,

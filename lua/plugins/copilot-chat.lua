@@ -6,7 +6,7 @@ return {
       },
       build = "make tiktoken",
       opts = {
-        model = "claude-sonnet-4",
+        model = "claude-sonnet-4.5",
         prompts = {
           PrDescription = {
             prompt =

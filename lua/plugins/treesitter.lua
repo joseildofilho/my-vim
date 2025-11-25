@@ -10,6 +10,7 @@ return {
         'rust',
         'typescript',
         'javascript',
+        'java',
         'go',
         'gomod',
         'http',

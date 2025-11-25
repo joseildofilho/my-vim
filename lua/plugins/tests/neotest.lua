@@ -14,6 +14,10 @@ local goConfig = {
   sanitize_output = true,
 }
 
+local javaConfig = {
+  incremental_build = true
+}
+
 local plenaryConfig = {}
 
 local neotest_lazy_config = {
@@ -39,10 +43,12 @@ local neotest_lazy_config = {
     local jest = require 'neotest-jest'
     local go = require 'neotest-golang'
     local plenary = require 'neotest-plenary'
+    local java = require 'neotest-java'
 
     ---@diagnostic disable-next-line: missing-fields
     neotest.setup {
       adapters = {
+        java(javaConfig),
         jest(jestConfig),
         go(goConfig),
         plenary(plenaryConfig)
@@ -65,7 +71,7 @@ local neotest_lazy_config = {
     require('plugins.tests.tests')
   end,
   lazy = true,
-  ft = { "rust", "typescript", "go", "lua" },
+  ft = { "rust", "typescript", "go", "lua", "java" },
 }
 
 return {

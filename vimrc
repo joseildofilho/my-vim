@@ -106,7 +106,7 @@ nnoremap <leader>fm  <cmd>:NvimTreeToggle<cr>
 nnoremap <leader>o   <cmd>:Oil<cr>
 
 nnoremap <leader>ccc <cmd>lua require'wezterm'.spawn('nvim', { cwd = '~/.config/nvim/'})<cr>
-nnoremap <leader>ccC <cmd>:NeatermNvimConfigShortcut<cr>
+nnoremap <leader>cc  <cmd>:CopilotChat<cr>
 
 nnoremap <silent> <C-g><C-g> <cmd>OverseerRun<cr>
 nnoremap <silent> <C-g><C-s> <cmd>OverseerToggle<cr>

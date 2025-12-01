@@ -25,6 +25,7 @@ local neotest_lazy_config = {
   dependencies = {
     "nvim-lua/plenary.nvim",
     'nvim-neotest/nvim-nio',
+    'rcasia/neotest-java',
     "nvim-treesitter/nvim-treesitter",
     "antoinemadec/FixCursorHold.nvim",
 

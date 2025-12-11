@@ -43,7 +43,7 @@ tal:add_item(nut.tab.tablist.tabs({
             nut.tab.tablist.modified({ prefix = " ", config = { text = "●" } }),
             nut.tab.tablist.close({ prefix = " ", config = { text = "󰅖" } }),
         },
-        sep_right = sep.right_chevron_solid(true),
+        sep_right = sep.right_lower_triangle_solid(true),
     },
     inactive_tab = {
         hl = { bg = color.bg2, fg = color.fg2 },
@@ -55,7 +55,7 @@ tal:add_item(nut.tab.tablist.tabs({
             nut.tab.tablist.modified({ prefix = " ", config = { text = "●" } }),
             nut.tab.tablist.close({ prefix = " ", config = { text = "󰅖" } }),
         },
-        sep_right = sep.right_chevron_solid(true),
+        sep_right = sep.right_lower_triangle_solid(true),
     },
 }))
 

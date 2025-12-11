@@ -33,7 +33,7 @@ local color = require("nougat.color").get()
 local mode = nut.mode({
     prefix = " ",
     suffix = " ",
-    sep_right = sep.right_chevron_solid(true),
+    sep_right = sep.right_lower_triangle_solid(true),
     config = {
         highlight = {
             normal = { bg = color.bg1, fg = color.blue },
@@ -49,7 +49,7 @@ stl:add_item(nut.git.branch({
     hl = { bg = color.magenta, fg = color.bg },
     prefix = "  ",
     suffix = " ",
-    sep_right = sep.right_chevron_solid(true),
+    sep_right = sep.right_lower_triangle_solid(true),
 }))
 stl:add_item(nut.git.status.create({
     hl = { bg = color.bg1 },
@@ -68,7 +68,7 @@ stl:add_item(nut.git.status.create({
         }),
     },
     suffix = " ",
-    sep_right = sep.right_chevron_solid(true),
+    sep_right = sep.right_lower_triangle_solid(true),
 }))
 
 stl:add_item(nut.spacer())
@@ -76,7 +76,7 @@ stl:add_item(nut.truncation_point())
 stl:add_item(nut.buf.diagnostic_count({
     hidden = false,
     hl = { bg = color.red, fg = color.bg },
-    sep_left = sep.left_chevron_solid(true),
+    sep_left = sep.left_lower_triangle_solid(true),
     prefix = " ",
     suffix = " ",
     config = {
@@ -86,7 +86,7 @@ stl:add_item(nut.buf.diagnostic_count({
 stl:add_item(nut.buf.diagnostic_count({
     hidden = false,
     hl = { bg = color.yellow, fg = color.bg },
-    sep_left = sep.left_chevron_solid(true),
+    sep_left = sep.left_lower_triangle_solid(true),
     prefix = " ",
     suffix = " ",
     config = {
@@ -96,7 +96,7 @@ stl:add_item(nut.buf.diagnostic_count({
 stl:add_item(nut.buf.diagnostic_count({
     hidden = false,
     hl = { bg = color.blue, fg = color.bg },
-    sep_left = sep.left_chevron_solid(true),
+    sep_left = sep.left_lower_triangle_solid(true),
     prefix = " ",
     suffix = " ",
     config = {
@@ -105,7 +105,7 @@ stl:add_item(nut.buf.diagnostic_count({
 }))
 stl:add_item(nut.buf.diagnostic_count({
     hl = { bg = color.green, fg = color.bg },
-    sep_left = sep.left_chevron_solid(true),
+    sep_left = sep.left_lower_triangle_solid(true),
     prefix = " ",
     suffix = " ",
     config = {
@@ -114,13 +114,13 @@ stl:add_item(nut.buf.diagnostic_count({
 }))
 stl:add_item(nut.buf.filetype({
     hl = { bg = color.bg1 },
-    sep_left = sep.left_chevron_solid(true),
+    sep_left = sep.left_lower_triangle_solid(true),
     prefix = " ",
     suffix = " ",
 }))
 stl:add_item(Item({
     hl = { bg = color.bg2, fg = color.blue },
-    sep_left = sep.left_chevron_solid(true),
+    sep_left = sep.left_lower_triangle_solid(true),
     prefix = "  ",
     content = core.group({
         core.code("l"),
@@ -131,7 +131,7 @@ stl:add_item(Item({
 }))
 stl:add_item(Item({
     hl = { bg = color.blue, fg = color.bg },
-    sep_left = sep.left_chevron_solid(true),
+    sep_left = sep.left_lower_triangle_solid(true),
     prefix = " ",
     content = core.code("P"),
     suffix = " ",

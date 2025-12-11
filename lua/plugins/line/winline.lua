@@ -43,7 +43,7 @@ line:add_item(nut.buf.filename({
 line:add_item(nut.buf.filestatus({
     hl = { bg = color.bg1 },
     suffix = " ",
-    sep_right = sep.right_chevron_solid(true),
+    sep_right = sep.right_lower_triangle_solid(true),
     config = {
         modified = "󰏫",
         nomodifiable = "󰏯",
@@ -53,7 +53,7 @@ line:add_item(nut.buf.filestatus({
 }))
 line:add_item(Item({
     hl = { bg = color.bg2, fg = color.blue },
-    sep_right = sep.right_chevron_solid(true),
+    sep_right = sep.right_lower_triangle_solid(true),
     prefix = " ",
     content = function ()
         local hooks = #require'harpoon':list().items

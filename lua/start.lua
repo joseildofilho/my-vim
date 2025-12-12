@@ -23,6 +23,8 @@ require('dressing').setup()
 
 require("prettier").setup {}
 
+require'config.user_commands.format'
+
 vim.wo.number = true
 vim.wo.relativenumber = true
 

@@ -52,7 +52,7 @@ nmap                      gk   <Cmd>lua vim.diagnostic.goto_prev()<CR>
 nmap                      gj   <Cmd>lua vim.diagnostic.goto_next()<CR>
 nmap     <silent> <leader>gr   <CMD>lua require'telescope.builtin'.lsp_incoming_calls()<CR>
 nmap     <silent>         <F6> <CMD>lua vim.lsp.buf.rename()<CR>
-nnoremap <silent> <leader>gf   :LspBufFormat<CR>
+nnoremap <silent> <leader>gf   :Format<CR>
 nnoremap          <leader>gm   <CMD>lua vim.lsp.buf.signature_help()<CR>
 nmap     <silent>         gq   <CMD>lua vim.diagnostic.setqflist()<CR>
 nmap                      ?    <CMD>:Trouble<CR>

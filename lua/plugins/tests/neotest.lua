@@ -20,6 +20,8 @@ local javaConfig = {
 
 local plenaryConfig = {}
 
+local gtestConfig = {}
+
 local neotest_lazy_config = {
   "nvim-neotest/neotest",
   dependencies = {
@@ -28,6 +30,7 @@ local neotest_lazy_config = {
     'rcasia/neotest-java',
     "nvim-treesitter/nvim-treesitter",
     "antoinemadec/FixCursorHold.nvim",
+    'alfaix/neotest-gtest',
 
     "rouge8/neotest-rust",
     "nvim-neotest/neotest-jest",
@@ -45,6 +48,7 @@ local neotest_lazy_config = {
     local go = require 'neotest-golang'
     local plenary = require 'neotest-plenary'
     local java = require 'neotest-java'
+    local gtest = require 'neotest-gtest'
 
     ---@diagnostic disable-next-line: missing-fields
     neotest.setup {
@@ -52,7 +56,8 @@ local neotest_lazy_config = {
         java(javaConfig),
         jest(jestConfig),
         go(goConfig),
-        plenary(plenaryConfig)
+        plenary(plenaryConfig),
+        gtest.setup(gtestConfig)
       },
       discovery = {
         enabled = true,
@@ -69,10 +74,11 @@ local neotest_lazy_config = {
       }
     }
 
+    print"configured"
     require('plugins.tests.tests')
   end,
   lazy = true,
-  ft = { "rust", "typescript", "go", "lua", "java" },
+  ft = { "rust", "typescript", "go", "lua", "java", "cpp" },
 }
 
 return {

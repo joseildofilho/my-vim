@@ -84,7 +84,7 @@ dap.configurations.dart = {
     }
 }
 
-local dap, dapui = require("dap"), require("dapui")
+local dapui = require("dapui")
 dap.listeners.before.attach.dapui_config = function()
     dapui.open()
 end

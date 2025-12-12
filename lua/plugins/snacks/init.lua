@@ -2,7 +2,10 @@ return {
   'folke/snacks.nvim',
   opts = {
     -- input = require 'plugins.snacks.input',
-    pickers = {},
+    picker = {
+      ui_select = true,
+    },
     lazygit = {},
+    input = {}
   }
 }

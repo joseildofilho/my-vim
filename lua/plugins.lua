@@ -49,6 +49,7 @@ local plugins = {
   require 'plugins.go',
   require 'plugins.lazydev',
   require 'plugins.platform_io',
+  require 'plugins.conform',
 
   { 'yuezk/vim-js',              ft = { 'typescript', 'js' } },
   { 'pangloss/vim-javascript',   ft = { 'typescript', 'js' } },
@@ -64,6 +65,17 @@ local plugins = {
     dependencies = { "mfussenegger/nvim-dap" },
     ft = { 'typescript', 'js' }
   },
+  {
+    "lowitea/aw-watcher.nvim",
+    opts = { -- required, but can be empty table: {}
+      -- add any options here
+      -- for example:
+      aw_server = {
+        host = "127.0.0.1",
+        port = 5600,
+      },
+    },
+  }
 }
 
 local lazy = require 'lazy'

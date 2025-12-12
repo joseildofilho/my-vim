@@ -1,10 +1,11 @@
-local jdtls           = vim.fn.expand '$MASON/packages/jdtls'
-local jdtlsExecutable = jdtls .. '/jdtls'
-local equinox         = jdtls .. '/plugins/org.eclipse.equinox.launcher_1.7.0.v20250519-0528.jar'
+local jdtls              = vim.fn.expand '$MASON/packages/jdtls'
+local java_debug_adapter = vim.fn.expand '$MASON/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-0.53.2.jar'
+local jdtlsExecutable    = jdtls .. '/jdtls'
+local equinox            = jdtls .. '/plugins/org.eclipse.equinox.launcher_1.7.0.v20250519-0528.jar'
 
-local figet           = require 'fidget'
+local figet              = require 'fidget'
 
-local lombok          = jdtls .. '/lombok.jar'
+local lombok             = jdtls .. '/lombok.jar'
 figet.notify(lombok, vim.log.levels.INFO)
 
 local M = {}
@@ -53,7 +54,7 @@ function M:setup()
     --
     -- If you don't plan on using the debugger or other eclipse.jdt.ls plugins you can remove this
     init_options = {
-      bundles = {},
+      bundles = { java_debug_adapter },
     },
   }
   -- This starts a new client & server,

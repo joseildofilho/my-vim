@@ -7,7 +7,6 @@ local plugins = {
   'nvim-tree/nvim-web-devicons',
   'tpope/vim-fugitive',
   'stevearc/overseer.nvim',
-  'stevearc/dressing.nvim',
   'RishabhRD/popfix',
 
   require 'plugins.mason',
@@ -53,7 +52,6 @@ local plugins = {
 
   { 'yuezk/vim-js',              ft = { 'typescript', 'js' } },
   { 'pangloss/vim-javascript',   ft = { 'typescript', 'js' } },
-  { 'MunifTanjim/prettier.nvim', ft = { 'typescript', 'js' } },
   {
     "microsoft/vscode-js-debug",
     lazy = true,

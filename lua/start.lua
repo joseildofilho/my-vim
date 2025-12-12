@@ -16,11 +16,6 @@ require('plugins')
 
 require('plugins.dap')
 require('plugins.theme')
---
-require('overseer').setup()
-require('dressing').setup()
-
-require("prettier").setup {}
 
 require 'config.user_commands.format'
 require 'config.autocmds.http'

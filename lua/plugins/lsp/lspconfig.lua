@@ -6,7 +6,7 @@ local lspconfig_lazy_config = {
   end
 }
 
-vim.lsp.enable({ 'lua_ls', 'kulala_ls', 'terraformls', 'ts_ls', 'ccls' })
+vim.lsp.enable({ 'lua_ls', 'kulala_ls', 'terraformls', 'ts_ls', 'ccls', 'codebook' })
 
 vim.api.nvim_create_autocmd("BufEnter", {
   pattern = 'sql',

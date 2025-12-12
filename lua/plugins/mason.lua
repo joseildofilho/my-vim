@@ -6,7 +6,7 @@ return {
   {
     'WhoIsSethDaniel/mason-tool-installer.nvim',
     opts = {
-      ensure_installed = { 'lua-language-server', 'gopls' },
+      ensure_installed = { 'lua-language-server', 'gopls', 'codebook' },
     }
   }
 }

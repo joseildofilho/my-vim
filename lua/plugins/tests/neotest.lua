@@ -12,6 +12,7 @@ local jestConfig = {
 local goConfig = {
   dap_go_enabled = true,
   sanitize_output = true,
+  warn_test_name_dupes = false,
 }
 
 local javaConfig = {

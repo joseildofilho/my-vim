@@ -49,6 +49,7 @@ local plugins = {
   require 'plugins.lazydev',
   require 'plugins.platform_io',
   require 'plugins.conform',
+  require 'plugins.lua-console',
 
   { 'yuezk/vim-js',              ft = { 'typescript', 'js' } },
   { 'pangloss/vim-javascript',   ft = { 'typescript', 'js' } },

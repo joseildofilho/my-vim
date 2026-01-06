@@ -3,7 +3,8 @@ return {
   opts = {
     formatters_by_ft = {
       java = { 'google-java-format' },
-      go = { 'gofmt' }
+      go = { 'gofmt' },
+      dart = { 'fvm dart format write', lsp_format = "fallback" }
     }
   }
 }

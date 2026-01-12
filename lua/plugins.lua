@@ -50,6 +50,8 @@ local plugins = {
   require 'plugins.platform_io',
   require 'plugins.conform',
   require 'plugins.lua-console',
+  require 'plugins.atone',
+  require 'plugins.triforce',
 
   { 'yuezk/vim-js',              ft = { 'typescript', 'js' } },
   { 'pangloss/vim-javascript',   ft = { 'typescript', 'js' } },

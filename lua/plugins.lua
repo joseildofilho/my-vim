@@ -53,6 +53,7 @@ local plugins = {
   require 'plugins.atone',
   require 'plugins.triforce',
   require 'plugins.exercism',
+  'joerdav/templ.vim',
 
   { 'yuezk/vim-js',              ft = { 'typescript', 'js' } },
   { 'pangloss/vim-javascript',   ft = { 'typescript', 'js' } },

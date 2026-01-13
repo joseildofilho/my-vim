@@ -21,6 +21,7 @@ return {
         'toml',
         'caddyfile',
         'cpp',
+        'templ'
       },
       highlight = {
         enable = true,

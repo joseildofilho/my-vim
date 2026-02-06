@@ -52,6 +52,7 @@ local plugins = {
   require 'plugins.lua-console',
   require 'plugins.atone',
   require 'plugins.triforce',
+  require 'plugins.exercism',
 
   { 'yuezk/vim-js',              ft = { 'typescript', 'js' } },
   { 'pangloss/vim-javascript',   ft = { 'typescript', 'js' } },

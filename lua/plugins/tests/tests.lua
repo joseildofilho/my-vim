@@ -77,7 +77,4 @@ vim.api.nvim_create_autocmd('BufWritePost', {
     callback = stop_current_test_after_write,
 })
 
-vim.api.nvim_create_autocmd('WinLeave', {
-  pattern = '*Neotest Summary*',
-  callback = function() vim.cmd('q') end,
-})
+

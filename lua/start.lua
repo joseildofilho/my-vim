@@ -19,6 +19,7 @@ require('plugins.theme')
 
 require 'config.user_commands.format'
 require 'config.autocmds.http'
+require 'config.autocmds.auto_close'
 
 vim.wo.number = true
 vim.wo.relativenumber = true

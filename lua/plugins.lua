@@ -15,6 +15,7 @@ local plugins = {
   require 'plugins.dbee',
   require 'plugins.indent-blankline',
   require 'plugins.snacks',
+  require 'plugins.mini.init',
   require 'plugins.which-key',
   require 'plugins.trouble',
   require 'plugins.todo-comments',

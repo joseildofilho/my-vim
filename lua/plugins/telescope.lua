@@ -4,7 +4,7 @@ return {
   config = function()
     require('telescope').setup {
       defaults = {
-        file_ignore_patterns = { "node_modules/.*", "dist/.*", "build/.*", "deps/.*" },
+        --file_ignore_patterns = { "node_modules/.*", "dist/.*", "build/.*", "deps/.*", "target/.*", ".git/.*" },
         path_display = { "smart" }
       },
     }

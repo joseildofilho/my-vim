@@ -55,19 +55,6 @@ local plugins = {
   require 'plugins.exercism',
   'joerdav/templ.vim',
 
-  { 'yuezk/vim-js',              ft = { 'typescript', 'js' } },
-  { 'pangloss/vim-javascript',   ft = { 'typescript', 'js' } },
-  {
-    "microsoft/vscode-js-debug",
-    lazy = true,
-    build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
-    ft = { 'typescript', 'js' }
-  },
-  {
-    "mxsdev/nvim-dap-vscode-js",
-    dependencies = { "mfussenegger/nvim-dap" },
-    ft = { 'typescript', 'js' }
-  },
   {
     "lowitea/aw-watcher.nvim",
     opts = { -- required, but can be empty table: {}

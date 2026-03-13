@@ -8,6 +8,15 @@ local plugins = {
   'tpope/vim-fugitive',
   'stevearc/overseer.nvim',
   'RishabhRD/popfix',
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  {
+    'mfussenegger/nvim-lint',
+    config = function()
+      require 'lint'.linters_by_ft = {
+        java = { 'checkstyle' }
+      }
+    end
+  },
 
   require 'plugins.mason',
   require 'plugins.jdtls.jdtls',

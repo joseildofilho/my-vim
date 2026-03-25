@@ -4,7 +4,7 @@ return {
     formatters_by_ft = {
       lua = { lsp_format = "fallback" },
       java = { 'google-java-format' },
-      go = { 'gofmt' },
+      go = { 'golines' },
       dart = { 'fvm dart format write', lsp_format = "fallback" }
     }
   }

@@ -55,9 +55,21 @@ stl:add_item(nut.git.branch({
 stl:add_item(Item({
   sep_right = sep.right_lower_triangle_solid(true),
   hl = { bg = color.yellow, fg = color.bg },
-  content = function(_)
-    local out, _ = vim.fn.system("git diff --shortstat master..HEAD | awk '{print $4 + $6}'"):gsub("^%s*(.-)%s*$", "%1")
-    return out
+  init = function(self)
+    local timer = vim.uv.new_timer()
+    if timer == nil then
+      return
+    end
+
+    timer:start(0, 5000, function()
+      vim.system({ 'git', 'diff', '--shortstat', 'master..HEAD' }, { detach = true }, function(out)
+        local changed = 0
+        for pos, neg in out.stdout:gmatch(".*, (%d*).*, (%d).*$") do
+          changed = tonumber(pos) + tonumber(neg)
+        end
+        self.content = '' .. changed
+      end)
+    end)
   end,
   prefix = " ~",
   suffix = " ",

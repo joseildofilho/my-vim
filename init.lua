@@ -1,3 +1,4 @@
+require'vim._core.ui2'.enable{}
 require'globals'
 -- it is a recomendation from nvimtree
 -- disable netrw at the very start of your init.lua

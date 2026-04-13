@@ -1,0 +1,1 @@
+require('marks.nvim').setup({})

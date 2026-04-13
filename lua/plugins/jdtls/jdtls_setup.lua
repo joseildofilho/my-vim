@@ -3,12 +3,9 @@ local java_debug_adapter = vim.fn.expand '$MASON/packages/java-debug-adapter/ext
 local jdtlsExecutable    = jdtls .. '/jdtls'
 local equinox            = jdtls .. '/plugins/org.eclipse.equinox.launcher_1.7.0.v20250519-0528.jar'
 
-local figet              = require 'fidget'
-
 local lombok             = jdtls .. '/lombok.jar'
-figet.notify(lombok, vim.log.levels.INFO)
 
-local M = {}
+local M                  = {}
 
 function M:setup()
   local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
@@ -30,7 +27,7 @@ function M:setup()
       "--add-opens",
       "java.base/java.lang=ALL-UNNAMED",
       "-jar", equinox,
-      "--jvm-arg=-javaagent:" .. lombok,
+      vim.fn.filereadable(lombok) == 1 and "--jvm-arg=-javaagent:" .. lombok or "",
       "-configuration",
       jdtls .. "config_" .. (os_name == "Linux" and "linux" or "mac_arm"),
       "-data",

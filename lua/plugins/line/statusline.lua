@@ -62,9 +62,10 @@ stl:add_item(Item({
     end
 
     timer:start(0, 5000, function()
-      vim.system({ 'git', 'diff', '--shortstat', 'master..HEAD' }, { detach = true }, function(out)
+      local cmd = { 'git', 'diff', '--shortstat', 'master..HEAD' }
+      vim.system(cmd, { detach = true }, function(out)
         local changed = 0
-        for pos, neg in out.stdout:gmatch(".*, (%d*).*, (%d).*$") do
+        for pos, neg in out.stdout:gmatch(".*, (%d*).*, (%d*).*$") do
           changed = tonumber(pos) + tonumber(neg)
         end
         self.content = '' .. changed

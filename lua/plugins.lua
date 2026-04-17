@@ -2,14 +2,15 @@ local dev = {
   path = "~/Codigos/Joseildo/nvim-plugins"
 }
 
+require 'plugins.marks'
+
 local plugins = {
-  { 'chentoast/marks.nvim', opts = {} },
   'isobit/vim-caddyfile',
   'nvim-tree/nvim-web-devicons',
   'tpope/vim-fugitive',
   'stevearc/overseer.nvim',
   'RishabhRD/popfix',
-  { "catppuccin/nvim",      name = "catppuccin", priority = 1000 },
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   {
     'mfussenegger/nvim-lint',
     config = function()

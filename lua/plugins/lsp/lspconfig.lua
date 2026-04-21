@@ -23,6 +23,13 @@ vim.api.nvim_create_autocmd("BufEnter", {
 })
 
 vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = { '*.tf', '*.tfvars' },
+  callback = function(_)
+    vim.lsp.config('terraformls', {})
+  end
+})
+
+vim.api.nvim_create_autocmd("BufEnter", {
   pattern = '*.java',
   callback = function(_)
     require 'plugins.jdtls.jdtls_setup'.setup {}

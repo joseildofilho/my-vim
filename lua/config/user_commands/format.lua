@@ -1,3 +1,3 @@
 vim.api.nvim_create_user_command('Format', function()
-  require 'conform'.format()
+  require 'conform'.format({ lsp_format = "fallback" })
 end, {})

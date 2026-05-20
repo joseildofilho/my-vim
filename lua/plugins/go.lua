@@ -14,6 +14,7 @@ return {
       lsp_inlay_hints = {
         enabled = false,
       },
+      lsp_semantic_highlights = true,
       lsp_keymaps = false,
       lsp_cfg = {
         capabilities = capabilities,

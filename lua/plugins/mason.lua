@@ -16,6 +16,7 @@ return {
 				"terraform-ls",
 				"stylua",
 				"bash-language-server",
+				"tinymist",
 			},
 		},
 	},

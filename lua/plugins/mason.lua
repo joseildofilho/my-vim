@@ -1,12 +1,22 @@
 return {
-  {
-    'mason-org/mason.nvim',
-    opts = {}
-  },
-  {
-    'WhoIsSethDaniel/mason-tool-installer.nvim',
-    opts = {
-      ensure_installed = { 'lua-language-server', 'gopls', 'typescript-language-server', 'codebook', 'jdtls', 'java-debug-adapter', 'terraform-ls' },
-    }
-  }
+	{
+		"mason-org/mason.nvim",
+		opts = {},
+	},
+	{
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		opts = {
+			ensure_installed = {
+				"lua-language-server",
+				"gopls",
+				"typescript-language-server",
+				"codebook",
+				"jdtls",
+				"java-debug-adapter",
+				"terraform-ls",
+				"stylua",
+				"bash-language-server",
+			},
+		},
+	},
 }

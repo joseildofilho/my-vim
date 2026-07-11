@@ -25,6 +25,16 @@ vim.api.nvim_create_autocmd("BufEnter", {
 })
 
 vim.api.nvim_create_autocmd("BufEnter", {
+	pattern = "*.templ",
+	callback = function(_)
+		vim.lsp.enable("templ")
+		vim.lsp.config("templ", {
+			cmd = { "go", "tool", "templ", "lsp" },
+		})
+	end,
+})
+
+vim.api.nvim_create_autocmd("BufEnter", {
 	pattern = "sql",
 	callback = function(_)
 		vim.lsp.enable({ "postgres_lsp", "sqruff" })

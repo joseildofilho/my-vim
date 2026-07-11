@@ -92,6 +92,10 @@
       "rev": "f353e8c08c50f39e99a9ed474172df7eddd89b72",
       "src": "https://github.com/chentoast/marks.nvim"
     },
+    "odin.nvim": {
+      "rev": "82e8cf4f3720becc4dd8ebcd7934dcedd649c4ab",
+      "src": "git@github.com:cephei8/odin.nvim"
+    },
     "zen-mode.nvim": {
       "rev": "8564ce6d29ec7554eb9df578efa882d33b3c23a7",
       "src": "https://github.com/folke/zen-mode.nvim"

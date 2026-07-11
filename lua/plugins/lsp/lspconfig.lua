@@ -1,44 +1,61 @@
 local lspconfig_lazy_config = {
-  'neovim/nvim-lspconfig',
-  config = function()
-    require('plugins.lsp.lsp-utils')
-    require("plugins.lsp.lsp")
-  end
+	"neovim/nvim-lspconfig",
+	config = function()
+		require("plugins.lsp.lsp-utils")
+		require("plugins.lsp.lsp")
+	end,
 }
 
-vim.lsp.enable({ 'lua_ls', 'kulala_ls', 'terraformls', 'ts_ls', 'ccls', 'codebook', 'templ', 'bashls' })
+vim.lsp.enable({ "lua_ls", "kulala_ls", "terraformls", "ts_ls", "ccls", "templ", "bashls" })
 
 vim.api.nvim_create_autocmd("BufEnter", {
-  pattern = 'sql',
-  callback = function(_)
-    vim.lsp.enable { 'postgres_lsp', 'sqruff' }
-  end
+	pattern = "*.typ",
+	callback = function(_)
+		vim.lsp.enable("tinymist")
+		vim.lsp.config("typ", {
+			cmd = { "tinymist" },
+			filetypes = { "typst" },
+			settings = {
+				formatterMode = "typstyle",
+				exportPdf = "onType",
+				semanticTokens = "enabled",
+			},
+		})
+	end,
 })
 
 vim.api.nvim_create_autocmd("BufEnter", {
-  pattern = 'cpp,h,hpp,c',
-  callback = function(_)
-    vim.lsp.config('ccls', {})
-  end
+	pattern = "sql",
+	callback = function(_)
+		vim.lsp.enable({ "postgres_lsp", "sqruff" })
+	end,
 })
 
 vim.api.nvim_create_autocmd("BufEnter", {
-  pattern = { '*.tf', '*.tfvars' },
-  callback = function(_)
-    vim.lsp.config('terraformls', {})
-  end
+	pattern = "cpp,h,hpp,c",
+	callback = function(_)
+		vim.lsp.config("ccls", {})
+	end,
 })
 
 vim.api.nvim_create_autocmd("BufEnter", {
-  pattern = '*.java',
-  callback = function(_)
-    require 'plugins.jdtls.jdtls_setup'.setup {}
-  end
+	pattern = { "*.tf", "*.tfvars" },
+	callback = function(_)
+		vim.lsp.config("terraformls", {})
+	end,
+})
+
+vim.api.nvim_create_autocmd("BufEnter", {
+	pattern = "*.java",
+	callback = function(_)
+		require("plugins.jdtls.jdtls_setup").setup({})
+		vim.lsp.enable("codebook")
+	end,
 })
 
 return {
-  lspconfig_lazy_config,
-  'RishabhRD/nvim-lsputils',
-  'ray-x/lsp_signature.nvim',
-  'onsails/lspkind-nvim',
+	lspconfig_lazy_config,
+	"RishabhRD/nvim-lsputils",
+	"ray-x/lsp_signature.nvim",
+	"onsails/lspkind-nvim",
 }
